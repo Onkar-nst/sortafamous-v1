@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { Reveal } from "./Reveal";
+import { SectionHeader } from "./SectionHeader";
 
 const tiers = [
   {
@@ -36,41 +37,28 @@ export function Pricing() {
   return (
     <section id="pricing" className="relative z-[115] bg-cream py-16 md:py-28 px-6 md:px-12 lg:px-16 xl:px-28 border-t border-border">
       <div className="mx-auto max-w-[1480px]">
-        <div className="flex items-center justify-between mb-10 md:mb-14">
-          <Reveal>
-            <div className="eyebrow flex items-center gap-2">
-              <span className="h-1.5 w-1.5 rounded-full bg-accent" /> Simple pricing
-            </div>
-          </Reveal>
-          <Reveal delay={80}>
-            <div className="text-sm text-ink-soft">Pricing — 2026</div>
-          </Reveal>
-        </div>
-
-        <div className="flex items-end justify-between mb-10 md:mb-14">
-          <Reveal>
-            <h2 className="serif text-4xl md:text-7xl">Pricing</h2>
-          </Reveal>
-          <Reveal delay={80}>
-            <div className="serif-italic text-sm text-ink-soft">/ © /</div>
-          </Reveal>
-        </div>
+        <SectionHeader
+          eyebrow="Simple pricing"
+          title="Pricing"
+          marker="/ © /"
+          className="mb-10 md:mb-14"
+        />
 
         {/* Billing toggle */}
         <div className="flex flex-col gap-5 sm:flex-row sm:items-center sm:justify-between border-t border-ink/15 py-6 mb-2">
           <div className="eyebrow">Engagement & billing</div>
-          <div className="inline-flex items-center rounded-full border border-ink/15 bg-muted p-1 text-sm">
+          <div className="flex w-full sm:inline-flex sm:w-auto items-center rounded-full border border-ink/15 bg-muted p-1 text-sm">
             <button
               onClick={() => setMonthly(false)}
               aria-pressed={!monthly}
-              className={`rounded-full px-5 py-2 transition-colors duration-300 ${!monthly ? "bg-ink text-cream" : "text-ink-soft hover:text-ink"}`}
+              className={`flex-1 sm:flex-none rounded-full px-5 py-2 text-center transition-colors duration-300 ${!monthly ? "bg-ink text-cream" : "text-ink-soft hover:text-ink"}`}
             >
               Per project
             </button>
             <button
               onClick={() => setMonthly(true)}
               aria-pressed={monthly}
-              className={`rounded-full px-5 py-2 transition-colors duration-300 ${monthly ? "bg-ink text-cream" : "text-ink-soft hover:text-ink"}`}
+              className={`flex-1 sm:flex-none rounded-full px-5 py-2 text-center transition-colors duration-300 ${monthly ? "bg-ink text-cream" : "text-ink-soft hover:text-ink"}`}
             >
               Monthly
             </button>

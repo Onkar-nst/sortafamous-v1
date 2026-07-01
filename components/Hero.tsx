@@ -100,7 +100,7 @@ export function Hero() {
                 className="mt-6 lg:mt-8 flex items-center gap-4"
               >
                 <span className="serif text-5xl leading-none">3.4×</span>
-                <span className="text-sm text-ink-soft leading-tight max-w-[9rem]">
+                <span className="text-sm text-ink-soft leading-tight max-w-[9rem] lg:max-w-none lg:whitespace-nowrap">
                   average client growth in the first year
                 </span>
               </motion.div>
@@ -108,12 +108,17 @@ export function Hero() {
 
             <motion.div
               style={{ y: imgY }}
-              className="pointer-events-none absolute inset-x-0 bottom-0 z-20 h-[60vh] order-2 lg:pointer-events-auto lg:relative lg:inset-auto lg:z-auto lg:h-full lg:order-last"
+              className="pointer-events-none absolute inset-x-0 bottom-0 z-0 h-[44vh] order-2 lg:pointer-events-auto lg:relative lg:inset-auto lg:z-auto lg:h-full lg:order-last"
             >
+              {/* solid circle backdrop behind the bust — desktop only, image sits on top */}
+              <div
+                aria-hidden
+                className="hidden lg:block absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-[54%] aspect-square w-[92%] rounded-full bg-[#e4ddce]"
+              />
               <motion.img
                 src="/rightside%20img.png"
                 alt="Sorta Famous — editorial portrait"
-                className="absolute inset-0 h-full w-full object-contain object-bottom"
+                className="absolute inset-0 lg:bottom-[13vh] w-full object-contain object-bottom"
                 fetchPriority="high"
                 initial={{ opacity: 0, scale: 1.06, filter: "blur(16px)" }}
                 animate={{ opacity: 1, scale: 1, filter: "blur(0px)" }}

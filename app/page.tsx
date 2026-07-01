@@ -10,7 +10,6 @@ import { Services } from "@/components/Services";
 import { Craft } from "@/components/Craft";
 import { Process } from "@/components/Process";
 import { Values } from "@/components/Values";
-import { Proof } from "@/components/Proof";
 import { Work } from "@/components/Work";
 import { Team } from "@/components/Team";
 import { Pricing } from "@/components/Pricing";
@@ -46,7 +45,6 @@ export default function Home() {
           <Services />
           <Craft />
           <Process />
-          <Proof />
           <Work />
           <Team />
           <Pricing />

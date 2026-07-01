@@ -2,6 +2,7 @@
 
 import { Mail, Phone, MapPin, ArrowRight, Sparkles, Users } from "lucide-react";
 import { Reveal } from "./Reveal";
+import { SectionHeader } from "./SectionHeader";
 
 const fields = [
   { id: "name", label: "Your name", type: "text", placeholder: "Jane Doe" },
@@ -27,16 +28,11 @@ export function Contact() {
       className="relative z-[140] bg-cream py-16 md:py-28 px-6 md:px-12 lg:px-16 xl:px-28 border-t border-border"
     >
       <div className="mx-auto max-w-[1480px]">
-        <div className="flex items-baseline justify-between mb-12">
-          <Reveal>
-            <div className="eyebrow flex items-center gap-2">
-              <span className="h-1.5 w-1.5 rounded-full bg-accent" /> Get in touch
-            </div>
-          </Reveal>
-          <Reveal delay={80}>
-            <div className="text-sm text-ink-soft">Contact — 2026</div>
-          </Reveal>
-        </div>
+        <SectionHeader
+          eyebrow="Get in touch"
+          title="Let's talk"
+          className="mb-12"
+        />
 
         <div className="grid lg:grid-cols-2 gap-6 lg:gap-10 items-stretch">
           {/* LEFT — image card with headline + perks */}

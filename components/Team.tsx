@@ -1,6 +1,7 @@
 "use client";
 
 import { Reveal } from "./Reveal";
+import { SectionHeader } from "./SectionHeader";
 
 const team = [
   { img: "/images/art/team3.jpg", n: "Elise Moreau", r: "Founder & Strategy Director" },
@@ -13,19 +14,11 @@ export function Team() {
   return (
     <section className="relative z-[110] bg-cream py-16 md:py-28 px-6 md:px-12 lg:px-16 xl:px-28 border-t border-border">
       <div className="mx-auto max-w-[1480px]">
-        <div className="flex flex-col gap-6 md:flex-row md:items-baseline md:justify-between mb-14">
-          <Reveal>
-            <div>
-              <div className="eyebrow mb-3">The people</div>
-              <div className="text-sm text-ink-soft">Studio team — 2026</div>
-            </div>
-          </Reveal>
-          <Reveal delay={80}>
-            <h2 className="serif text-4xl md:text-7xl md:text-right">
-              Meet the <span className="serif-italic">team</span>
-            </h2>
-          </Reveal>
-        </div>
+        <SectionHeader
+          eyebrow="The people"
+          title={<>Meet the <span className="serif-italic">team</span></>}
+          className="mb-14"
+        />
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-6">
           {team.map((m, i) => (
             <Reveal key={m.n} delay={i * 80}>

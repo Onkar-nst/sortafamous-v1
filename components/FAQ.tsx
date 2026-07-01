@@ -4,6 +4,7 @@ import { AnimatePresence, motion } from "framer-motion";
 import { useState } from "react";
 import { Reveal } from "./Reveal";
 import { EASE } from "./motion";
+import { SectionHeader } from "./SectionHeader";
 
 const faqs = [
   {
@@ -41,25 +42,12 @@ export function FAQ() {
       className="relative z-[135] bg-cream px-6 md:px-12 lg:px-16 xl:px-28 py-16 md:py-28 border-t border-border"
     >
       <div className="mx-auto max-w-[1480px]">
-        <div className="flex items-center justify-between mb-10 md:mb-14">
-          <Reveal>
-            <div className="eyebrow flex items-center gap-2">
-              <span className="h-1.5 w-1.5 rounded-full bg-accent" /> Questions
-            </div>
-          </Reveal>
-          <Reveal delay={80}>
-            <div className="serif-italic text-sm text-ink-soft">FAQ — 2026</div>
-          </Reveal>
-        </div>
-
-        <div className="flex items-baseline justify-between mb-6">
-          <Reveal>
-            <h2 className="serif text-4xl md:text-7xl">
-              Frequently asked <span className="serif-italic">questions</span>
-            </h2>
-          </Reveal>
-          <div className="serif-italic text-sm text-ink-soft hidden md:block">/ 6 / ©</div>
-        </div>
+        <SectionHeader
+          eyebrow="Questions"
+          title={<>Frequently asked <span className="serif-italic">questions</span></>}
+          marker="/ 6 / ©"
+          className="mb-6"
+        />
 
         <div className="mt-6">
           {faqs.map((f, i) => {

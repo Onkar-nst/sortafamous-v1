@@ -11,9 +11,9 @@ const stats = [
 
 export function Proof() {
   return (
-    <section className="relative z-[90] bg-ink text-cream py-20 md:py-32 px-6 md:px-12 lg:px-16 xl:px-28 rounded-t-[2.5rem]">
+    <section className="relative z-[90] bg-ink text-cream py-14 md:py-32 px-6 md:px-12 lg:px-16 xl:px-28 rounded-t-[2.5rem]">
       <div className="mx-auto max-w-[1480px]">
-        <div className="flex items-baseline justify-between mb-20">
+        <div className="flex items-baseline justify-between mb-12 md:mb-20">
           <Reveal>
             <div className="eyebrow text-cream/60">Proof in numbers</div>
           </Reveal>
@@ -21,16 +21,16 @@ export function Proof() {
             <h2 className="serif text-3xl md:text-5xl">Est. 2019 ©</h2>
           </Reveal>
         </div>
-        <div className="grid md:grid-cols-3 gap-12">
+        <div className="grid md:grid-cols-3 gap-8 md:gap-12">
           {stats.map((s, i) => (
             <Reveal key={s.d} delay={i * 100}>
-              <div className="border-t border-cream/20 pt-6">
+              <div className="border-t border-cream/20 pt-5 md:pt-6">
                 <Counter
                   to={s.to}
                   suffix={s.suffix}
-                  className="serif text-[clamp(4rem,10vw,9rem)] leading-none block"
+                  className="serif text-[clamp(3rem,10vw,9rem)] leading-none block"
                 />
-                <p className="text-cream/70 mt-6 max-w-xs">{s.d}</p>
+                <p className="text-cream/70 text-sm md:text-base mt-4 md:mt-6 max-w-xs">{s.d}</p>
               </div>
             </Reveal>
           ))}

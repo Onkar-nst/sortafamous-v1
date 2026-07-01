@@ -1,7 +1,8 @@
 "use client";
 
 import { Leaf, Flower2, Hexagon, Gem, Compass, Aperture } from "lucide-react";
-import { Reveal, RevealStagger, RevealItem } from "./Reveal";
+import { RevealStagger, RevealItem } from "./Reveal";
+import { SectionHeader } from "./SectionHeader";
 
 const clients = [
   { name: "Borden", Icon: Hexagon },
@@ -14,16 +15,14 @@ const clients = [
 
 export function OurClients() {
   return (
-    <section className="relative z-10 bg-cream rounded-t-[2.5rem] shadow-[0_-30px_60px_-30px_rgba(0,0,0,0.25)] py-16 md:py-24 px-6 md:px-12 lg:px-16 xl:px-28 border-t border-border">
+    <section className="relative z-10 bg-cream rounded-t-[2.5rem] shadow-[0_-30px_60px_-30px_rgba(0,0,0,0.25)] pt-16 md:pt-24 pb-8 md:pb-10 px-6 md:px-12 lg:px-16 xl:px-28 border-t border-border">
       <div className="mx-auto max-w-[1480px]">
-        <div className="flex items-baseline justify-between mb-10">
-          <Reveal>
-            <h2 className="serif text-4xl md:text-6xl">Our clients</h2>
-          </Reveal>
-          <Reveal delay={80}>
-            <div className="serif-italic text-sm text-ink-soft">/ 2019–27 / ©</div>
-          </Reveal>
-        </div>
+        <SectionHeader
+          eyebrow="Trusted by"
+          title="Our clients"
+          marker="/ 2019–27 / ©"
+          className="mb-10"
+        />
         <RevealStagger className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-3 md:gap-4">
           {clients.map(({ name, Icon }) => (
             <RevealItem key={name}>

@@ -13,6 +13,7 @@ import {
   type ReactNode,
   type MouseEvent,
 } from "react";
+import { SectionHeader } from "./SectionHeader";
 
 const EASE = [0.16, 1, 0.3, 1] as const;
 
@@ -114,22 +115,13 @@ export function Bento() {
       <div className="pointer-events-none absolute -top-24 left-1/2 h-[420px] w-[820px] -translate-x-1/2 rounded-full bg-accent/15 blur-[120px]" />
 
       <div className="relative mx-auto max-w-[1480px]">
-        <div className="flex items-end justify-between mb-14">
-          <motion.div
-            initial={{ opacity: 0, y: 20, filter: "blur(8px)" }}
-            whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8, ease: EASE }}
-          >
-            <div className="eyebrow text-cream/50 mb-3">What we do</div>
-            <h2 className="serif text-4xl md:text-6xl leading-[0.98]">
-              We turn visibility
-              <br />
-              into <span className="serif-italic">credibility</span>
-            </h2>
-          </motion.div>
-          <div className="serif-italic text-sm text-cream/40 hidden md:block">/ 3 / ©</div>
-        </div>
+        <SectionHeader
+          dark
+          eyebrow="What we do"
+          title={<>We turn visibility <span className="serif-italic">into credibility</span></>}
+          marker="/ 3 / ©"
+          className="mb-14"
+        />
 
         <motion.div
           variants={container}
@@ -220,18 +212,30 @@ export function Bento() {
             </div>
           </Block>
 
-          {/* Three pillars as their own detailed blocks */}
+        </motion.div>
+
+        {/* Three pillars — swipe carousel on mobile, 3-col grid on desktop */}
+        <motion.div
+          variants={container}
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true, margin: "0px 0px 12% 0px" }}
+          className="mt-3 md:mt-4 flex md:grid md:grid-cols-3 gap-3 md:gap-4 overflow-x-auto md:overflow-visible snap-x snap-mandatory -mr-6 pr-6 md:mr-0 md:pr-0 pb-1 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
+        >
           {pillars.map((p) => (
-            <Block key={p.t} className="flex flex-col justify-between group">
+            <Block
+              key={p.t}
+              className="snap-start shrink-0 w-[76vw] sm:w-[46vw] md:w-auto min-h-[264px] md:min-h-[210px] flex flex-col justify-between group"
+            >
               <div className="flex items-start justify-between">
-                <span className="serif-italic text-lg md:text-2xl text-cream/40">{p.n}</span>
-                <span className="hidden sm:inline text-cream/30 transition-transform duration-500 group-hover:translate-x-1 group-hover:-translate-y-1">
+                <span className="serif-italic text-2xl text-cream/40">{p.n}</span>
+                <span className="text-cream/30 transition-transform duration-500 group-hover:translate-x-1 group-hover:-translate-y-1">
                   ↗
                 </span>
               </div>
-              <div className="mt-4 md:mt-10">
-                <h3 className="serif text-base sm:text-xl md:text-[1.7rem] leading-tight">{p.t}</h3>
-                <p className="hidden sm:block text-cream/60 text-sm mt-3 leading-relaxed">{p.d}</p>
+              <div className="mt-10">
+                <h3 className="serif text-2xl md:text-[1.7rem] leading-tight">{p.t}</h3>
+                <p className="text-cream/60 text-sm mt-3 leading-relaxed">{p.d}</p>
               </div>
             </Block>
           ))}

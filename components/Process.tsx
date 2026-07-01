@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import { Reveal } from "./Reveal";
 import { EASE } from "./motion";
+import { SectionHeader } from "./SectionHeader";
 
 const steps = [
   { n: "01", phase: "Weeks 1–2", t: "Discovery & Strategy", d: "An in-depth brand audit covering goals, audience and competition — then a PR and social strategy that sets the tone for growth." },
@@ -17,21 +18,12 @@ export function Process() {
   return (
     <section id="process" className="relative z-[80] bg-cream py-16 md:py-28 px-6 md:px-12 lg:px-16 xl:px-28 rounded-t-[2.5rem]">
       <div className="mx-auto max-w-[1480px]">
-        <div className="flex items-baseline justify-between mb-4">
-          <Reveal>
-            <div className="eyebrow flex items-center gap-2">
-              <span className="h-1.5 w-1.5 rounded-full bg-accent" /> The method
-            </div>
-          </Reveal>
-          <Reveal delay={80}>
-            <div className="serif-italic text-sm text-ink-soft">/ 6 / ©</div>
-          </Reveal>
-        </div>
-        <Reveal delay={40}>
-          <h2 className="serif text-4xl md:text-6xl mb-16">
-            A structured, <span className="serif-italic">data-driven</span> process
-          </h2>
-        </Reveal>
+        <SectionHeader
+          eyebrow="The method"
+          title={<>A structured, <span className="serif-italic">data-driven</span> process</>}
+          marker="/ 6 / ©"
+          className="mb-16"
+        />
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-x-10 gap-y-14">
           {steps.map((s, i) => (
@@ -60,11 +52,21 @@ export function Process() {
         </div>
 
         <Reveal delay={80}>
-          <div className="mt-20 flex flex-wrap items-center justify-between gap-6 border-t border-ink/15 pt-8">
-            <p className="serif text-2xl md:text-3xl">Have a project in mind? <span className="serif-italic">Let&apos;s map your path.</span></p>
-            <a href="#contact" className="inline-flex items-center gap-2 rounded-full bg-ink text-cream px-6 py-3.5 text-sm hover:opacity-90 transition">
-              Let&apos;s work together <span aria-hidden>→</span>
-            </a>
+          <div className="relative mt-20 overflow-hidden rounded-[2rem] bg-ink text-cream px-8 py-12 md:px-14 md:py-16">
+            {/* decorative background — glowing circle, outlined ring, floating box */}
+            <div aria-hidden className="pointer-events-none absolute -right-20 -top-24 h-80 w-80 rounded-full bg-accent/25 blur-[90px]" />
+            <div aria-hidden className="pointer-events-none absolute -right-16 -bottom-24 h-72 w-72 rounded-full border border-cream/10" />
+            <div aria-hidden className="pointer-events-none absolute right-40 -bottom-10 hidden h-32 w-32 rotate-12 rounded-3xl border border-cream/10 bg-cream/[0.04] md:block" />
+
+            <div className="relative flex flex-wrap items-center justify-between gap-8">
+              <div>
+                <div className="eyebrow text-cream/50 mb-4">Ready when you are</div>
+                <p className="serif text-2xl md:text-4xl leading-[1.1] lg:whitespace-nowrap">Have a project in mind? <span className="serif-italic">Let&apos;s map your path.</span></p>
+              </div>
+              <a href="#contact" className="inline-flex items-center gap-2 rounded-full bg-cream text-ink px-7 py-4 text-sm hover:opacity-90 transition">
+                Let&apos;s work together <span aria-hidden>→</span>
+              </a>
+            </div>
           </div>
         </Reveal>
       </div>

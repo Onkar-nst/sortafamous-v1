@@ -2,6 +2,7 @@
 
 import { Reveal } from "./Reveal";
 import { Counter, Parallax } from "./motion";
+import { SectionHeader } from "./SectionHeader";
 
 const stats = [
   { to: 24, suffix: "+", t: "Awards & mentions", d: "Recognised for work that performs as sharply as it reads." },
@@ -13,16 +14,11 @@ export function Craft() {
   return (
     <section className="relative z-[70] bg-cream py-16 md:py-28 px-6 md:px-12 lg:px-16 xl:px-28 border-t border-border">
       <div className="mx-auto max-w-[1480px]">
-        <div className="flex items-baseline justify-between mb-14">
-          <Reveal>
-            <div className="eyebrow flex items-center gap-2">
-              <span className="h-1.5 w-1.5 rounded-full bg-accent" /> Our edge
-            </div>
-          </Reveal>
-          <Reveal delay={80}>
-            <div className="text-sm text-ink-soft">Why Sorta Famous — 2026</div>
-          </Reveal>
-        </div>
+        <SectionHeader
+          eyebrow="Our edge"
+          title="Why Sorta Famous"
+          className="mb-14"
+        />
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-14 items-stretch">
           {/* Image card with parallax + overlay caption */}

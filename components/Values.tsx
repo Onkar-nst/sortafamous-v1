@@ -1,6 +1,7 @@
 "use client";
 
 import { Reveal } from "./Reveal";
+import { SectionHeader } from "./SectionHeader";
 
 const values = [
   { t: "Our Vision", d: "Empowering brands to own their narrative and lead with influence in the digital era." },
@@ -13,20 +14,11 @@ export function Values() {
   return (
     <section className="relative z-30 bg-cream rounded-t-[2.5rem] shadow-[0_-30px_60px_-30px_rgba(0,0,0,0.25)] py-16 md:py-28 px-6 md:px-12 lg:px-16 xl:px-28">
       <div className="mx-auto max-w-[1480px]">
-        <div className="flex flex-col gap-6 md:flex-row md:items-baseline md:justify-between mb-14">
-          <Reveal>
-            <div>
-              <div className="eyebrow mb-3">Our values</div>
-              <div className="text-sm text-ink-soft">What guides us</div>
-            </div>
-          </Reveal>
-          <Reveal delay={80}>
-            <h2 className="serif text-4xl md:text-7xl md:text-right">
-              Values that guide<br />
-              every <span className="serif-italic">campaign</span>
-            </h2>
-          </Reveal>
-        </div>
+        <SectionHeader
+          eyebrow="Our values"
+          title={<>Values that guide <span className="serif-italic">every campaign</span></>}
+          className="mb-14"
+        />
         <Reveal>
           <p className="max-w-2xl text-ink-soft text-lg mb-12">
             Our values shape every story we tell and every strategy we execute — so your brand doesn't just get attention, it earns lasting credibility.

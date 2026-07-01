@@ -1,7 +1,7 @@
 "use client";
 
 import { motion, AnimatePresence, useScroll, useMotionValueEvent } from "framer-motion";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Clock } from "./Clock";
 import { EASE } from "./motion";
 
@@ -29,7 +29,19 @@ export function Nav() {
   const { scrollYProgress, scrollY } = useScroll();
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
-  useMotionValueEvent(scrollY, "change", (y) => setScrolled(y > 40));
+  const [navHidden, setNavHidden] = useState(false);
+  const lastY = useRef(0);
+  useMotionValueEvent(scrollY, "change", (y) => {
+    setScrolled(y > 40);
+    // Mobile only: hide the bar while scrolling down, reveal it on scroll up.
+    if (window.innerWidth >= 1024) {
+      setNavHidden(false);
+    } else {
+      const goingDown = y > lastY.current;
+      setNavHidden(goingDown && y > 80);
+    }
+    lastY.current = y;
+  });
 
   // lock body scroll while the mobile menu is open
   useEffect(() => {
@@ -40,7 +52,11 @@ export function Nav() {
   }, [open]);
 
   return (
-    <header className="fixed top-0 inset-x-0 z-50">
+    <motion.header
+      animate={{ y: navHidden && !open ? "-100%" : 0 }}
+      transition={{ duration: 0.35, ease: EASE }}
+      className="fixed top-0 inset-x-0 z-50"
+    >
       {/* scroll progress bar */}
       <motion.div
         style={{ scaleX: scrollYProgress }}
@@ -52,9 +68,18 @@ export function Nav() {
         }`}
       >
         <div className="mx-auto max-w-[1480px] px-6 md:px-12 lg:px-16 xl:px-28 py-4 grid grid-cols-[1fr_auto_1fr] items-center">
-          <Logo />
-          <div className="hidden md:block justify-self-center">
-            <Clock />
+          <div className="justify-self-start">
+            <div className="hidden md:block">
+              <Logo />
+            </div>
+          </div>
+          <div className="justify-self-center">
+            <div className="md:hidden">
+              <Logo />
+            </div>
+            <div className="hidden md:block">
+              <Clock />
+            </div>
           </div>
           <div className="justify-self-end flex items-center gap-3">
             <nav className="hidden lg:flex items-center gap-6 text-sm text-ink-soft mr-2">
@@ -140,6 +165,6 @@ export function Nav() {
           </motion.div>
         )}
       </AnimatePresence>
-    </header>
+    </motion.header>
   );
 }
