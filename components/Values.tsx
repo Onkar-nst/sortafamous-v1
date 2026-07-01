@@ -11,7 +11,7 @@ const values = [
 
 export function Values() {
   return (
-    <section className="relative z-[60] bg-cream py-16 md:py-28 px-6 md:px-12 lg:px-16 xl:px-28 border-t border-border">
+    <section className="relative z-30 bg-cream rounded-t-[2.5rem] shadow-[0_-30px_60px_-30px_rgba(0,0,0,0.25)] py-16 md:py-28 px-6 md:px-12 lg:px-16 xl:px-28">
       <div className="mx-auto max-w-[1480px]">
         <div className="flex flex-col gap-6 md:flex-row md:items-baseline md:justify-between mb-14">
           <Reveal>

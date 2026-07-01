@@ -4,15 +4,15 @@ import { Reveal } from "./Reveal";
 import { Parallax } from "./motion";
 
 const cases = [
-  { n: "01", t: "Borden Skincare", d: "Launch & earned-media campaign", img: "/images/art/work1.jpg" },
-  { n: "02", t: "Leafe Studio", d: "Positioning & founder PR", img: "/images/art/work2.jpg" },
-  { n: "03", t: "Hues Gallery", d: "Editorial & cultural strategy", img: "/images/art/work4.jpg" },
-  { n: "04", t: "Penta Group", d: "Thought leadership & social", img: "/images/art/about1.jpg" },
+  { n: "01", t: "Borden Skincare", d: "Launch & earned-media campaign", img: "/images/art/case1.jpg" },
+  { n: "02", t: "Leafe Studio", d: "Positioning & founder PR", img: "/images/art/case2.jpg" },
+  { n: "03", t: "Hues Gallery", d: "Editorial & cultural strategy", img: "/images/art/case3.jpg" },
+  { n: "04", t: "Penta Group", d: "Thought leadership & social", img: "/images/art/case4.jpg" },
 ];
 
 export function Work() {
   return (
-    <section className="relative z-[80] bg-cream py-16 md:py-28 px-6 md:px-12 lg:px-16 xl:px-28 rounded-t-[2.5rem]">
+    <section className="relative z-[100] bg-cream py-16 md:py-28 px-6 md:px-12 lg:px-16 xl:px-28 rounded-t-[2.5rem]">
       <div className="mx-auto max-w-[1480px]">
         <div className="flex flex-col gap-6 md:flex-row md:items-baseline md:justify-between mb-14">
           <Reveal>

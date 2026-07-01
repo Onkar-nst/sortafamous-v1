@@ -18,15 +18,15 @@ const EASE = [0.16, 1, 0.3, 1] as const;
 
 const container: Variants = {
   hidden: {},
-  show: { transition: { staggerChildren: 0.08, delayChildren: 0.05 } },
+  show: { transition: { staggerChildren: 0.05, delayChildren: 0 } },
 };
 const item: Variants = {
-  hidden: { opacity: 0, y: 30, filter: "blur(10px)" },
+  hidden: { opacity: 0, y: 30, filter: "blur(6px)" },
   show: {
     opacity: 1,
     y: 0,
     filter: "blur(0px)",
-    transition: { duration: 0.8, ease: EASE },
+    transition: { duration: 0.55, ease: EASE },
   },
 };
 
@@ -49,7 +49,7 @@ function Block({
       onMouseMove={onMove}
       whileHover={{ y: -4 }}
       transition={{ type: "spring", stiffness: 300, damping: 24 }}
-      className={`block-sheen relative overflow-hidden rounded-3xl border border-cream/12 bg-cream/[0.03] p-6 md:p-8 backdrop-blur-sm ${className}`}
+      className={`block-sheen relative overflow-hidden rounded-3xl border border-cream/12 bg-cream/[0.03] p-4 sm:p-6 md:p-8 backdrop-blur-sm ${className}`}
     >
       {children}
     </motion.div>
@@ -108,7 +108,7 @@ const pillars = [
 
 export function Bento() {
   return (
-    <section className="relative z-20 bg-ink text-cream rounded-t-[2.5rem] py-16 md:py-28 px-6 md:px-12 lg:px-16 xl:px-28 overflow-hidden">
+    <section className="relative z-40 bg-ink text-cream rounded-t-[2.5rem] py-16 md:py-28 px-6 md:px-12 lg:px-16 xl:px-28 overflow-hidden">
       {/* texture + accent glow */}
       <div className="pointer-events-none absolute inset-0 grid-texture opacity-[0.35]" />
       <div className="pointer-events-none absolute -top-24 left-1/2 h-[420px] w-[820px] -translate-x-1/2 rounded-full bg-accent/15 blur-[120px]" />
@@ -135,11 +135,11 @@ export function Bento() {
           variants={container}
           initial="hidden"
           whileInView="show"
-          viewport={{ once: true, amount: 0.15 }}
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 auto-rows-[minmax(210px,auto)] gap-3 md:gap-4"
+          viewport={{ once: true, margin: "0px 0px 12% 0px" }}
+          className="grid grid-cols-3 md:grid-cols-2 lg:grid-cols-3 auto-rows-[minmax(150px,auto)] md:auto-rows-[minmax(210px,auto)] gap-3 md:gap-4"
         >
           {/* Big statement block — spans 2×2 on lg */}
-          <Block className="md:col-span-2 lg:row-span-2 flex flex-col justify-between">
+          <Block className="col-span-3 md:col-span-2 lg:row-span-2 flex flex-col justify-between">
             <div className="flex items-start justify-between">
               <span className="pill bg-cream/10 text-cream/80">
                 <span className="h-1.5 w-1.5 rounded-full bg-accent" /> Insight-led
@@ -180,7 +180,7 @@ export function Bento() {
           </Block>
 
           {/* Stat — earned-media lift with animated bars */}
-          <Block className="flex flex-col justify-between">
+          <Block className="col-span-3 md:col-span-1 flex flex-col justify-between">
             <div className="eyebrow text-cream/50">Avg. earned-media lift</div>
             <div>
               <div className="flex items-end gap-1.5 h-16 mb-4">
@@ -202,7 +202,7 @@ export function Bento() {
           </Block>
 
           {/* Live availability block */}
-          <Block className="flex flex-col justify-between">
+          <Block className="col-span-3 md:col-span-1 flex flex-col justify-between">
             <div className="flex items-center gap-2 text-sm text-cream/70">
               <span className="relative flex h-2 w-2">
                 <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-accent opacity-75" />
@@ -224,14 +224,14 @@ export function Bento() {
           {pillars.map((p) => (
             <Block key={p.t} className="flex flex-col justify-between group">
               <div className="flex items-start justify-between">
-                <span className="serif-italic text-2xl text-cream/40">{p.n}</span>
-                <span className="text-cream/30 transition-transform duration-500 group-hover:translate-x-1 group-hover:-translate-y-1">
+                <span className="serif-italic text-lg md:text-2xl text-cream/40">{p.n}</span>
+                <span className="hidden sm:inline text-cream/30 transition-transform duration-500 group-hover:translate-x-1 group-hover:-translate-y-1">
                   ↗
                 </span>
               </div>
-              <div className="mt-10">
-                <h3 className="serif text-2xl md:text-[1.7rem] leading-tight">{p.t}</h3>
-                <p className="text-cream/60 text-sm mt-3 leading-relaxed">{p.d}</p>
+              <div className="mt-4 md:mt-10">
+                <h3 className="serif text-base sm:text-xl md:text-[1.7rem] leading-tight">{p.t}</h3>
+                <p className="hidden sm:block text-cream/60 text-sm mt-3 leading-relaxed">{p.d}</p>
               </div>
             </Block>
           ))}

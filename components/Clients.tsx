@@ -10,7 +10,7 @@ const outlets = [
 
 export function Clients() {
   return (
-    <section className="relative z-20 bg-cream py-16 border-t border-border overflow-hidden">
+    <section className="relative z-50 bg-cream rounded-t-[2.5rem] shadow-[0_-30px_60px_-30px_rgba(0,0,0,0.25)] py-16 overflow-hidden">
       <div className="mx-auto max-w-[1480px] px-6 md:px-12 lg:px-16 xl:px-28 mb-8 flex items-center justify-between">
         <Reveal>
           <div className="eyebrow flex items-center gap-2">

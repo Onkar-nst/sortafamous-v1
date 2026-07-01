@@ -13,10 +13,10 @@ const services = [
 ];
 
 export function Services() {
-  const [open, setOpen] = useState(0);
+  const [open, setOpen] = useState(-1);
 
   return (
-    <section id="services" className="relative z-30 bg-cream py-16 md:py-28 px-6 md:px-12 lg:px-16 xl:px-28 border-t border-border">
+    <section id="services" className="relative z-[60] bg-cream py-16 md:py-28 px-6 md:px-12 lg:px-16 xl:px-28 border-t border-border">
       <div className="mx-auto max-w-[1480px]">
         <div className="flex items-end justify-between mb-6">
           <Reveal>
@@ -51,9 +51,9 @@ export function Services() {
                     <h3 className={`serif text-3xl md:text-5xl flex-1 transition-colors duration-300 ${isOpen ? "" : "group-hover:text-ink-soft"}`}>
                       {s.t}
                     </h3>
-                    <div className="hidden lg:flex flex-wrap gap-2 justify-end max-w-md">
+                    <div className="hidden lg:flex flex-nowrap gap-2 justify-end">
                       {s.items.map((it) => (
-                        <span key={it} className="pill">{it}</span>
+                        <span key={it} className="pill whitespace-nowrap">{it}</span>
                       ))}
                     </div>
                     <span className="relative h-11 w-11 shrink-0 rounded-full border border-ink/25 grid place-items-center group-hover:bg-ink group-hover:text-cream transition-colors duration-300">

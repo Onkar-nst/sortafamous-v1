@@ -29,15 +29,15 @@ export function Hero() {
   return (
     <section
       ref={ref}
-      className="relative lg:sticky lg:top-0 min-h-[100svh] lg:h-[100svh] overflow-hidden bg-cream"
+      className="sticky top-0 h-[100svh] overflow-hidden bg-cream"
     >
       <motion.div
         style={{ opacity }}
-        className="relative lg:absolute lg:inset-0 px-6 md:px-12 lg:px-16 xl:px-28 pt-24 pb-8 lg:pt-28 lg:pb-16"
+        className="relative lg:absolute lg:inset-0 px-6 md:px-12 lg:px-16 xl:px-28 pt-24 pb-8 lg:pt-24 lg:pb-16"
       >
-        <div className="mx-auto max-w-[1480px] lg:h-full relative">
+        <div className="mx-auto max-w-[1480px] min-h-[80svh] lg:min-h-0 lg:h-full relative">
           <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 lg:h-full lg:items-end">
-            <div className="order-2 lg:order-none lg:pb-[4vh]">
+            <div className="relative z-10 order-1 lg:order-none lg:pb-[7vh]">
               <motion.span
                 custom={0}
                 variants={rise}
@@ -53,7 +53,7 @@ export function Hero() {
                 variants={rise}
                 initial="hidden"
                 animate="show"
-                className="serif text-[clamp(2.75rem,7.5vw,7rem)] leading-[0.95] tracking-[-0.03em]"
+                className="serif text-[clamp(2.5rem,6vw,5.75rem)] leading-[0.95] tracking-[-0.03em]"
               >
                 Fame is earned.
                 <br />
@@ -64,7 +64,7 @@ export function Hero() {
                 variants={rise}
                 initial="hidden"
                 animate="show"
-                className="mt-8 max-w-md text-ink-soft leading-relaxed"
+                className="mt-6 max-w-md text-ink-soft leading-relaxed"
               >
                 Insight-led social media performance. Visibility that lasts longer than the
                 news cycle — no clout chasing, just status with substance.
@@ -74,7 +74,7 @@ export function Hero() {
                 variants={rise}
                 initial="hidden"
                 animate="show"
-                className="mt-8 lg:mt-10 flex flex-wrap items-center gap-4"
+                className="mt-6 lg:mt-8 flex flex-wrap items-center gap-4"
               >
                 <Magnetic strength={0.4}>
                   <a
@@ -97,7 +97,7 @@ export function Hero() {
                 variants={rise}
                 initial="hidden"
                 animate="show"
-                className="mt-8 lg:mt-12 flex items-center gap-4"
+                className="mt-6 lg:mt-8 flex items-center gap-4"
               >
                 <span className="serif text-5xl leading-none">3.4×</span>
                 <span className="text-sm text-ink-soft leading-tight max-w-[9rem]">
@@ -108,12 +108,12 @@ export function Hero() {
 
             <motion.div
               style={{ y: imgY }}
-              className="relative h-[34vh] sm:h-[42vh] lg:h-full order-1 lg:order-last"
+              className="pointer-events-none absolute inset-x-0 bottom-0 z-20 h-[60vh] order-2 lg:pointer-events-auto lg:relative lg:inset-auto lg:z-auto lg:h-full lg:order-last"
             >
               <motion.img
                 src="/rightside%20img.png"
                 alt="Sorta Famous — editorial portrait"
-                className="absolute inset-0 h-full w-full object-contain object-center lg:object-bottom"
+                className="absolute inset-0 h-full w-full object-contain object-bottom"
                 fetchPriority="high"
                 initial={{ opacity: 0, scale: 1.06, filter: "blur(16px)" }}
                 animate={{ opacity: 1, scale: 1, filter: "blur(0px)" }}

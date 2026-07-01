@@ -11,7 +11,7 @@ const stats = [
 
 export function Craft() {
   return (
-    <section className="relative z-[35] bg-cream py-16 md:py-28 px-6 md:px-12 lg:px-16 xl:px-28 border-t border-border">
+    <section className="relative z-[70] bg-cream py-16 md:py-28 px-6 md:px-12 lg:px-16 xl:px-28 border-t border-border">
       <div className="mx-auto max-w-[1480px]">
         <div className="flex items-baseline justify-between mb-14">
           <Reveal>
@@ -24,21 +24,21 @@ export function Craft() {
           </Reveal>
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-8 lg:gap-14 items-stretch">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-14 items-stretch">
           {/* Image card with parallax + overlay caption */}
           <Reveal>
-            <div className="relative rounded-3xl overflow-hidden bg-muted aspect-[4/5] lg:aspect-auto lg:h-full min-h-[420px]">
+            <div className="relative rounded-3xl overflow-hidden bg-muted aspect-[4/5] lg:aspect-auto lg:h-full lg:min-h-[420px]">
               <Parallax amount={40} className="absolute inset-0">
                 <img
-                  src="/images/art/work4.jpg"
+                  src="/images/art/craft.jpg"
                   alt="Built on measured craft"
                   loading="lazy"
                   className="h-[120%] w-full object-cover"
                 />
               </Parallax>
               <div className="absolute inset-0 bg-gradient-to-t from-ink/80 via-ink/20 to-transparent" />
-              <div className="absolute bottom-0 left-0 p-8 text-cream">
-                <h3 className="serif text-3xl">Built on measured craft</h3>
+              <div className="absolute inset-x-0 bottom-0 p-6 md:p-8 text-cream">
+                <h3 className="serif text-2xl md:text-3xl">Built on measured craft</h3>
                 <p className="text-cream/80 mt-2 max-w-sm">Strategy, creative and media — under one roof.</p>
               </div>
             </div>

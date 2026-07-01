@@ -3,14 +3,14 @@
 import { Reveal } from "./Reveal";
 
 const posts = [
-  { tag: "Strategy", date: "May 18, 2026", t: "Why discipline beats novelty in brand building", d: "Trends fade. Brands that compound attention commit to a system and refuse to chase every new format.", img: "/images/art/story2.jpg" },
-  { tag: "Measurement", date: "Apr 2, 2026", t: "The metrics that actually predict growth", d: "Vanity numbers feel good and tell you nothing. Here are the signals we watch.", img: "/images/art/story1.jpg" },
-  { tag: "Craft", date: "Feb 21, 2026", t: "Creative and media belong in the same room", d: "When the people making the work and the people buying the placement never talk, you get beautiful ads nobody sees.", img: "/images/art/story3.jpg" },
+  { tag: "Strategy", date: "May 18, 2026", t: "Why discipline beats novelty in brand building", d: "Trends fade. Brands that compound attention commit to a system and refuse to chase every new format.", img: "/images/art/story-strategy.jpg" },
+  { tag: "Measurement", date: "Apr 2, 2026", t: "The metrics that actually predict growth", d: "Vanity numbers feel good and tell you nothing. Here are the signals we watch.", img: "/images/art/story-metrics.jpg" },
+  { tag: "Craft", date: "Feb 21, 2026", t: "Creative and media belong in the same room", d: "When the people making the work and the people buying the placement never talk, you get beautiful ads nobody sees.", img: "/images/art/story-craft.jpg" },
 ];
 
 export function Journal() {
   return (
-    <section className="relative z-[100] bg-cream py-16 md:py-28 px-6 md:px-12 lg:px-16 xl:px-28 border-t border-border">
+    <section className="relative z-[120] bg-cream py-16 md:py-28 px-6 md:px-12 lg:px-16 xl:px-28 border-t border-border">
       <div className="mx-auto max-w-[1480px]">
         <div className="flex flex-col gap-6 md:flex-row md:items-baseline md:justify-between mb-14">
           <Reveal>

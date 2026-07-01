@@ -3,18 +3,20 @@ import { Preloader } from "@/components/Preloader";
 import { Nav } from "@/components/Nav";
 import { Hero } from "@/components/Hero";
 import { About } from "@/components/About";
+import { OurClients } from "@/components/OurClients";
 import { Clients } from "@/components/Clients";
 import { Bento } from "@/components/Bento";
 import { Services } from "@/components/Services";
 import { Craft } from "@/components/Craft";
-import { Manifesto } from "@/components/Manifesto";
 import { Process } from "@/components/Process";
 import { Values } from "@/components/Values";
 import { Proof } from "@/components/Proof";
 import { Work } from "@/components/Work";
 import { Team } from "@/components/Team";
+import { Pricing } from "@/components/Pricing";
 import { Journal } from "@/components/Journal";
 import { CTA } from "@/components/CTA";
+import { FAQ } from "@/components/FAQ";
 import { Contact } from "@/components/Contact";
 import { Footer } from "@/components/Footer";
 
@@ -36,19 +38,21 @@ export default function Home() {
         <Hero />
         {/* Wrapper makes following sections scroll OVER the sticky hero like a blanket */}
         <div className="relative z-10 bg-cream">
+          <OurClients />
           <About />
-          <Clients />
+          <Values />
           <Bento />
+          <Clients />
           <Services />
           <Craft />
-          <Manifesto />
           <Process />
-          <Values />
           <Proof />
           <Work />
           <Team />
+          <Pricing />
           <Journal />
           <CTA />
+          <FAQ />
           <Contact />
         </div>
       </main>

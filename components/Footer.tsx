@@ -1,47 +1,87 @@
+import { ArrowRight } from "lucide-react";
+
+const nav = [
+  { href: "#", label: "Home" },
+  { href: "#about", label: "About" },
+  { href: "#services", label: "Services" },
+  { href: "#process", label: "How it works" },
+];
+const company = [
+  { href: "#work", label: "Selected work" },
+  { href: "#journal", label: "Journal" },
+  { href: "#contact", label: "Contact" },
+  { href: "#", label: "Privacy Policy" },
+];
+
 export function Footer() {
   return (
-    <footer className="relative z-[130] bg-ink text-cream">
-      <div className="mx-auto max-w-[1480px] px-6 md:px-12 lg:px-16 xl:px-28 py-16 grid md:grid-cols-[2fr_1fr_1fr_1fr] gap-10">
-        <div>
-          <img
-            src="/logo-mark.png"
-            alt="Sorta Famous"
-            className="h-10 w-auto select-none"
-            draggable={false}
-          />
-          <p className="text-cream/60 text-sm mt-4 max-w-xs">
-            PR & strategic communications agency — visibility that earns its keep.
-          </p>
+    <footer className="relative z-[150] bg-cream text-ink overflow-hidden border-t border-border">
+      <div className="mx-auto max-w-[1480px] px-6 md:px-12 lg:px-16 xl:px-28 pt-16 md:pt-24">
+        {/* top row */}
+        <div className="flex items-center justify-between pb-8 border-b border-ink/15">
+          <div className="eyebrow flex items-center gap-2">
+            <span className="h-1.5 w-1.5 rounded-full bg-accent" /> Available for new projects
+          </div>
+          <div className="text-sm text-ink-soft">Sorta Famous® — 2026</div>
         </div>
-        <div>
-          <div className="eyebrow text-cream/60 mb-4">Company</div>
-          <ul className="space-y-2 text-sm text-cream/80">
-            <li><a href="#about">About</a></li>
-            <li><a href="#services">Services</a></li>
-            <li><a href="#contact">Contact</a></li>
-            <li><a href="#">Privacy Policy</a></li>
-          </ul>
+
+        {/* middle — nav columns + closing CTA */}
+        <div className="grid md:grid-cols-2 gap-12 py-14 md:py-16">
+          <div className="grid grid-cols-2 gap-8 max-w-md">
+            <div>
+              <div className="eyebrow mb-5">Navigation</div>
+              <ul className="space-y-3 text-ink-soft">
+                {nav.map((l) => (
+                  <li key={l.label}>
+                    <a href={l.href} className="hover:text-ink transition">{l.label}</a>
+                  </li>
+                ))}
+              </ul>
+            </div>
+            <div>
+              <div className="eyebrow mb-5">Company</div>
+              <ul className="space-y-3 text-ink-soft">
+                {company.map((l) => (
+                  <li key={l.label}>
+                    <a href={l.href} className="hover:text-ink transition">{l.label}</a>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+
+          <div className="flex flex-col md:items-end md:text-right justify-between gap-8">
+            <h2 className="serif text-[clamp(2rem,4vw,3.6rem)] leading-[1.05] max-w-md">
+              Let&apos;s get you <span className="serif-italic">Sorta Famous.</span>
+            </h2>
+            <a
+              href="#contact"
+              className="inline-flex w-fit items-center gap-2 rounded-full bg-ink text-cream px-7 py-4 text-sm hover:opacity-90 transition"
+            >
+              Let&apos;s work together <ArrowRight className="h-4 w-4" />
+            </a>
+          </div>
         </div>
-        <div>
-          <div className="eyebrow text-cream/60 mb-4">Follow</div>
-          <ul className="space-y-2 text-sm text-cream/80">
-            <li><a href="#">LinkedIn</a></li>
-            <li><a href="#">Instagram</a></li>
-            <li><a href="#">X / Twitter</a></li>
-          </ul>
-        </div>
-        <div>
-          <div className="eyebrow text-cream/60 mb-4">Studio</div>
-          <ul className="space-y-2 text-sm text-cream/80">
-            <li>Mumbai, India</li>
-            <li>hellothere@sortafamous.in</li>
-          </ul>
+
+        {/* bottom bar */}
+        <div className="flex flex-wrap items-center justify-between gap-4 py-6 border-t border-ink/15 text-xs text-ink-soft">
+          <div>© 2026 Sorta Famous · All rights reserved</div>
+          <div className="flex gap-6">
+            <a href="#" className="hover:text-ink transition">Privacy Policy</a>
+            <a href="#" className="hover:text-ink transition">Terms &amp; Conditions</a>
+          </div>
         </div>
       </div>
-      <div className="border-t border-cream/10">
-        <div className="mx-auto max-w-[1480px] px-6 md:px-12 lg:px-16 xl:px-28 py-6 flex flex-wrap justify-between text-xs text-cream/50 gap-4">
-          <div>© 2026 Sorta Famous · All rights reserved</div>
-          <div>Made with intention.</div>
+
+      {/* giant faded wordmark with a landscape peeking at the very bottom */}
+      <div className="relative mt-6 select-none pointer-events-none">
+        <img
+          src="/images/art/about1.jpg"
+          alt=""
+          className="absolute inset-x-0 bottom-0 h-[70%] w-full object-cover opacity-[0.10]"
+        />
+        <div className="relative serif text-ink/[0.07] leading-[0.78] text-center whitespace-nowrap text-[19vw]">
+          Sorta&nbsp;Famous
         </div>
       </div>
     </footer>
