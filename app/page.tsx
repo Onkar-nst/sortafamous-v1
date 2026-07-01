@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { Preloader } from "@/components/Preloader";
 import { Nav } from "@/components/Nav";
 import { Hero } from "@/components/Hero";
 import { About } from "@/components/About";
@@ -29,6 +30,7 @@ export const metadata: Metadata = {
 export default function Home() {
   return (
     <div className="bg-cream text-ink">
+      <Preloader />
       <Nav />
       <main>
         <Hero />

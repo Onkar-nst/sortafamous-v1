@@ -7,8 +7,13 @@ import { EASE } from "./motion";
 
 function Logo() {
   return (
-    <a href="#" className="text-xl md:text-2xl serif tracking-tight">
-      Sorta <span className="serif-italic">Famous</span><sup className="text-[0.55em] ml-0.5">®</sup>
+    <a href="#" aria-label="Sorta Famous — home" className="inline-flex items-center">
+      <img
+        src="/logo-mark.png"
+        alt="Sorta Famous"
+        className="h-7 md:h-9 w-auto select-none"
+        draggable={false}
+      />
     </a>
   );
 }

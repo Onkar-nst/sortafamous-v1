@@ -3,10 +3,12 @@ export function Footer() {
     <footer className="relative z-[130] bg-ink text-cream">
       <div className="mx-auto max-w-[1480px] px-6 py-16 grid md:grid-cols-[2fr_1fr_1fr_1fr] gap-10">
         <div>
-          <div className="serif text-3xl">
-            Sorta <span className="serif-italic">Famous</span>
-            <sup className="text-[0.5em]">®</sup>
-          </div>
+          <img
+            src="/logo-mark.png"
+            alt="Sorta Famous"
+            className="h-10 w-auto select-none"
+            draggable={false}
+          />
           <p className="text-cream/60 text-sm mt-4 max-w-xs">
             PR & strategic communications agency — visibility that earns its keep.
           </p>
