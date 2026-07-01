@@ -154,7 +154,7 @@ export function Bento() {
                 <span className="absolute inset-0 m-auto h-2.5 w-2.5 rounded-full bg-accent" />
               </div>
             </div>
-            <div>
+            <div className="mt-6 md:mt-0">
               <p className="serif text-[clamp(1.6rem,2.6vw,2.6rem)] leading-[1.1] max-w-xl">
                 We don&apos;t chase clout. We shape reputations — visibility that sticks, and
                 it&apos;s the <span className="serif-italic">smart kind.</span>
@@ -225,7 +225,7 @@ export function Bento() {
           {pillars.map((p) => (
             <Block
               key={p.t}
-              className="snap-start shrink-0 w-[76vw] sm:w-[46vw] md:w-auto min-h-[264px] md:min-h-[210px] flex flex-col justify-between group"
+              className="snap-start shrink-0 w-[76vw] sm:w-[46vw] md:w-auto min-h-[150px] md:min-h-[210px] flex flex-col justify-between group"
             >
               <div className="flex items-start justify-between">
                 <span className="serif-italic text-2xl text-cream/40">{p.n}</span>

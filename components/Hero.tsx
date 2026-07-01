@@ -32,7 +32,7 @@ export function Hero() {
     return () => mq.removeEventListener("change", update);
   }, []);
   // Gentle parallax: image drifts up, whole hero fades as sections blanket over it.
-  const imgY = useTransform(scrollYProgress, [0, 1], ["0%", isDesktop ? "-32%" : "-12%"]);
+  const imgY = useTransform(scrollYProgress, [0, 1], ["0%", isDesktop ? "-32%" : "-50%"]);
   const opacity = useTransform(scrollYProgress, [0, 0.85], [1, 0]);
 
   return (
