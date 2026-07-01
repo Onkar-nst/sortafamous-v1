@@ -54,9 +54,9 @@ export function Craft() {
             <div className="mt-10">
               {stats.map((s, i) => (
                 <Reveal key={s.t} delay={i * 90}>
-                  <div className="grid grid-cols-[minmax(120px,0.5fr)_1fr] gap-6 items-baseline border-t border-ink/15 py-6">
-                    <Counter to={s.to} suffix={s.suffix} className="serif text-5xl md:text-6xl leading-none" />
-                    <div>
+                  <div className="grid grid-cols-[auto_1fr] gap-4 sm:gap-6 items-baseline border-t border-ink/15 py-6">
+                    <Counter to={s.to} suffix={s.suffix} className="serif text-4xl sm:text-5xl md:text-6xl leading-none" />
+                    <div className="min-w-0">
                       <div className="serif text-xl">{s.t}</div>
                       <p className="text-ink-soft text-sm mt-1 leading-relaxed max-w-xs">{s.d}</p>
                     </div>

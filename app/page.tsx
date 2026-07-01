@@ -29,7 +29,7 @@ export const metadata: Metadata = {
 
 export default function Home() {
   return (
-    <div className="bg-cream text-ink">
+    <div className="bg-cream text-ink overflow-x-clip">
       <Preloader />
       <Nav />
       <main>
