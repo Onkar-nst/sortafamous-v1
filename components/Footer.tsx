@@ -1,7 +1,7 @@
 export function Footer() {
   return (
     <footer className="relative z-[130] bg-ink text-cream">
-      <div className="mx-auto max-w-[1480px] px-6 py-16 grid md:grid-cols-[2fr_1fr_1fr_1fr] gap-10">
+      <div className="mx-auto max-w-[1480px] px-6 md:px-12 lg:px-16 xl:px-28 py-16 grid md:grid-cols-[2fr_1fr_1fr_1fr] gap-10">
         <div>
           <img
             src="/logo-mark.png"
@@ -39,7 +39,7 @@ export function Footer() {
         </div>
       </div>
       <div className="border-t border-cream/10">
-        <div className="mx-auto max-w-[1480px] px-6 py-6 flex flex-wrap justify-between text-xs text-cream/50 gap-4">
+        <div className="mx-auto max-w-[1480px] px-6 md:px-12 lg:px-16 xl:px-28 py-6 flex flex-wrap justify-between text-xs text-cream/50 gap-4">
           <div>© 2026 Sorta Famous · All rights reserved</div>
           <div>Made with intention.</div>
         </div>

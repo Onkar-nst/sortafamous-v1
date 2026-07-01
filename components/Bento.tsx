@@ -108,7 +108,7 @@ const pillars = [
 
 export function Bento() {
   return (
-    <section className="relative z-20 bg-ink text-cream rounded-t-[2.5rem] py-16 md:py-28 px-6 overflow-hidden">
+    <section className="relative z-20 bg-ink text-cream rounded-t-[2.5rem] py-16 md:py-28 px-6 md:px-12 lg:px-16 xl:px-28 overflow-hidden">
       {/* texture + accent glow */}
       <div className="pointer-events-none absolute inset-0 grid-texture opacity-[0.35]" />
       <div className="pointer-events-none absolute -top-24 left-1/2 h-[420px] w-[820px] -translate-x-1/2 rounded-full bg-accent/15 blur-[120px]" />

@@ -5,7 +5,7 @@ import { Magnetic, Parallax } from "./motion";
 
 export function CTA() {
   return (
-    <section className="relative z-[110] px-6 py-16 md:py-28">
+    <section className="relative z-[110] px-6 md:px-12 lg:px-16 xl:px-28 py-16 md:py-28">
       <div className="mx-auto max-w-[1480px]">
         <div className="relative rounded-[2rem] overflow-hidden bg-ink text-cream p-10 md:p-16">
           {/* atmospheric landscape backdrop */}

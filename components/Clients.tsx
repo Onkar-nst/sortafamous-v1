@@ -11,7 +11,7 @@ const outlets = [
 export function Clients() {
   return (
     <section className="relative z-20 bg-cream py-16 border-t border-border overflow-hidden">
-      <div className="mx-auto max-w-[1480px] px-6 mb-8 flex items-center justify-between">
+      <div className="mx-auto max-w-[1480px] px-6 md:px-12 lg:px-16 xl:px-28 mb-8 flex items-center justify-between">
         <Reveal>
           <div className="eyebrow flex items-center gap-2">
             <span className="h-1.5 w-1.5 rounded-full bg-accent" /> As seen in

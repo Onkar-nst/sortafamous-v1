@@ -12,7 +12,7 @@ const cases = [
 
 export function Work() {
   return (
-    <section className="relative z-[80] bg-cream py-16 md:py-28 px-6 rounded-t-[2.5rem]">
+    <section className="relative z-[80] bg-cream py-16 md:py-28 px-6 md:px-12 lg:px-16 xl:px-28 rounded-t-[2.5rem]">
       <div className="mx-auto max-w-[1480px]">
         <div className="flex flex-col gap-6 md:flex-row md:items-baseline md:justify-between mb-14">
           <Reveal>

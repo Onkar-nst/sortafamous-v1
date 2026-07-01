@@ -51,7 +51,7 @@ export function Nav() {
           scrolled || open ? "bg-cream/80 backdrop-blur-md border-b border-border" : "bg-transparent"
         }`}
       >
-        <div className="mx-auto max-w-[1480px] px-6 py-4 grid grid-cols-[1fr_auto_1fr] items-center">
+        <div className="mx-auto max-w-[1480px] px-6 md:px-12 lg:px-16 xl:px-28 py-4 grid grid-cols-[1fr_auto_1fr] items-center">
           <Logo />
           <div className="hidden md:block justify-self-center">
             <Clock />

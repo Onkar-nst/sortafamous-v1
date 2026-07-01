@@ -15,7 +15,7 @@ const steps = [
 
 export function Process() {
   return (
-    <section id="process" className="relative z-50 bg-cream py-16 md:py-28 px-6 rounded-t-[2.5rem]">
+    <section id="process" className="relative z-50 bg-cream py-16 md:py-28 px-6 md:px-12 lg:px-16 xl:px-28 rounded-t-[2.5rem]">
       <div className="mx-auto max-w-[1480px]">
         <div className="flex items-baseline justify-between mb-4">
           <Reveal>

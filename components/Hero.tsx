@@ -33,7 +33,7 @@ export function Hero() {
     >
       <motion.div
         style={{ opacity }}
-        className="relative lg:absolute lg:inset-0 px-6 pt-24 pb-8 lg:pt-28 lg:pb-16"
+        className="relative lg:absolute lg:inset-0 px-6 md:px-12 lg:px-16 xl:px-28 pt-24 pb-8 lg:pt-28 lg:pb-16"
       >
         <div className="mx-auto max-w-[1480px] lg:h-full relative">
           <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 lg:h-full lg:items-end">

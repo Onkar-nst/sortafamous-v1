@@ -4,7 +4,7 @@ import { Reveal } from "./Reveal";
 
 export function About() {
   return (
-    <section id="about" className="relative z-10 bg-cream rounded-t-[2.5rem] shadow-[0_-30px_60px_-30px_rgba(0,0,0,0.25)] py-16 md:py-28 px-6 border-t border-border">
+    <section id="about" className="relative z-10 bg-cream rounded-t-[2.5rem] shadow-[0_-30px_60px_-30px_rgba(0,0,0,0.25)] py-16 md:py-28 px-6 md:px-12 lg:px-16 xl:px-28 border-t border-border">
       <div className="mx-auto max-w-[1480px]">
         <div className="flex flex-col gap-6 md:flex-row md:items-baseline md:justify-between mb-14">
           <Reveal>
