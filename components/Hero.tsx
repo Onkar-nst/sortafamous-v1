@@ -1,7 +1,7 @@
 "use client";
 
 import { motion, useScroll, useTransform } from "framer-motion";
-import { useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Magnetic } from "./motion";
 
 const EASE = [0.16, 1, 0.3, 1] as const;
@@ -22,8 +22,17 @@ export function Hero() {
     target: ref,
     offset: ["start start", "end start"],
   });
+  // Desktop-only: statue rises more as you scroll. Mobile keeps the gentle drift.
+  const [isDesktop, setIsDesktop] = useState(false);
+  useEffect(() => {
+    const mq = window.matchMedia("(min-width: 1024px)");
+    const update = () => setIsDesktop(mq.matches);
+    update();
+    mq.addEventListener("change", update);
+    return () => mq.removeEventListener("change", update);
+  }, []);
   // Gentle parallax: image drifts up, whole hero fades as sections blanket over it.
-  const imgY = useTransform(scrollYProgress, [0, 1], ["0%", "-12%"]);
+  const imgY = useTransform(scrollYProgress, [0, 1], ["0%", isDesktop ? "-32%" : "-12%"]);
   const opacity = useTransform(scrollYProgress, [0, 0.85], [1, 0]);
 
   return (
@@ -118,7 +127,7 @@ export function Hero() {
               <motion.img
                 src="/rightside%20img.png"
                 alt="Sorta Famous — editorial portrait"
-                className="absolute inset-0 lg:bottom-[13vh] w-full object-contain object-bottom"
+                className="absolute inset-0 w-full object-contain object-bottom lg:-translate-y-[14vh]"
                 fetchPriority="high"
                 initial={{ opacity: 0, scale: 1.06, filter: "blur(16px)" }}
                 animate={{ opacity: 1, scale: 1, filter: "blur(0px)" }}

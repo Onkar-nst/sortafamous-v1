@@ -24,7 +24,7 @@ export function Work() {
           {cases.map((c, i) => (
             <Reveal key={c.t} delay={(i % 2) * 100}>
               <a href="#" className="group block">
-                <div className="relative aspect-[16/10] rounded-3xl overflow-hidden bg-muted">
+                <div className="relative aspect-[16/10] md:aspect-[5/2] rounded-3xl overflow-hidden bg-muted">
                   <Parallax amount={30} className="absolute inset-0">
                     <img
                       src={c.img}
@@ -43,8 +43,8 @@ export function Work() {
                       ↗
                     </span>
                   </span>
-                  <div className="absolute bottom-0 left-0 p-7 text-cream">
-                    <h3 className="serif text-3xl md:text-4xl">{c.t}</h3>
+                  <div className="absolute bottom-0 left-0 p-8 text-cream">
+                    <h3 className="serif text-4xl md:text-5xl">{c.t}</h3>
                     <p className="text-cream/80 mt-1">{c.d}</p>
                   </div>
                 </div>
