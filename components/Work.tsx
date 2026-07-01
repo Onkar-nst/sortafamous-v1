@@ -12,9 +12,9 @@ const cases = [
 
 export function Work() {
   return (
-    <section className="relative z-[80] bg-cream py-28 px-6 rounded-t-[2.5rem]">
+    <section className="relative z-[80] bg-cream py-16 md:py-28 px-6 rounded-t-[2.5rem]">
       <div className="mx-auto max-w-[1480px]">
-        <div className="flex items-baseline justify-between mb-14">
+        <div className="flex flex-col gap-6 md:flex-row md:items-baseline md:justify-between mb-14">
           <Reveal>
             <div>
               <div className="eyebrow mb-3 flex items-center gap-2">
@@ -24,7 +24,7 @@ export function Work() {
             </div>
           </Reveal>
           <Reveal delay={80}>
-            <h2 className="serif text-4xl md:text-7xl text-right">
+            <h2 className="serif text-4xl md:text-7xl md:text-right">
               Selected <span className="serif-italic">work</span>
             </h2>
           </Reveal>

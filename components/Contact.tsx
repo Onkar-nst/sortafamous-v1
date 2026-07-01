@@ -4,7 +4,7 @@ import { Reveal } from "./Reveal";
 
 export function Contact() {
   return (
-    <section id="contact" className="relative z-[120] px-6 py-28 border-t border-border">
+    <section id="contact" className="relative z-[120] px-6 py-16 md:py-28 border-t border-border">
       <div className="mx-auto max-w-[1480px]">
         <div className="flex items-baseline justify-between mb-14">
           <Reveal>

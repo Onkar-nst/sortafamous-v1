@@ -11,9 +11,9 @@ const values = [
 
 export function Values() {
   return (
-    <section className="relative z-[60] bg-cream py-28 px-6 border-t border-border">
+    <section className="relative z-[60] bg-cream py-16 md:py-28 px-6 border-t border-border">
       <div className="mx-auto max-w-[1480px]">
-        <div className="flex items-baseline justify-between mb-14">
+        <div className="flex flex-col gap-6 md:flex-row md:items-baseline md:justify-between mb-14">
           <Reveal>
             <div>
               <div className="eyebrow mb-3">Our values</div>
@@ -21,7 +21,7 @@ export function Values() {
             </div>
           </Reveal>
           <Reveal delay={80}>
-            <h2 className="serif text-4xl md:text-7xl text-right">
+            <h2 className="serif text-4xl md:text-7xl md:text-right">
               Values that guide<br />
               every <span className="serif-italic">campaign</span>
             </h2>

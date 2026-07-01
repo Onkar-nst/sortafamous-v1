@@ -10,7 +10,7 @@ const whatWeDo = [
 
 export function WhatWeDo() {
   return (
-    <section className="relative z-20 bg-cream py-28 px-6 border-t border-border">
+    <section className="relative z-20 bg-cream py-16 md:py-28 px-6 border-t border-border">
       <div className="mx-auto max-w-[1480px]">
         <div className="flex items-baseline justify-between mb-14">
           <Reveal>

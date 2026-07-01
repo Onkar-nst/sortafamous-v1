@@ -27,17 +27,23 @@ export function Hero() {
   const opacity = useTransform(scrollYProgress, [0, 0.85], [1, 0]);
 
   return (
-    <section ref={ref} className="sticky top-0 h-[100svh] overflow-hidden bg-cream">
-      <motion.div style={{ opacity }} className="absolute inset-0 px-6 pt-28 pb-16">
-        <div className="mx-auto max-w-[1480px] h-full relative">
-          <div className="grid lg:grid-cols-2 gap-12 h-full items-end">
-            <div className="lg:pb-[4vh]">
+    <section
+      ref={ref}
+      className="relative lg:sticky lg:top-0 min-h-[100svh] lg:h-[100svh] overflow-hidden bg-cream"
+    >
+      <motion.div
+        style={{ opacity }}
+        className="relative lg:absolute lg:inset-0 px-6 pt-24 pb-8 lg:pt-28 lg:pb-16"
+      >
+        <div className="mx-auto max-w-[1480px] lg:h-full relative">
+          <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 lg:h-full lg:items-end">
+            <div className="order-2 lg:order-none lg:pb-[4vh]">
               <motion.span
                 custom={0}
                 variants={rise}
                 initial="hidden"
                 animate="show"
-                className="pill mb-8 inline-flex"
+                className="pill mb-5 lg:mb-8 inline-flex"
               >
                 <span className="h-1.5 w-1.5 rounded-full bg-accent" />
                 PR &amp; Strategic Communications · India
@@ -68,7 +74,7 @@ export function Hero() {
                 variants={rise}
                 initial="hidden"
                 animate="show"
-                className="mt-10 flex items-center gap-4"
+                className="mt-8 lg:mt-10 flex flex-wrap items-center gap-4"
               >
                 <Magnetic strength={0.4}>
                   <a
@@ -91,7 +97,7 @@ export function Hero() {
                 variants={rise}
                 initial="hidden"
                 animate="show"
-                className="mt-12 flex items-center gap-4"
+                className="mt-8 lg:mt-12 flex items-center gap-4"
               >
                 <span className="serif text-5xl leading-none">3.4×</span>
                 <span className="text-sm text-ink-soft leading-tight max-w-[9rem]">
@@ -102,12 +108,12 @@ export function Hero() {
 
             <motion.div
               style={{ y: imgY }}
-              className="relative h-[50vh] lg:h-full order-first lg:order-last"
+              className="relative h-[34vh] sm:h-[42vh] lg:h-full order-1 lg:order-last"
             >
               <motion.img
                 src="/rightside%20img.png"
                 alt="Sorta Famous — editorial portrait"
-                className="absolute inset-0 h-full w-full object-contain object-bottom"
+                className="absolute inset-0 h-full w-full object-contain object-center lg:object-bottom"
                 fetchPriority="high"
                 initial={{ opacity: 0, scale: 1.06, filter: "blur(16px)" }}
                 animate={{ opacity: 1, scale: 1, filter: "blur(0px)" }}
@@ -123,7 +129,7 @@ export function Hero() {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 1, duration: 1 }}
-        className="absolute bottom-6 left-1/2 -translate-x-1/2 text-xs text-ink-soft flex flex-col items-center gap-2"
+        className="absolute bottom-6 left-1/2 -translate-x-1/2 text-xs text-ink-soft hidden lg:flex flex-col items-center gap-2"
       >
         <span className="eyebrow">Scroll</span>
         <motion.span

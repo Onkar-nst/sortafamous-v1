@@ -16,7 +16,7 @@ export function Services() {
   const [open, setOpen] = useState(0);
 
   return (
-    <section id="services" className="relative z-30 bg-cream py-28 px-6 border-t border-border">
+    <section id="services" className="relative z-30 bg-cream py-16 md:py-28 px-6 border-t border-border">
       <div className="mx-auto max-w-[1480px]">
         <div className="flex items-end justify-between mb-6">
           <Reveal>

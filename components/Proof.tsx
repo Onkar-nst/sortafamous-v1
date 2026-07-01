@@ -11,7 +11,7 @@ const stats = [
 
 export function Proof() {
   return (
-    <section className="relative z-[70] bg-ink text-cream py-32 px-6 rounded-t-[2.5rem]">
+    <section className="relative z-[70] bg-ink text-cream py-20 md:py-32 px-6 rounded-t-[2.5rem]">
       <div className="mx-auto max-w-[1480px]">
         <div className="flex items-baseline justify-between mb-20">
           <Reveal>

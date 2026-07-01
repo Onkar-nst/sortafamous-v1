@@ -4,7 +4,7 @@ import { WordReveal } from "./motion";
 
 export function Manifesto() {
   return (
-    <section className="relative z-40 bg-cream py-32 md:py-44 px-6 border-t border-border">
+    <section className="relative z-40 bg-cream py-20 md:py-44 px-6 border-t border-border">
       <div className="mx-auto max-w-[1180px]">
         <WordReveal
           text="Sorta Famous is a communications studio that treats reputation as a craft, and measures it like a science."
