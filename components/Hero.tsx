@@ -122,17 +122,21 @@ export function Hero() {
               {/* solid circle backdrop behind the bust — desktop only, image sits on top */}
               <div
                 aria-hidden
-                className="hidden lg:block absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-[54%] aspect-square w-[92%] rounded-full bg-[#e4ddce]"
+                className="hidden lg:block absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-[46%] aspect-square w-[92%] rounded-full bg-[#e4ddce]"
               />
-              <motion.img
-                src="/rightside%20img.png"
-                alt="Sorta Famous — editorial portrait"
-                className="absolute inset-0 w-full object-contain object-bottom lg:-translate-y-[14vh]"
-                fetchPriority="high"
-                initial={{ opacity: 0, scale: 1.06, filter: "blur(16px)" }}
-                animate={{ opacity: 1, scale: 1, filter: "blur(0px)" }}
-                transition={{ duration: 1.2, ease: EASE, delay: 0.15 }}
-              />
+              {/* box defines the drawable area so the statue's base lands on the
+                  same baseline as the left column (7vh above the grid bottom) */}
+              <div className="absolute inset-0 lg:top-[6vh] lg:bottom-[7vh]">
+                <motion.img
+                  src="/rightside%20img.png"
+                  alt="Sorta Famous — editorial portrait"
+                  className="h-full w-full object-contain object-bottom"
+                  fetchPriority="high"
+                  initial={{ opacity: 0, scale: 1.06, filter: "blur(16px)" }}
+                  animate={{ opacity: 1, scale: 1, filter: "blur(0px)" }}
+                  transition={{ duration: 1.2, ease: EASE, delay: 0.15 }}
+                />
+              </div>
             </motion.div>
           </div>
         </div>
