@@ -12,7 +12,7 @@ import { Process } from "@/components/Process";
 import { Values } from "@/components/Values";
 import { Work } from "@/components/Work";
 import { Team } from "@/components/Team";
-import { Pricing } from "@/components/Pricing";
+// import { Pricing } from "@/components/Pricing"; // hidden for now
 import { Journal } from "@/components/Journal";
 import { CTA } from "@/components/CTA";
 import { FAQ } from "@/components/FAQ";
@@ -47,7 +47,7 @@ export default function Home() {
           <Process />
           <Work />
           <Team />
-          <Pricing />
+          {/* <Pricing /> hidden for now */}
           <Journal />
           <CTA />
           <FAQ />
