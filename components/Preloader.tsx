@@ -57,7 +57,7 @@ export function Preloader() {
             animate={{ opacity: 1 }}
             transition={{ delay: 0.4, duration: 0.6 }}
           >
-            PR &amp; Strategic Communications
+            360° Marketing &amp; PR
           </motion.span>
         </motion.div>
       )}

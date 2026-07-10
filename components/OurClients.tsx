@@ -20,7 +20,6 @@ export function OurClients() {
         <SectionHeader
           eyebrow="Trusted by"
           title="Our clients"
-          marker="/ 2019–27 / ©"
           className="mb-10"
         />
         <RevealStagger className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-3 md:gap-4">

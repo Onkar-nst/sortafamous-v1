@@ -34,7 +34,7 @@ export function CTA() {
             </Reveal>
             <Reveal delay={200}>
               <Magnetic strength={0.4} className="mt-10">
-                <a href="#contact" className="inline-flex items-center gap-2 rounded-full bg-cream text-ink px-7 py-4 text-sm hover:opacity-90 transition">
+                <a href="/contact" className="inline-flex items-center gap-2 rounded-full bg-cream text-ink px-7 py-4 text-sm hover:opacity-90 transition">
                   Discover more <span aria-hidden>→</span>
                 </a>
               </Magnetic>

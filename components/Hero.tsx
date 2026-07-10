@@ -55,7 +55,7 @@ export function Hero() {
                 className="pill mb-5 lg:mb-8 inline-flex"
               >
                 <span className="h-1.5 w-1.5 rounded-full bg-accent" />
-                PR &amp; Strategic Communications · India
+                360° Marketing &amp; PR · India
               </motion.span>
               <motion.h1
                 custom={1}
@@ -75,8 +75,8 @@ export function Hero() {
                 animate="show"
                 className="mt-6 max-w-md text-ink-soft leading-relaxed"
               >
-                Insight-led social media performance. Visibility that lasts longer than the
-                news cycle — no clout chasing, just status with substance.
+                Insight-led 360° marketing across brand, social, content and PR. Visibility that
+                lasts longer than the news cycle — no clout chasing, just status with substance.
               </motion.p>
               <motion.div
                 custom={3}
@@ -87,7 +87,7 @@ export function Hero() {
               >
                 <Magnetic strength={0.4}>
                   <a
-                    href="#contact"
+                    href="/contact"
                     className="inline-flex items-center gap-2 rounded-full bg-ink text-cream px-6 py-3.5 text-sm hover:opacity-90 transition"
                   >
                     Let&apos;s get Sorta Famous

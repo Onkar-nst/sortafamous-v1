@@ -18,7 +18,7 @@ export function Clients() {
           </div>
         </Reveal>
         <Reveal delay={80}>
-          <div className="serif-italic text-sm text-ink-soft">/ press /</div>
+          <div className="serif-italic text-sm text-ink-soft">/ partners /</div>
         </Reveal>
       </div>
       <div className="relative">

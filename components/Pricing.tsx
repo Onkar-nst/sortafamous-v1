@@ -40,7 +40,6 @@ export function Pricing() {
         <SectionHeader
           eyebrow="Simple pricing"
           title="Pricing"
-          marker="/ © /"
           className="mb-10 md:mb-14"
         />
 
@@ -87,7 +86,7 @@ export function Pricing() {
                   </div>
                   <div className="text-sm text-ink-soft mt-2">{monthly ? "/ month" : "/ project"}</div>
                   <a
-                    href="#contact"
+                    href="/contact"
                     className="group inline-flex items-center gap-2 mt-5 text-sm border-b border-ink/30 pb-0.5 hover:border-ink transition-colors"
                   >
                     {tier.cta}

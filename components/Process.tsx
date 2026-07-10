@@ -21,7 +21,6 @@ export function Process() {
         <SectionHeader
           eyebrow="The method"
           title={<>A structured, <span className="serif-italic">data-driven</span> process</>}
-          marker="/ 6 / ©"
           className="mb-16"
         />
 
@@ -63,7 +62,7 @@ export function Process() {
                 <div className="eyebrow text-cream/50 mb-4">Ready when you are</div>
                 <p className="serif text-2xl md:text-4xl leading-[1.1] lg:whitespace-nowrap">Have a project in mind? <span className="serif-italic">Let&apos;s map your path.</span></p>
               </div>
-              <a href="#contact" className="inline-flex items-center gap-2 rounded-full bg-cream text-ink px-7 py-4 text-sm hover:opacity-90 transition">
+              <a href="/contact" className="inline-flex items-center gap-2 rounded-full bg-cream text-ink px-7 py-4 text-sm hover:opacity-90 transition">
                 Let&apos;s work together <span aria-hidden>→</span>
               </a>
             </div>

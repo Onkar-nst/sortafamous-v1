@@ -2,12 +2,13 @@
 
 import { motion, AnimatePresence, useScroll, useMotionValueEvent } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
+import { usePathname } from "next/navigation";
 import { Clock } from "./Clock";
 import { EASE } from "./motion";
 
 function Logo() {
   return (
-    <a href="#" aria-label="Sorta Famous — home" className="inline-flex items-center">
+    <a href="/" aria-label="Sorta Famous — home" className="inline-flex items-center">
       <img
         src="/logo-mark.png"
         alt="Sorta Famous"
@@ -19,10 +20,10 @@ function Logo() {
 }
 
 const links = [
-  { href: "#services", label: "Services" },
-  { href: "#about", label: "About" },
-  { href: "#process", label: "How it works" },
-  { href: "#contact", label: "Contact" },
+  { href: "/services", label: "Services" },
+  { href: "/about", label: "About" },
+  { href: "/how-it-works", label: "How it works" },
+  { href: "/contact", label: "Contact" },
 ];
 
 export function Nav() {
@@ -31,10 +32,12 @@ export function Nav() {
   const [open, setOpen] = useState(false);
   const [navHidden, setNavHidden] = useState(false);
   const lastY = useRef(0);
+  const pathname = usePathname();
+  // Home stays permanently pinned; subpages hide on scroll down, reveal on scroll up.
+  const isHome = pathname === "/";
   useMotionValueEvent(scrollY, "change", (y) => {
     setScrolled(y > 40);
-    // Mobile only: hide the bar while scrolling down, reveal it on scroll up.
-    if (window.innerWidth >= 1024) {
+    if (isHome) {
       setNavHidden(false);
     } else {
       const goingDown = y > lastY.current;
@@ -89,7 +92,7 @@ export function Nav() {
                 </a>
               ))}
             </nav>
-            <a href="#contact" className="hidden sm:inline-flex items-center gap-2 rounded-full bg-ink text-cream px-5 py-2.5 text-sm hover:opacity-90 transition">
+            <a href="/contact" className="hidden sm:inline-flex items-center gap-2 rounded-full bg-ink text-cream px-5 py-2.5 text-sm hover:opacity-90 transition">
               Get Started
             </a>
             {/* hamburger / close */}
@@ -151,7 +154,7 @@ export function Nav() {
               className="px-6 pb-10 space-y-5"
             >
               <a
-                href="#contact"
+                href="/contact"
                 onClick={() => setOpen(false)}
                 className="w-full inline-flex items-center justify-center gap-2 rounded-full bg-ink text-cream px-6 py-4 text-sm active:opacity-80"
               >

@@ -45,7 +45,6 @@ export function FAQ() {
         <SectionHeader
           eyebrow="Questions"
           title={<>Frequently asked <span className="serif-italic">questions</span></>}
-          marker="/ 6 / ©"
           className="mb-6"
         />
 

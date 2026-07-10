@@ -1,15 +1,15 @@
 import { ArrowRight } from "lucide-react";
 
 const nav = [
-  { href: "#", label: "Home" },
-  { href: "#about", label: "About" },
-  { href: "#services", label: "Services" },
-  { href: "#process", label: "How it works" },
+  { href: "/", label: "Home" },
+  { href: "/about", label: "About" },
+  { href: "/services", label: "Services" },
+  { href: "/how-it-works", label: "How it works" },
 ];
 const company = [
-  { href: "#work", label: "Selected work" },
-  { href: "#journal", label: "Journal" },
-  { href: "#contact", label: "Contact" },
+  { href: "/#work", label: "Selected work" },
+  { href: "/#journal", label: "Journal" },
+  { href: "/contact", label: "Contact" },
   { href: "#", label: "Privacy Policy" },
 ];
 
@@ -55,7 +55,7 @@ export function Footer() {
               Let&apos;s get you <span className="serif-italic text-brand">Sorta Famous.</span>
             </h2>
             <a
-              href="#contact"
+              href="/contact"
               className="inline-flex w-fit items-center gap-2 rounded-full bg-cream text-ink px-7 py-4 text-sm hover:opacity-90 transition"
             >
               Let&apos;s work together <ArrowRight className="h-4 w-4" />

@@ -119,7 +119,6 @@ export function Bento() {
           dark
           eyebrow="What we do"
           title={<>We turn visibility <span className="serif-italic">into credibility</span></>}
-          marker="/ 3 / ©"
           className="mb-14"
         />
 

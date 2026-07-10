@@ -31,8 +31,8 @@ export function Services() {
         </div>
         <Reveal>
           <p className="max-w-2xl text-ink-soft text-lg mb-6">
-            We craft PR and social strategies that make your brand impossible to ignore. From startups to
-            influencers, we build visibility, trust and influence that lasts.
+            We craft full-funnel marketing, brand and PR strategies that make your brand impossible to
+            ignore. From startups to influencers, we build visibility, trust and influence that lasts.
           </p>
         </Reveal>
 
