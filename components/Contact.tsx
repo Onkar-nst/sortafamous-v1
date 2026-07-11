@@ -11,8 +11,8 @@ const fields = [
 ];
 
 const perks = [
-  { Icon: Sparkles, t: "Free 30-min consult", d: "Tell us your goals — we'll send back a quick-win snapshot. No commitment." },
-  { Icon: Users, t: "Talk to strategists", d: "No account managers — you speak directly with the people running your campaigns." },
+  { Icon: Sparkles, t: "Free 30 minute consult", d: "Tell us your goals, we'll send back a quick win snapshot. No commitment." },
+  { Icon: Users, t: "Talk to strategists", d: "No account managers, you speak directly with the people running your campaigns." },
 ];
 
 const info = [
@@ -35,9 +35,9 @@ export function Contact() {
         />
 
         <div className="grid lg:grid-cols-2 gap-6 lg:gap-10 items-stretch">
-          {/* LEFT — image card with headline + perks */}
+          {/* LEFT, image card with headline + perks */}
           <Reveal>
-            <div className="relative rounded-[2rem] overflow-hidden min-h-[520px] lg:h-full flex flex-col justify-between p-8 md:p-10 bg-ink">
+            <div className="relative rounded-[2rem] overflow-hidden min-h-[520px] lg:h-full flex flex-col justify-between p-8 md:p-10 bg-ink-gradient">
               <img
                 src="/images/art/scene1.jpg"
                 alt=""
@@ -63,7 +63,7 @@ export function Contact() {
             </div>
           </Reveal>
 
-          {/* RIGHT — form + contact info */}
+          {/* RIGHT, form + contact info */}
           <Reveal delay={100}>
             <form onSubmit={(e) => e.preventDefault()} className="flex flex-col">
               <div className="space-y-7">

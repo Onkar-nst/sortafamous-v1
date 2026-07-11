@@ -6,7 +6,7 @@ import { SectionHeader } from "./SectionHeader";
 const values = [
   { t: "Our Vision", d: "Empowering brands to own their narrative and lead with influence in the digital era." },
   { t: "Our Mission", d: "Delivering impactful strategies that combine creativity, authenticity and measurable results." },
-  { t: "Our Approach", d: "Data-driven insights meet bold creativity — because smart strategies deserve fearless execution." },
+  { t: "Our Approach", d: "Data driven insights meet bold creativity, because smart strategies deserve fearless execution." },
   { t: "Our Promise", d: "Partnership built on transparency, consistency, and results that speak louder than buzz." },
 ];
 
@@ -21,7 +21,7 @@ export function Values() {
         />
         <Reveal>
           <p className="max-w-2xl text-ink-soft text-lg mb-12">
-            Our values shape every story we tell and every strategy we execute — so your brand doesn't just get attention, it earns lasting credibility.
+            Our values shape every story we tell and every strategy we execute, so your brand doesn't just get attention, it earns lasting credibility.
           </p>
         </Reveal>
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">

@@ -9,23 +9,23 @@ import { SectionHeader } from "./SectionHeader";
 const faqs = [
   {
     q: "What kind of projects do you take on?",
-    a: "We work with founders, startups and modern brands who want earned attention that lasts — from full-scale PR campaigns and media relations to founder brand building and always-on social strategy.",
+    a: "We work with founders, startups and modern brands who want earned attention that lasts, from full scale PR campaigns and media relations to founder brand building and always on social strategy.",
   },
   {
     q: "How does a typical engagement begin?",
-    a: "It starts with a discovery call to understand your goals, audience and current positioning. From there we map a strategy, agree on scope and milestones, and move into execution — usually within the first two weeks.",
+    a: "It starts with a discovery call to understand your goals, audience and current positioning. From there we map a strategy, agree on scope and milestones, and move into execution, usually within the first two weeks.",
   },
   {
     q: "What is your pricing model?",
-    a: "Most partnerships run as a monthly retainer scoped to your goals, with project-based options for launches and one-off campaigns. We share a clear proposal after our first call — no surprises.",
+    a: "Most partnerships run as a monthly retainer scoped to your goals, with project based options for launches and standalone campaigns. We share a clear proposal after our first call, no surprises.",
   },
   {
     q: "Who will I be working with?",
-    a: "A dedicated lead strategist supported by our PR, content and social specialists. You get a single point of contact and a team that actually knows your brand — not a rotating cast of account managers.",
+    a: "A dedicated lead strategist supported by our PR, content and social specialists. You get a single point of contact and a team that actually knows your brand, not a rotating cast of account managers.",
   },
   {
     q: "How do you measure success?",
-    a: "We agree on the metrics that matter to you up front — earned media, share of voice, qualified inbound, follower and engagement growth — and report against them transparently every month.",
+    a: "We agree on the metrics that matter to you up front, earned media, share of voice, qualified inbound, follower and engagement growth, and report against them transparently every month.",
   },
   {
     q: "How long until we see results?",

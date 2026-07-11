@@ -12,7 +12,7 @@ import { BotanicalBranch } from "./BotanicalBranch";
 const CREAM = "#f1ebdf";
 const INK = "#1b1811";
 
-// The manifesto paragraph — revealed word by word as you scroll.
+// The manifesto paragraph, revealed word by word as you scroll.
 const TEXT =
   "We're Sorta Famous, helping founders, startups and modern brands earn the right kind of attention. We don't chase clout we shape reputations. Visibility sticks, and it's the smart kind.";
 const ITALIC = new Set([1, 2]); // "Sorta Famous"
@@ -25,7 +25,7 @@ export function About() {
     offset: ["start start", "end end"],
   });
 
-  // Drive the word reveal with a single CSS variable — each word maps its own
+  // Drive the word reveal with a single CSS variable, each word maps its own
   // slice of scroll progress to opacity via calc(), so it can never desync.
   useMotionValueEvent(scrollYProgress, "change", (v) => {
     holder.current?.style.setProperty("--p", v.toFixed(4));
@@ -52,7 +52,7 @@ export function About() {
         style={{ backgroundColor: bg }}
         className="sticky top-0 h-[100svh] overflow-hidden flex items-center justify-center px-6 md:px-12 lg:px-16 xl:px-28"
       >
-        {/* botanical branches — top-left & bottom-right */}
+        {/* botanical branches, top-left & bottom-right */}
         <motion.div
           style={{ y: leafY, opacity: leafOpacity }}
           className="pointer-events-none absolute -left-12 -top-8 sm:-left-4 sm:top-0 w-32 sm:w-44 lg:w-56 -rotate-6"

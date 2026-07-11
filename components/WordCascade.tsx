@@ -3,10 +3,10 @@
 import { motion } from "framer-motion";
 
 /**
- * WordCascade — right-side visual for the About hero. Two vertical columns of
+ * WordCascade, right-side visual for the About hero. Two vertical columns of
  * brand words drift in opposite directions behind a soft panel, faded at top
- * and bottom. Editorial kinetic type — distinct from the Services orbit.
- * Purely decorative — hidden from assistive tech.
+ * and bottom. Editorial kinetic type, distinct from the Services orbit.
+ * Purely decorative, hidden from assistive tech.
  */
 
 const COL_A = ["Visibility", "Reputation", "Story", "Press", "Reach", "Trust"];

@@ -13,7 +13,7 @@ export function AboutManifesto() {
           </div>
         </Reveal>
         <WordReveal
-          text="We don't chase clout — we shape reputations that last. Visibility that sticks, and it's the smart kind."
+          text="We don't chase clout, we shape reputations that last. Visibility that sticks, and it's the smart kind."
           className="serif text-[clamp(1.75rem,4.4vw,3.6rem)] leading-[1.25] tracking-[-0.01em] w-full"
           italicFrom={10}
         />

@@ -6,11 +6,11 @@ import { EASE } from "./motion";
 import { SectionHeader } from "./SectionHeader";
 
 const steps = [
-  { n: "01", phase: "Weeks 1–2", t: "Discovery & Strategy", d: "An in-depth brand audit covering goals, audience and competition — then a PR and social strategy that sets the tone for growth." },
-  { n: "02", phase: "Weeks 2–4", t: "Content Creation", d: "From scroll-stopping social creatives to impactful PR stories. Every post, every headline — built to connect and convert." },
+  { n: "01", phase: "Weeks 1 to 2", t: "Discovery & Strategy", d: "An in depth brand audit covering goals, audience and competition, then a PR and social strategy that sets the tone for growth." },
+  { n: "02", phase: "Weeks 2 to 4", t: "Content Creation", d: "From scroll stopping social creatives to impactful PR stories. Every post, every headline, built to connect and convert." },
   { n: "03", phase: "Ongoing", t: "Scheduling & Publishing", d: "Timing matters. We plan and schedule for maximum visibility, keeping your brand active, relevant and consistent." },
   { n: "04", phase: "Monthly", t: "Tracking & Optimization", d: "We monitor every campaign, analyse performance, and tune the strategy so the next round always outperforms the last." },
-  { n: "05", phase: "Daily", t: "Community Engagement", d: "We don't just post — we build relationships. Replies, DMs, conversations that make your brand feel human and trusted." },
+  { n: "05", phase: "Daily", t: "Community Engagement", d: "We don't just post, we build relationships. Replies, DMs, conversations that make your brand feel human and trusted." },
   { n: "06", phase: "Monthly", t: "Reporting & Collaboration", d: "Clear monthly reports, actionable insights, and regular collaboration calls. Transparency is the whole point." },
 ];
 
@@ -20,7 +20,7 @@ export function Process() {
       <div className="mx-auto max-w-[1480px]">
         <SectionHeader
           eyebrow="The method"
-          title={<>A structured, <span className="serif-italic">data-driven</span> process</>}
+          title={<>A structured, <span className="serif-italic">data driven</span> process</>}
           className="mb-16"
         />
 
@@ -51,8 +51,8 @@ export function Process() {
         </div>
 
         <Reveal delay={80}>
-          <div className="relative mt-20 overflow-hidden rounded-[2rem] bg-ink text-cream px-8 py-12 md:px-14 md:py-16">
-            {/* decorative background — glowing circle, outlined ring, floating box */}
+          <div className="relative mt-20 overflow-hidden rounded-[2rem] bg-ink-gradient text-cream px-8 py-12 md:px-14 md:py-16">
+            {/* decorative background, glowing circle, outlined ring, floating box */}
             <div aria-hidden className="pointer-events-none absolute -right-20 -top-24 h-80 w-80 rounded-full bg-accent/25 blur-[90px]" />
             <div aria-hidden className="pointer-events-none absolute -right-16 -bottom-24 h-72 w-72 rounded-full border border-cream/10" />
             <div aria-hidden className="pointer-events-none absolute right-40 -bottom-10 hidden h-32 w-32 rotate-12 rounded-3xl border border-cream/10 bg-cream/[0.04] md:block" />

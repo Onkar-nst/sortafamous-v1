@@ -7,7 +7,7 @@ import { SectionHeader } from "./SectionHeader";
 const stats = [
   { to: 24, suffix: "+", t: "Awards & mentions", d: "Recognised for work that performs as sharply as it reads." },
   { to: 300, suffix: "+", t: "Placements landed", d: "Earned stories shipped with strategy, creative and media in step." },
-  { to: 60, suffix: "+", t: "Brands who stay", d: "Founders and teams who keep us on as long-term partners." },
+  { to: 60, suffix: "+", t: "Brands who stay", d: "Founders and teams who keep us on as long term partners." },
 ];
 
 export function Craft() {
@@ -35,7 +35,7 @@ export function Craft() {
               <div className="absolute inset-0 bg-gradient-to-t from-ink/80 via-ink/20 to-transparent" />
               <div className="absolute inset-x-0 bottom-0 p-6 md:p-8 text-cream">
                 <h3 className="serif text-2xl md:text-3xl">Built on measured craft</h3>
-                <p className="text-cream/80 mt-2 max-w-sm">Strategy, creative and media — under one roof.</p>
+                <p className="text-cream/80 mt-2 max-w-sm">Strategy, creative and media, under one roof.</p>
               </div>
             </div>
           </Reveal>

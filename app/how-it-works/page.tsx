@@ -9,11 +9,11 @@ import { Footer } from "@/components/Footer";
 export const metadata: Metadata = {
   title: "How it works",
   description:
-    "A clear, data-driven process — discovery and strategy, content creation, scheduling, tracking and optimization, community engagement, and transparent monthly reporting.",
+    "A clear, data driven process, discovery and strategy, content creation, scheduling, tracking and optimization, community engagement, and transparent monthly reporting.",
   openGraph: {
     title: "How it works · Sorta Famous",
     description:
-      "From first call to lasting fame — a transparent, six-stage process that turns strategy into earned attention.",
+      "From first call to lasting fame, a transparent, six stage process that turns strategy into earned attention.",
   },
 };
 

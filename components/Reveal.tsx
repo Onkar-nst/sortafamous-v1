@@ -3,7 +3,7 @@
 import { motion, type Variants } from "framer-motion";
 import type { ComponentProps, ReactNode } from "react";
 
-// Fathom-style easing — a long, confident ease-out (expo-ish).
+// Fathom-style easing, a long, confident ease-out (expo-ish).
 const EASE = [0.16, 1, 0.3, 1] as const;
 
 /**
@@ -38,7 +38,7 @@ export function Reveal({
 }
 
 /**
- * Stagger container — children marked with <RevealItem> animate in sequence
+ * Stagger container, children marked with <RevealItem> animate in sequence
  * as the group scrolls into view (the Fathom "blocks cascade in" feel).
  */
 const containerVariants: Variants = {

@@ -98,7 +98,7 @@ const pillars = [
   {
     n: "02",
     t: "Personal Brand Management",
-    d: "We polish the person, not just the logo — turning founders into the voice their category listens to.",
+    d: "We polish the person, not just the logo, turning founders into the voice their category listens to.",
   },
   {
     n: "03",
@@ -109,7 +109,7 @@ const pillars = [
 
 export function Bento() {
   return (
-    <section className="relative z-40 bg-ink text-cream rounded-t-[2.5rem] py-16 md:py-28 px-6 md:px-12 lg:px-16 xl:px-28 overflow-hidden">
+    <section className="relative z-40 bg-ink-gradient text-cream rounded-t-[2.5rem] py-16 md:py-28 px-6 md:px-12 lg:px-16 xl:px-28 overflow-hidden">
       {/* texture + accent glow */}
       <div className="pointer-events-none absolute inset-0 grid-texture opacity-[0.35]" />
       <div className="pointer-events-none absolute -top-24 left-1/2 h-[420px] w-[820px] -translate-x-1/2 rounded-full bg-accent/15 blur-[120px]" />
@@ -129,11 +129,11 @@ export function Bento() {
           viewport={{ once: true, margin: "0px 0px 12% 0px" }}
           className="grid grid-cols-3 md:grid-cols-2 lg:grid-cols-3 auto-rows-[minmax(150px,auto)] md:auto-rows-[minmax(210px,auto)] gap-3 md:gap-4"
         >
-          {/* Big statement block — spans 2×2 on lg */}
+          {/* Big statement block, spans 2×2 on lg */}
           <Block className="col-span-3 md:col-span-2 lg:row-span-2 flex flex-col justify-between">
             <div className="flex items-start justify-between">
               <span className="pill bg-cream/10 text-cream/80">
-                <span className="h-1.5 w-1.5 rounded-full bg-accent" /> Insight-led
+                <span className="h-1.5 w-1.5 rounded-full bg-accent" /> Insight led
               </span>
               {/* animated concentric signal rings */}
               <div className="relative h-24 w-24 hidden sm:block">
@@ -155,7 +155,7 @@ export function Bento() {
             </div>
             <div className="mt-6 md:mt-0">
               <p className="serif text-[clamp(1.6rem,2.6vw,2.6rem)] leading-[1.1] max-w-xl">
-                We don&apos;t chase clout. We shape reputations — visibility that sticks, and
+                We don&apos;t chase clout. We shape reputations, visibility that sticks, and
                 it&apos;s the <span className="serif-italic">smart kind.</span>
               </p>
               <div className="mt-8 h-px w-full bg-cream/10" />
@@ -170,9 +170,9 @@ export function Bento() {
             </div>
           </Block>
 
-          {/* Stat — earned-media lift with animated bars */}
+          {/* Stat, earned media lift with animated bars */}
           <Block className="col-span-3 md:col-span-1 flex flex-col justify-between">
-            <div className="eyebrow text-cream/50">Avg. earned-media lift</div>
+            <div className="eyebrow text-cream/50">Avg. earned media lift</div>
             <div>
               <div className="flex items-end gap-1.5 h-16 mb-4">
                 {[40, 55, 48, 70, 62, 88, 100].map((h, i) => (
@@ -199,7 +199,7 @@ export function Bento() {
                 <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-accent opacity-75" />
                 <span className="relative inline-flex h-2 w-2 rounded-full bg-accent" />
               </span>
-              Available — Mumbai
+              Available · Mumbai
             </div>
             <div>
               <div className="serif text-5xl leading-none">
@@ -213,7 +213,7 @@ export function Bento() {
 
         </motion.div>
 
-        {/* Three pillars — swipe carousel on mobile, 3-col grid on desktop */}
+        {/* Three pillars, swipe carousel on mobile, 3-col grid on desktop */}
         <motion.div
           variants={container}
           initial="hidden"

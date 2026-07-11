@@ -4,14 +4,14 @@ import { Reveal } from "./Reveal";
 import { Counter } from "./motion";
 
 const stats = [
-  { to: 240, suffix: "%", d: "Average earned-media lift across launches" },
+  { to: 240, suffix: "%", d: "Average earned media lift across launches" },
   { to: 60, suffix: "+", d: "Founders and brands shaped since the studio opened" },
   { to: 98, suffix: "%", d: "Client retention, year over year" },
 ];
 
 export function Proof() {
   return (
-    <section className="relative z-[90] bg-ink text-cream py-14 md:py-32 px-6 md:px-12 lg:px-16 xl:px-28 rounded-t-[2.5rem]">
+    <section className="relative z-[90] bg-ink-gradient text-cream py-14 md:py-32 px-6 md:px-12 lg:px-16 xl:px-28 rounded-t-[2.5rem]">
       <div className="mx-auto max-w-[1480px]">
         <div className="flex items-baseline justify-between mb-12 md:mb-20">
           <Reveal>

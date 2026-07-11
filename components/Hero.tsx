@@ -76,8 +76,8 @@ export function Hero() {
                 animate="show"
                 className="mt-6 max-w-md text-ink-soft leading-relaxed"
               >
-                Insight-led 360° marketing across brand, social, content and PR. Visibility that
-                lasts longer than the news cycle — no clout chasing, just status with substance.
+                Insight led 360° marketing across brand, social, content and PR. Visibility that
+                lasts longer than the news cycle, no clout chasing, just status with substance.
               </motion.p>
               <motion.div
                 custom={3}
@@ -120,7 +120,7 @@ export function Hero() {
               style={{ y: imgY }}
               className="relative z-0 mt-2 h-[46vh] order-last lg:mt-0 lg:h-full"
             >
-              {/* solid circle backdrop behind the bust — desktop only, image sits on top */}
+              {/* solid circle backdrop behind the bust, desktop only, image sits on top */}
               <div
                 aria-hidden
                 className="hidden lg:block absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-[46%] aspect-square w-[92%] rounded-full bg-[#e4ddce]"
@@ -130,7 +130,7 @@ export function Hero() {
               <div className="absolute inset-0 lg:top-[6vh] lg:bottom-[7vh]">
                 <motion.img
                   src="/rightside%20img.png"
-                  alt="Sorta Famous — editorial portrait"
+                  alt="Sorta Famous, editorial portrait"
                   className="h-full w-full object-contain object-bottom"
                   fetchPriority="high"
                   initial={{ opacity: 0, scale: 1.06, filter: "blur(16px)" }}

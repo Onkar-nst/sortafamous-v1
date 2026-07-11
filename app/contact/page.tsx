@@ -6,7 +6,7 @@ import { Footer } from "@/components/Footer";
 export const metadata: Metadata = {
   title: "Contact",
   description:
-    "Let's talk. Tell us your goals and we'll send back a quick-win snapshot — no commitment. Reach Sorta Famous by email, phone, or the form. Based in Andheri West, Mumbai.",
+    "Let's talk. Tell us your goals and we'll send back a quick win snapshot, no commitment. Reach Sorta Famous by email, phone, or the form. Based in Andheri West, Mumbai.",
   openGraph: {
     title: "Contact · Sorta Famous",
     description:

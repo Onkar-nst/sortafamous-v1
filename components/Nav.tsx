@@ -8,7 +8,7 @@ import { EASE } from "./motion";
 
 function Logo() {
   return (
-    <a href="/" aria-label="Sorta Famous — home" className="inline-flex items-center">
+    <a href="/" aria-label="Sorta Famous, home" className="inline-flex items-center">
       <img
         src="/logo-mark.png"
         alt="Sorta Famous"

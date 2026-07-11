@@ -4,9 +4,9 @@ import { useEffect, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 
 /**
- * ProcessDial — right-side visual for the How-it-works hero. Three step-nodes
+ * ProcessDial, right-side visual for the How-it-works hero. Three step-nodes
  * sit on a ring (connected as a triangle) and light up in sequence while the
- * centre label tracks the active stage. A clear "process" motif — distinct from
+ * centre label tracks the active stage. A clear "process" motif, distinct from
  * the Services orbit and About word-cascade. Purely decorative.
  */
 

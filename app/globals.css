@@ -61,6 +61,12 @@
   background: oklch(0.9 0.02 86); font-size: 0.78rem;
 }
 
+/* Deep green to black gradient used on the site's dark panels. */
+@utility bg-ink-gradient {
+  background-color: var(--ink);
+  background-image: linear-gradient(145deg, oklch(0.37 0.078 150) 0%, oklch(0.25 0.042 150) 44%, oklch(0.165 0.012 150) 100%);
+}
+
 @keyframes marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
 @utility animate-marquee { animation: marquee 40s linear infinite; }
 

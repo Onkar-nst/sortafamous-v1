@@ -16,7 +16,7 @@ const tiers = [
   {
     n: "02",
     t: "Growth",
-    features: ["Ongoing media relations", "Always-on social performance", "Monthly performance reporting"],
+    features: ["Ongoing media relations", "Always on social performance", "Monthly performance reporting"],
     perProject: "$4,800",
     monthly: "$3,500",
     cta: "Start a project",
@@ -24,7 +24,7 @@ const tiers = [
   {
     n: "03",
     t: "Scale",
-    features: ["Full-funnel PR & paid social", "Founder brand & thought leadership", "Dedicated strategist"],
+    features: ["Full funnel PR & paid social", "Founder brand & thought leadership", "Dedicated strategist"],
     perProject: "$12,000",
     monthly: "$8,000",
     cta: "Book a call",

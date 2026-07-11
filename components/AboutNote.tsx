@@ -11,7 +11,7 @@ const faces = [
 ];
 
 /**
- * A warm, first-person note from the team — the human moment on the About page.
+ * A warm, first-person note from the team, the human moment on the About page.
  * Real faces, a conversational voice and a signature, designed to make a
  * prospective client feel there are actual people on the other side.
  */
@@ -42,7 +42,7 @@ export function AboutNote() {
             <Reveal delay={80}>
               <p className="serif text-[clamp(1.5rem,3.4vw,2.6rem)] leading-[1.3] tracking-[-0.01em]">
                 We started Sorta Famous because we were tired of visibility that
-                felt hollow — <span className="serif-italic">loud today, forgotten tomorrow.</span> You
+                felt hollow, <span className="serif-italic">loud today, forgotten tomorrow.</span> You
                 worked too hard on what you built to let it go unnoticed, or to be
                 remembered for the wrong reasons.
               </p>
@@ -52,7 +52,7 @@ export function AboutNote() {
               <p className="mt-7 text-ink-soft text-lg leading-relaxed">
                 So here&apos;s our promise: we&apos;ll treat your reputation like it&apos;s our
                 own. No jargon, no vanity metrics, no disappearing after the launch.
-                Just a small, obsessive team that actually picks up the phone — and
+                Just a small, obsessive team that actually picks up the phone, and
                 cares whether the story lands. If that sounds like the kind of partner
                 you&apos;ve been looking for, we should talk.
               </p>

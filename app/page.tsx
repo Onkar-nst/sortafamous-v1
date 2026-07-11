@@ -22,11 +22,11 @@ import { Contact } from "@/components/Contact";
 import { Footer } from "@/components/Footer";
 
 export const metadata: Metadata = {
-  title: "Sorta Famous — 360° Marketing & PR Agency in India",
-  description: "Fame is earned. We manage the rest. Insight-led 360° marketing — PR, brand, social and content — visibility that lasts longer than the news cycle.",
+  title: "Sorta Famous · 360° Marketing & PR Agency in India",
+  description: "Fame is earned. We manage the rest. Insight led 360° marketing, PR, brand, social and content, visibility that lasts longer than the news cycle.",
   openGraph: {
-    title: "Sorta Famous — 360° Marketing & PR Agency",
-    description: "Visibility that lasts longer than the news cycle — no clout chasing, just status with substance.",
+    title: "Sorta Famous · 360° Marketing & PR Agency",
+    description: "Visibility that lasts longer than the news cycle, no clout chasing, just status with substance.",
   },
 };
 

@@ -21,7 +21,7 @@ import {
 export const EASE = [0.16, 1, 0.3, 1] as const;
 
 /* -------------------------------------------------------------------------- */
-/*  Counter — animates 0 → `to` once when scrolled into view                  */
+/*  Counter, animates 0 → `to` once when scrolled into view                  */
 /* -------------------------------------------------------------------------- */
 export function Counter({
   to,
@@ -60,7 +60,7 @@ export function Counter({
 }
 
 /* -------------------------------------------------------------------------- */
-/*  Magnetic — element drifts toward the cursor, springs back on leave        */
+/*  Magnetic, element drifts toward the cursor, springs back on leave        */
 /* -------------------------------------------------------------------------- */
 export function Magnetic({
   children,
@@ -101,7 +101,7 @@ export function Magnetic({
 }
 
 /* -------------------------------------------------------------------------- */
-/*  WordReveal — big statement whose words fade from muted → ink as you       */
+/*  WordReveal, big statement whose words fade from muted → ink as you       */
 /*  scroll through it (Fathom's signature manifesto animation).               */
 /* -------------------------------------------------------------------------- */
 function Word({
@@ -158,7 +158,7 @@ export function WordReveal({
 }
 
 /* -------------------------------------------------------------------------- */
-/*  Marquee — seamless infinite horizontal scroll of its children             */
+/*  Marquee, seamless infinite horizontal scroll of its children             */
 /* -------------------------------------------------------------------------- */
 export function Marquee({
   children,
@@ -191,7 +191,7 @@ export function Marquee({
 }
 
 /* -------------------------------------------------------------------------- */
-/*  Parallax — translate child on scroll for depth                            */
+/*  Parallax, translate child on scroll for depth                            */
 /* -------------------------------------------------------------------------- */
 export function Parallax({
   children,

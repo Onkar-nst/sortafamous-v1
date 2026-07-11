@@ -16,7 +16,7 @@ export function Clock() {
   return (
     <span className="pill text-ink-soft">
       <span className="h-1.5 w-1.5 rounded-full bg-accent animate-pulse" />
-      Available — Mumbai <span className="opacity-40 mx-1">/</span> IST {now}
+      Available · Mumbai <span className="opacity-40 mx-1">/</span> IST {now}
     </span>
   );
 }

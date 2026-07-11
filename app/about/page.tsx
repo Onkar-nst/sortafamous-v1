@@ -13,11 +13,11 @@ import { Footer } from "@/components/Footer";
 export const metadata: Metadata = {
   title: "About us",
   description:
-    "At Sorta Famous, fame is earned — not accidental. A modern PR, marketing and SEO studio helping brands shape perception, build authority, and create visibility that lasts.",
+    "At Sorta Famous, fame is earned, not accidental. A modern PR, marketing and SEO studio helping brands shape perception, build authority, and create visibility that lasts.",
   openGraph: {
     title: "About us · Sorta Famous",
     description:
-      "Creating meaningful visibility for modern brands — strategy over shortcuts, visibility with substance, reputation that lasts.",
+      "Creating meaningful visibility for modern brands, strategy over shortcuts, visibility with substance, reputation that lasts.",
   },
 };
 

@@ -4,8 +4,8 @@ import { Reveal } from "./Reveal";
 import { ProcessDial } from "./ProcessDial";
 
 const phases = [
-  { n: "01", t: "Discover", d: "An in-depth brand audit, clear goals, and a PR + social strategy built around your audience." },
-  { n: "02", t: "Create & publish", d: "Scroll-stopping content and impactful PR stories, scheduled for maximum reach and consistency." },
+  { n: "01", t: "Discover", d: "An in depth brand audit, clear goals, and a PR + social strategy built around your audience." },
+  { n: "02", t: "Create & publish", d: "Scroll stopping content and impactful PR stories, scheduled for maximum reach and consistency." },
   { n: "03", t: "Grow & report", d: "We optimise, engage your community, and send clear, actionable reports every month." },
 ];
 
@@ -27,7 +27,7 @@ export function HowItWorksHero() {
             </Reveal>
             <Reveal delay={140}>
               <p className="mt-8 max-w-2xl text-lg md:text-xl text-ink-soft leading-relaxed">
-                No black boxes. Every engagement follows the same transparent path — a data-driven
+                No black boxes. Every engagement follows the same transparent path, a data driven
                 strategy, creative that connects, and monthly reporting you can actually read. Here&apos;s
                 exactly how we take your brand from quiet to quoted.
               </p>

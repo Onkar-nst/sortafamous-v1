@@ -21,7 +21,7 @@ export function ServicesHero() {
           <Reveal delay={140}>
             <p className="mt-8 max-w-2xl text-lg md:text-xl text-ink-soft leading-relaxed">
               Across brand, social, content and PR, we help you build influence and visibility that
-              lasts. Connected practices, one cohesive system — designed to earn you the right kind
+              lasts. Connected practices, one cohesive system, designed to earn you the right kind
               of attention.
             </p>
           </Reveal>

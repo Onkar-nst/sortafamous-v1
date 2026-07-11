@@ -23,7 +23,7 @@ const plans: Plan[] = [
     best: "For brands finding their voice",
     features: [
       "Monthly press release distribution",
-      "Targeted media outreach (2–3 publications)",
+      "Targeted media outreach (2 to 3 publications)",
       "Influencer mentions",
       "Comprehensive monthly coverage report",
       "One campaign concept per quarter",
@@ -35,7 +35,7 @@ const plans: Plan[] = [
     tagline: "Expanded strategic communications.",
     best: "For brands ready to scale",
     features: [
-      "Monthly press releases with enhanced influencer outreach (4–5 placements)",
+      "Monthly press releases with enhanced influencer outreach (4 to 5 placements)",
       "Weekly ongoing media relations",
       "Content development (1 blog + 4 social media assets monthly)",
       "Quarterly strategy reviews",
@@ -63,9 +63,9 @@ const plans: Plan[] = [
     best: "For brands going global",
     features: [
       "Everything in Ultra + executive visibility programs",
-      "C-suite thought leadership development",
-      "Multi-market outreach (India, GCC, international)",
-      "Tier-1 influencer campaigns + dedicated senior team",
+      "Executive thought leadership development",
+      "Multi market outreach (India, GCC, international)",
+      "Tier 1 influencer campaigns + dedicated senior team",
       "Monthly BD workshops & quarterly campaign execution",
     ],
   },
@@ -109,7 +109,7 @@ export function ServicePlans() {
                     i === plans.length - 1 ? "border-b" : ""
                   } ${featured ? "bg-brand/[0.05]" : "hover:bg-brand/[0.028]"}`}
                 >
-                  {/* accent rail — always on featured, grows in on hover for the rest */}
+                  {/* accent rail, always on featured, grows in on hover for the rest */}
                   <span
                     aria-hidden
                     className={`absolute left-0 top-0 bottom-0 w-[3px] origin-center rounded-full bg-brand transition-transform duration-500 ${
@@ -118,7 +118,7 @@ export function ServicePlans() {
                   />
 
                   <div className="grid gap-8 lg:grid-cols-[0.82fr_1.18fr] lg:gap-14 px-5 md:px-8 py-9 md:py-12">
-                    {/* Left — identity + CTA */}
+                    {/* Left, identity + CTA */}
                     <div>
                       <div className="flex items-center gap-4">
                         <span className={`serif text-4xl leading-none ${featured ? "text-brand" : "text-ink/25"}`}>
@@ -147,7 +147,7 @@ export function ServicePlans() {
                       </a>
                     </div>
 
-                    {/* Right — what's included */}
+                    {/* Right, what's included */}
                     <div className="lg:pl-14 lg:border-l lg:border-ink/10">
                       <p className="eyebrow text-ink-soft mb-5">What&apos;s included</p>
                       <ul className="grid gap-x-10 gap-y-3.5 sm:grid-cols-2">

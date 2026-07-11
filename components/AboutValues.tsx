@@ -36,7 +36,7 @@ const values: Value[] = [
   {
     k: "03",
     t: "Our Approach",
-    d: "Data-driven insights meet bold creativity — because smart strategies deserve fearless execution.",
+    d: "Data driven insights meet bold creativity, because smart strategies deserve fearless execution.",
     Icon: Compass,
     accent: "oklch(0.63 0.15 35)", // terracotta
     tint: "oklch(0.63 0.15 35 / 0.12)",
@@ -67,9 +67,9 @@ export function AboutValues() {
         />
 
         <div className="grid gap-5 lg:grid-cols-6 lg:auto-rows-[minmax(0,1fr)]">
-          {/* Vision — large dark feature card */}
+          {/* Vision, large dark feature card */}
           <Reveal className={vision.span}>
-            <div className="group relative flex h-full min-h-[22rem] flex-col justify-between overflow-hidden rounded-[2rem] bg-ink text-cream p-9 md:p-11">
+            <div className="group relative flex h-full min-h-[22rem] flex-col justify-between overflow-hidden rounded-[2rem] bg-ink-gradient text-cream p-9 md:p-11">
               {/* textures + glow */}
               <div aria-hidden className="dot-texture absolute inset-0 opacity-[0.5] text-cream" />
               <div

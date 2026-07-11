@@ -12,50 +12,50 @@ import { Magnetic } from "./motion";
 import { EASE } from "./motion";
 
 /* Each service carries its own hue so the whole section shifts mood as you
-   move through the "menu" — dot, number, row glow and preview frame all tint. */
+   move through the list — dot, number, row glow and preview frame all tint. */
 const services = [
   {
     t: "Strategic PR",
-    course: "The main",
+    course: "Public relations",
     img: "/images/art/svc1.jpg",
-    accent: "oklch(0.56 0.075 135)", // sage — on brand
+    accent: "oklch(0.56 0.075 135)", // sage, on brand
     tint: "oklch(0.56 0.075 135 / 0.10)",
     items: ["Press strategy", "Newsroom", "Crisis comms", "Spokesperson prep"],
     body:
-      "Strategy and storytelling that puts your brand in the rooms — and the publications — that move the needle.",
-    stat: { n: "40+", l: "tier-1 placements / year" },
+      "Strategy and storytelling that puts your brand in the rooms, and the publications, that move the needle.",
+    stat: { n: "40+", l: "tier 1 placements / year" },
   },
   {
     t: "Social Performance",
-    course: "Something hot",
+    course: "Paid & organic",
     img: "/images/art/svc3.jpg",
     accent: "oklch(0.63 0.15 35)", // terracotta
     tint: "oklch(0.63 0.15 35 / 0.10)",
-    items: ["Paid social", "Creator partnerships", "Always-on", "Reporting"],
+    items: ["Paid social", "Creator partnerships", "Always on", "Reporting"],
     body:
       "Performance social that converts attention into pipeline, optimised channel by channel and post by post.",
     stat: { n: "6.2×", l: "avg. return on ad spend" },
   },
   {
     t: "Content & Editorial",
-    course: "Slow-cooked",
+    course: "Owned media",
     img: "/images/art/svc4.jpg",
     accent: "oklch(0.68 0.12 75)", // ochre
     tint: "oklch(0.68 0.12 75 / 0.10)",
-    items: ["Thought leadership", "Op-eds", "Newsletters", "Long-form"],
+    items: ["Thought leadership", "Opinion pieces", "Newsletters", "Long form"],
     body:
-      "Editorial substance and a publishing rhythm that compounds — owned media that earns its share of voice.",
+      "Editorial substance and a publishing rhythm that compounds, owned media that earns its share of voice.",
     stat: { n: "3.4M", l: "words that actually landed" },
   },
   {
     t: "Founder Brand",
-    course: "The signature",
+    course: "Personal brand",
     img: "/images/art/svc2.jpg",
     accent: "oklch(0.5 0.11 300)", // plum
     tint: "oklch(0.5 0.11 300 / 0.10)",
     items: ["Positioning", "LinkedIn", "Keynotes", "Podcast tour"],
     body:
-      "We sharpen the person behind the brand — clear point of view, sharper presence, real authority.",
+      "We sharpen the person behind the brand, clear point of view, sharper presence, real authority.",
     stat: { n: "1", l: "unmistakable point of view" },
   },
 ];
@@ -96,21 +96,22 @@ export function Services() {
         <div className="flex items-end justify-between mb-6">
           <Reveal>
             <div className="eyebrow mb-3 flex items-center gap-2">
-              <span className="h-1.5 w-1.5 rounded-full bg-accent" /> On the menu
+              <span className="h-1.5 w-1.5 rounded-full bg-accent" /> What we offer
             </div>
             <h2 className="serif text-4xl md:text-6xl">
-              Services, <span className="serif-italic">plated.</span>
+              Our <span className="serif-italic">services</span>
             </h2>
           </Reveal>
           <Reveal delay={80}>
-            <div className="serif-italic text-sm text-ink-soft">/ 4 courses / ©</div>
+            <div className="serif-italic text-sm text-ink-soft">/ 4 / ©</div>
           </Reveal>
         </div>
         <Reveal>
           <p className="max-w-2xl text-ink-soft text-lg mb-8">
-            A tasting menu of what we do best. Full-funnel marketing, brand and PR —
-            picked, prepped and served so your brand is impossible to ignore.
-            <span className="hidden lg:inline"> Hover to see each course.</span>
+            Full funnel marketing, brand and PR built to make your brand impossible
+            to ignore. From startups to founders, we build visibility, trust and
+            influence that lasts.
+            <span className="hidden lg:inline"> Hover any service to explore it.</span>
           </p>
         </Reveal>
 
@@ -120,7 +121,7 @@ export function Services() {
           onMouseMove={onMove}
           className="relative mt-2"
         >
-          {/* floating preview — desktop only */}
+          {/* floating preview, desktop only */}
           <AnimatePresence>
             {active && (
               <motion.div
@@ -279,7 +280,7 @@ export function Services() {
                                         "oklch(0.18 0.008 80 / 0.2)";
                                     }}
                                   >
-                                    Order this course <span aria-hidden>↗</span>
+                                    Start a project <span aria-hidden>↗</span>
                                   </a>
                                 </Magnetic>
                               </div>
@@ -314,7 +315,7 @@ export function Services() {
           <div className="border-t border-ink/15" />
         </div>
 
-        {/* taster strip — the full pantry of capabilities, always drifting */}
+        {/* capabilities strip — all deliverables, always drifting */}
         <Reveal delay={120}>
           <div className="relative mt-12 flex overflow-hidden [mask-image:linear-gradient(to_right,transparent,black_8%,black_92%,transparent)]">
             <div className="flex shrink-0 items-center gap-3 pr-3 animate-marquee">

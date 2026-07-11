@@ -9,11 +9,11 @@ import { Footer } from "@/components/Footer";
 export const metadata: Metadata = {
   title: "Services",
   description:
-    "360° marketing across PR, Brand Management and Social Media Marketing — from press placements to founder brand and paid social. Plans that scale from emerging visibility to market leadership.",
+    "360° marketing across PR, Brand Management and Social Media Marketing, from press placements to founder brand and paid social. Plans that scale from emerging visibility to market leadership.",
   openGraph: {
     title: "Services · Sorta Famous",
     description:
-      "Three connected practices, one cohesive system — PR, brand management and social. We craft stories that make brands matter.",
+      "Three connected practices, one cohesive system, PR, brand management and social. We craft stories that make brands matter.",
   },
 };
 

@@ -7,7 +7,7 @@ import { WordCascade } from "./WordCascade";
 const stats = [
   { to: 250, suffix: "+", label: "Media features earned" },
   { to: 90, suffix: "+", label: "Brands made famous" },
-  { to: 40, suffix: "+", label: "Tier-1 placements / year" },
+  { to: 40, suffix: "+", label: "Tier 1 placements / year" },
   { to: 98, suffix: "%", label: "Client retention" },
 ];
 
@@ -29,7 +29,7 @@ export function AboutHero() {
             </Reveal>
             <Reveal delay={140}>
               <p className="mt-8 max-w-2xl text-lg md:text-xl text-ink-soft leading-relaxed">
-                At Sorta Famous, we believe fame is earned — not accidental. We&apos;re a modern PR,
+                At Sorta Famous, we believe fame is earned, not accidental. We&apos;re a modern PR,
                 marketing and SEO studio that helps brands shape perception, build authority, and
                 create visibility that lasts.
               </p>

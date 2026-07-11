@@ -25,15 +25,15 @@ const instrumentSerif = Instrument_Serif({
 export const metadata: Metadata = {
   metadataBase: new URL("https://sortafamous.in"),
   title: {
-    default: "Sorta Famous — 360° Marketing & PR Agency in India",
+    default: "Sorta Famous · 360° Marketing & PR Agency in India",
     template: "%s · Sorta Famous",
   },
   description:
-    "Fame is earned. We manage the rest. Insight-led 360° marketing — PR, brand, social and content — visibility that lasts longer than the news cycle.",
+    "Fame is earned. We manage the rest. Insight led 360° marketing, PR, brand, social and content, visibility that lasts longer than the news cycle.",
   openGraph: {
-    title: "Sorta Famous — 360° Marketing & PR Agency",
+    title: "Sorta Famous · 360° Marketing & PR Agency",
     description:
-      "Visibility that lasts longer than the news cycle — no clout chasing, just status with substance.",
+      "Visibility that lasts longer than the news cycle, no clout chasing, just status with substance.",
     type: "website",
   },
 };

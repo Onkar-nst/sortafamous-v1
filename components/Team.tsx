@@ -12,7 +12,7 @@ import { Reveal } from "./Reveal";
 import { EASE, Parallax } from "./motion";
 
 /**
- * Team roster — the real Sorta Famous team (sortafamous.in/about-us). The site
+ * Team roster, the real Sorta Famous team (sortafamous.in/about-us). The site
  * publishes only names and roles, so the bios below are written to match each
  * role and the agency's stated positioning. Clicking a card opens a profile
  * modal with the portrait and fuller detail.
@@ -37,7 +37,7 @@ const team: Member[] = [
     img: "/images/art/team1.jpg",
     n: "Prajakta Mehul Sheth",
     r: "Sr. Account Manager",
-    bio: "Prajakta is the steady hand behind every engagement, translating strategy into day-to-day momentum. She keeps clients close, timelines honest, and campaigns moving from idea to earned coverage.",
+    bio: "Prajakta is the steady hand behind every engagement, translating strategy into day to day momentum. She keeps clients close, timelines honest, and campaigns moving from idea to earned coverage.",
     focus: ["Client partnerships", "Campaign delivery", "PR strategy"],
   },
   {
@@ -65,7 +65,7 @@ const team: Member[] = [
     img: "/images/art/team4.jpg",
     n: "Palak Nagar",
     r: "Graphic Designer",
-    bio: "Palak gives the strategy a face. She designs the visual language of every campaign — clean, considered, and unmistakably on-brand.",
+    bio: "Palak gives the strategy a face. She designs the visual language of every campaign, clean, considered, and unmistakably on brand.",
     focus: ["Visual design", "Brand identity", "Content"],
   },
 ];
@@ -92,7 +92,7 @@ function Asterisk({ className = "" }: { className?: string }) {
 }
 
 /* ------------------------------------------------------------------ */
-/*  TeamCard — 3D cursor-tilt portrait with depth layers               */
+/*  TeamCard, 3D cursor-tilt portrait with depth layers               */
 /* ------------------------------------------------------------------ */
 function TeamCard({
   m,
@@ -172,7 +172,7 @@ function TeamCard({
           style={{ ["--tw-ring-color" as string]: accent.a }}
         />
 
-        {/* index number — pops forward in 3D */}
+        {/* index number, pops forward in 3D */}
         <span
           className="serif absolute left-4 top-3 text-5xl leading-none text-cream/85 drop-shadow-lg"
           style={{ transform: "translateZ(45px)" }}
@@ -191,7 +191,7 @@ function TeamCard({
           <Asterisk className="h-5 w-5" />
         </motion.span>
 
-        {/* open button — scales + rotates in, floats forward */}
+        {/* open button, scales + rotates in, floats forward */}
         <span
           className="absolute bottom-4 right-4 flex h-11 w-11 scale-75 items-center justify-center rounded-full text-cream opacity-0 transition-all duration-300 group-hover:scale-100 group-hover:opacity-100"
           style={{ background: accent.a, transform: "translateZ(55px)" }}
@@ -248,7 +248,7 @@ function ProfileModal({ member, onClose }: { member: Member; onClose: () => void
       onClick={onClose}
       role="dialog"
       aria-modal="true"
-      aria-label={`${member.n} — ${member.r}`}
+      aria-label={`${member.n}, ${member.r}`}
     >
       <div className="absolute inset-0 bg-ink/70 backdrop-blur-sm" />
 
@@ -270,7 +270,7 @@ function ProfileModal({ member, onClose }: { member: Member; onClose: () => void
         </button>
 
         <div className="grid md:grid-cols-[0.92fr_1.08fr]">
-          {/* Editorial cover — portrait as a magazine feature */}
+          {/* Editorial cover, portrait as a magazine feature */}
           <div className="relative overflow-hidden bg-ink">
             <div className="aspect-[4/3] w-full md:aspect-auto md:h-full">
               <motion.img
@@ -328,7 +328,7 @@ function ProfileModal({ member, onClose }: { member: Member; onClose: () => void
             </div>
 
             <div className="mt-auto flex items-center justify-between pt-8 text-ink-soft">
-              <span className="serif-italic text-sm">— Sorta Famous</span>
+              <span className="serif-italic text-sm">Sorta Famous</span>
               <span className="eyebrow">Mumbai</span>
             </div>
           </div>

@@ -3,11 +3,11 @@
 import { motion } from "framer-motion";
 
 /**
- * HeroOrbit — a decorative right-side visual for the Services / About heroes.
+ * HeroOrbit, a decorative right-side visual for the Services / About heroes.
  * It echoes the home hero's circular motif (the soft cream disc) but is its own
  * thing: the brand's eight-point asterisk turns slowly at the centre of an
  * orbit, dotted rings rotate in opposite directions for depth, and four labels
- * float around the edge. Purely decorative — hidden from assistive tech.
+ * float around the edge. Purely decorative, hidden from assistive tech.
  *
  * Each page passes its own `chips` (Services → practices, About → values) so
  * the visual is shared but never identical between pages.
@@ -42,7 +42,7 @@ export function HeroOrbit({ chips }: { chips: string[] }) {
       aria-hidden="true"
       className="relative mx-auto aspect-square w-full max-w-[520px] select-none"
     >
-      {/* soft cream disc — the shared home-hero motif */}
+      {/* soft cream disc, the shared home-hero motif */}
       <div className="absolute inset-[10%] rounded-full bg-[#e4ddce]" />
       <div className="absolute inset-[10%] rounded-full bg-gradient-to-br from-cream/40 to-transparent" />
 
@@ -75,7 +75,7 @@ export function HeroOrbit({ chips }: { chips: string[] }) {
         </motion.div>
       </div>
 
-      {/* floating labels — gentle independent bob */}
+      {/* floating labels, gentle independent bob */}
       {chips.slice(0, 4).map((label, i) => (
         <motion.div
           key={label}

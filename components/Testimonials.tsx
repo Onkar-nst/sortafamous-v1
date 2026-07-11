@@ -6,13 +6,13 @@ import { Star } from "lucide-react";
 import { Reveal } from "./Reveal";
 
 /**
- * Testimonials — a native rebuild of the bundle's "Insights from Industry
+ * Testimonials, a native rebuild of the bundle's "Insights from Industry
  * Partners" section. The big serif title stays pinned in the centre (CSS
  * `sticky`) while the testimonial cards stream up past it on either side, and
- * the asterisk rotates with scroll — reproduced with framer-motion instead of
+ * the asterisk rotates with scroll, reproduced with framer-motion instead of
  * the original GSAP ScrollTrigger pin.
  *
- * NOTE: the quotes below are placeholders — Sorta Famous has no cleared client
+ * NOTE: the quotes below are placeholders, Sorta Famous has no cleared client
  * quotes yet. Swap in real names, companies and words when available.
  */
 
@@ -46,7 +46,7 @@ const testimonials: Testimonial[] = [
     role: "Brand Lead",
     company: "Marigold",
     quote:
-      "They have a rare instinct for what makes a brand worth talking about — visibility that felt earned, not manufactured.",
+      "They have a rare instinct for what makes a brand worth talking about, visibility that felt earned, not manufactured.",
     avatar: "/images/testimonial/sec8-avatar-3.webp",
   },
   {
@@ -54,7 +54,7 @@ const testimonials: Testimonial[] = [
     role: "Head of Growth",
     company: "Overstory",
     quote:
-      "Strategic, sharp, and genuinely honest. The right kind of attention showed up — and it stuck.",
+      "Strategic, sharp, and genuinely honest. The right kind of attention showed up, and it stuck.",
     avatar: "/images/testimonial/sec8-avatar-4.webp",
   },
 ];
@@ -104,7 +104,7 @@ function Card({ t }: { t: Testimonial }) {
 
 /**
  * Eight-point asterisk (from the bundle) that rotates as the page scrolls.
- * The rotation is driven by the parent section's scroll progress — the marker
+ * The rotation is driven by the parent section's scroll progress, the marker
  * lives inside a `sticky` container, so tracking its own position would freeze
  * once pinned.
  */
@@ -191,7 +191,7 @@ export function Testimonials() {
         <div className="mx-auto mt-16 max-w-xl text-center md:mt-24">
           <Reveal>
             <p className="serif text-xl text-ink-soft md:text-2xl">
-              Real words from the founders and brands we&apos;ve helped get noticed — and the
+              Real words from the founders and brands we&apos;ve helped get noticed, and the
               results that followed.
             </p>
           </Reveal>

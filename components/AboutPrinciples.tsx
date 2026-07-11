@@ -16,7 +16,7 @@ const principles: Principle[] = [
   {
     n: "01",
     t: "Strategy Over Shortcuts",
-    d: "No clout chasing, no mass blasts. We rely on research-driven storytelling that earns genuine editorial interest.",
+    d: "No clout chasing, no mass blasts. We rely on research driven storytelling that earns genuine editorial interest.",
     Icon: Compass,
   },
   {
@@ -79,7 +79,7 @@ export function AboutPrinciples() {
               />
 
               <div className="relative flex items-start justify-between">
-                {/* icon — settles in, flips to solid + rotates on hover */}
+                {/* icon, settles in, flips to solid + rotates on hover */}
                 <motion.span
                   className="grid h-12 w-12 place-items-center rounded-2xl bg-accent/12 text-accent transition-colors duration-500 group-hover:bg-accent group-hover:text-cream"
                   initial={{ scale: 0.6, opacity: 0, rotate: -12 }}
