@@ -21,12 +21,14 @@ import {
 // fans out to (near) full width in an arc.
 // End shape (baseX+dx, baseY+dy): outer two drop low to flank the statement,
 // the inner two rise up, the centre stays put — a wide asymmetric scatter.
+// m* are the mobile equivalents, scaled down so all five avatars stay on a
+// narrow viewport — the desktop pixel offsets would fly off-screen.
 const AVATARS = [
-  { src: "/images/scatter/avatar-15.webp", baseX: -300, baseY: 0, dx: -355, dy: 175, z: 1 },
-  { src: "/images/scatter/avatar-16.webp", baseX: -150, baseY: 0, dx: -200, dy: -60, z: 2 },
-  { src: "/images/scatter/avatar-17.webp", baseX: 0, baseY: 0, dx: 0, dy: 0, z: 5 },
-  { src: "/images/scatter/avatar-18.webp", baseX: 150, baseY: 0, dx: 200, dy: -60, z: 4 },
-  { src: "/images/scatter/avatar-19.webp", baseX: 300, baseY: 0, dx: 355, dy: 175, z: 3 },
+  { src: "/images/scatter/avatar-15.webp", baseX: -300, dx: -355, dy: 175, mBaseX: -70, mdx: -80, mdy: 55, z: 1 },
+  { src: "/images/scatter/avatar-16.webp", baseX: -150, dx: -200, dy: -60, mBaseX: -35, mdx: -45, mdy: -25, z: 2 },
+  { src: "/images/scatter/avatar-17.webp", baseX: 0, dx: 0, dy: 0, mBaseX: 0, mdx: 0, mdy: 0, z: 5 },
+  { src: "/images/scatter/avatar-18.webp", baseX: 150, dx: 200, dy: -60, mBaseX: 35, mdx: 45, mdy: -25, z: 4 },
+  { src: "/images/scatter/avatar-19.webp", baseX: 300, dx: 355, dy: 175, mBaseX: 70, mdx: 80, mdy: 55, z: 3 },
 ];
 
 // Real Sorta Famous brand statements, rotated as the big reveal line.
@@ -50,22 +52,31 @@ const slideVariants = {
 function ScatterAvatar({
   src,
   baseX,
-  baseY,
   dx,
   dy,
+  mBaseX,
+  mdx,
+  mdy,
   z,
   progress,
+  isMobile,
 }: {
   src: string;
   baseX: number;
-  baseY: number;
   dx: number;
   dy: number;
+  mBaseX: number;
+  mdx: number;
+  mdy: number;
   z: number;
   progress: MotionValue<number>;
+  isMobile: boolean;
 }) {
-  const x = useTransform(progress, [0, 1], [baseX, baseX + dx]);
-  const y = useTransform(progress, [0, 1], [baseY, baseY + dy]);
+  const startX = isMobile ? mBaseX : baseX;
+  const endX = isMobile ? mBaseX + mdx : baseX + dx;
+  const endY = isMobile ? mdy : dy;
+  const x = useTransform(progress, [0, 1], [startX, endX]);
+  const y = useTransform(progress, [0, 1], [0, endY]);
   return (
     <motion.div
       style={{ x, y, zIndex: z }}
@@ -150,6 +161,17 @@ export function BrandQuote() {
   const [active, setActive] = useState(0);
   const [direction, setDirection] = useState(1);
 
+  // Match the max-[575px] breakpoint used for avatar sizing, so the scatter
+  // uses the smaller offsets on phones.
+  const [isMobile, setIsMobile] = useState(false);
+  useEffect(() => {
+    const mq = window.matchMedia("(max-width: 575px)");
+    const update = () => setIsMobile(mq.matches);
+    update();
+    mq.addEventListener("change", update);
+    return () => mq.removeEventListener("change", update);
+  }, []);
+
   const select = (i: number) => {
     setDirection(i >= active ? 1 : -1);
     setActive(i);
@@ -173,7 +195,7 @@ export function BrandQuote() {
         {/* Scatter avatars — a side-by-side row that fans out to full width on scroll */}
         <div className="relative mx-auto h-[220px] w-full max-w-[1480px] max-[575px]:h-[150px]">
           {AVATARS.map((a) => (
-            <ScatterAvatar key={a.src} {...a} progress={scrollYProgress} />
+            <ScatterAvatar key={a.src} {...a} progress={scrollYProgress} isMobile={isMobile} />
           ))}
         </div>
 

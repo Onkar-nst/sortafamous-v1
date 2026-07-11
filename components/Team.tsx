@@ -1,10 +1,15 @@
 "use client";
 
-import { useEffect, useState } from "react";
-import { AnimatePresence, motion } from "framer-motion";
-import { X } from "lucide-react";
+import { useEffect, useRef, useState } from "react";
+import {
+  AnimatePresence,
+  motion,
+  useMotionValue,
+  useSpring,
+} from "framer-motion";
+import { X, ArrowUpRight } from "lucide-react";
 import { Reveal } from "./Reveal";
-import { SectionHeader } from "./SectionHeader";
+import { EASE, Parallax } from "./motion";
 
 /**
  * Team roster — the real Sorta Famous team (sortafamous.in/about-us). The site
@@ -65,6 +70,13 @@ const team: Member[] = [
   },
 ];
 
+const ACCENTS = [
+  { a: "oklch(0.56 0.075 135)", t: "oklch(0.56 0.075 135 / 0.16)" }, // sage
+  { a: "oklch(0.68 0.12 75)", t: "oklch(0.68 0.12 75 / 0.16)" }, // ochre
+  { a: "oklch(0.63 0.15 35)", t: "oklch(0.63 0.15 35 / 0.16)" }, // terracotta
+  { a: "oklch(0.5 0.11 300)", t: "oklch(0.5 0.11 300 / 0.16)" }, // plum
+];
+
 /** Brand eight-point asterisk, used as the feature's masthead mark. */
 function Asterisk({ className = "" }: { className?: string }) {
   return (
@@ -76,6 +88,134 @@ function Asterisk({ className = "" }: { className?: string }) {
         fill="currentColor"
       />
     </svg>
+  );
+}
+
+/* ------------------------------------------------------------------ */
+/*  TeamCard — 3D cursor-tilt portrait with depth layers               */
+/* ------------------------------------------------------------------ */
+function TeamCard({
+  m,
+  i,
+  onOpen,
+}: {
+  m: Member;
+  i: number;
+  onOpen: () => void;
+}) {
+  const ref = useRef<HTMLButtonElement>(null);
+  const accent = ACCENTS[i % ACCENTS.length];
+
+  const rx = useSpring(useMotionValue(0), { stiffness: 150, damping: 15 });
+  const ry = useSpring(useMotionValue(0), { stiffness: 150, damping: 15 });
+
+  function move(e: React.MouseEvent<HTMLButtonElement>) {
+    const r = ref.current?.getBoundingClientRect();
+    if (!r) return;
+    const px = (e.clientX - r.left) / r.width;
+    const py = (e.clientY - r.top) / r.height;
+    ry.set((px - 0.5) * 16);
+    rx.set(-(py - 0.5) * 16);
+  }
+  function leave() {
+    rx.set(0);
+    ry.set(0);
+  }
+
+  const no = String(i + 1).padStart(2, "0");
+
+  return (
+    <motion.button
+      ref={ref}
+      type="button"
+      onClick={onOpen}
+      onMouseMove={move}
+      onMouseLeave={leave}
+      aria-label={`View ${m.n}'s profile`}
+      className="group block w-full text-left [transform-style:preserve-3d]"
+      initial={{ opacity: 0, y: 44, filter: "blur(12px)" }}
+      whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+      viewport={{ once: true, margin: "0px 0px -12% 0px" }}
+      transition={{ duration: 0.85, ease: EASE, delay: (i % 3) * 0.12 }}
+    >
+      <motion.div
+        style={{ rotateX: rx, rotateY: ry, transformPerspective: 1000, transformStyle: "preserve-3d" }}
+        className="relative mb-5 aspect-[3/4] overflow-hidden rounded-3xl bg-muted"
+      >
+        {/* accent halo behind image on hover */}
+        <div
+          aria-hidden
+          className="pointer-events-none absolute -inset-4 rounded-[2rem] opacity-0 blur-2xl transition-opacity duration-500 group-hover:opacity-100"
+          style={{ background: accent.t }}
+        />
+
+        <img
+          src={m.img}
+          alt={m.n}
+          loading="lazy"
+          className="h-full w-full scale-100 object-cover grayscale transition-all duration-[900ms] ease-out group-hover:scale-[1.06] group-hover:grayscale-0"
+        />
+
+        {/* accent gradient wash blooms in on hover */}
+        <div
+          aria-hidden
+          className="pointer-events-none absolute inset-0 opacity-0 transition-opacity duration-500 group-hover:opacity-100"
+          style={{ background: `linear-gradient(to top, ${accent.a}, transparent 55%)`, mixBlendMode: "multiply" }}
+        />
+        {/* readability veil */}
+        <div aria-hidden className="pointer-events-none absolute inset-0 bg-gradient-to-t from-ink/40 via-transparent to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
+
+        {/* animated accent ring */}
+        <div
+          aria-hidden
+          className="pointer-events-none absolute inset-0 rounded-3xl ring-2 ring-inset opacity-0 transition-opacity duration-500 group-hover:opacity-100"
+          style={{ ["--tw-ring-color" as string]: accent.a }}
+        />
+
+        {/* index number — pops forward in 3D */}
+        <span
+          className="serif absolute left-4 top-3 text-5xl leading-none text-cream/85 drop-shadow-lg"
+          style={{ transform: "translateZ(45px)" }}
+        >
+          {no}
+        </span>
+
+        {/* spinning asterisk badge */}
+        <motion.span
+          aria-hidden
+          className="absolute right-4 top-4 text-cream/0 transition-colors duration-500 group-hover:text-cream/90"
+          style={{ transform: "translateZ(40px)" }}
+          animate={{ rotate: 360 }}
+          transition={{ duration: 18, ease: "linear", repeat: Infinity }}
+        >
+          <Asterisk className="h-5 w-5" />
+        </motion.span>
+
+        {/* open button — scales + rotates in, floats forward */}
+        <span
+          className="absolute bottom-4 right-4 flex h-11 w-11 scale-75 items-center justify-center rounded-full text-cream opacity-0 transition-all duration-300 group-hover:scale-100 group-hover:opacity-100"
+          style={{ background: accent.a, transform: "translateZ(55px)" }}
+        >
+          <ArrowUpRight className="h-5 w-5 transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5" strokeWidth={1.8} />
+        </span>
+      </motion.div>
+
+      {/* name + role with growing accent underline */}
+      <h3 className="serif text-2xl">
+        <span className="relative inline-block">
+          {m.n}
+          <span
+            aria-hidden
+            className="absolute -bottom-1 left-0 h-[2px] w-full origin-left scale-x-0 rounded-full transition-transform duration-500 group-hover:scale-x-100"
+            style={{ background: accent.a }}
+          />
+        </span>
+      </h3>
+      <p className="mt-1.5 flex items-center gap-2 text-sm text-ink-soft">
+        <span className="h-1.5 w-1.5 rounded-full transition-colors duration-500" style={{ background: accent.a }} />
+        {m.r}
+      </p>
+    </motion.button>
   );
 }
 
@@ -202,37 +342,58 @@ export function Team() {
   const [selected, setSelected] = useState<Member | null>(null);
 
   return (
-    <section className="relative z-[110] bg-cream py-16 md:py-28 px-6 md:px-12 lg:px-16 xl:px-28 border-t border-border">
-      <div className="mx-auto max-w-[1480px]">
-        <SectionHeader
-          eyebrow="The people"
-          title={<>Meet the <span className="serif-italic">team</span></>}
-          className="mb-14"
-        />
-        <div className="grid grid-cols-2 lg:grid-cols-3 gap-6">
-          {team.map((m, i) => (
-            <Reveal key={m.n} delay={i * 80}>
-              <button
-                type="button"
-                onClick={() => setSelected(m)}
-                aria-label={`View ${m.n}'s profile`}
-                className="group block w-full text-left"
-              >
-                <div className="relative aspect-[3/4] rounded-3xl overflow-hidden bg-muted mb-5">
-                  <img
-                    src={m.img}
-                    alt={m.n}
-                    loading="lazy"
-                    className="h-full w-full object-cover grayscale group-hover:grayscale-0 transition duration-700"
-                  />
-                  <span className="absolute bottom-4 right-4 flex h-10 w-10 translate-y-2 items-center justify-center rounded-full bg-cream/90 text-ink opacity-0 backdrop-blur transition-all duration-300 group-hover:translate-y-0 group-hover:opacity-100">
-                    <span className="text-xl leading-none">+</span>
-                  </span>
-                </div>
-                <h3 className="serif text-2xl">{m.n}</h3>
-                <p className="text-sm text-ink-soft mt-1">{m.r}</p>
-              </button>
+    <section className="relative z-[110] overflow-hidden bg-cream py-16 md:py-28 px-6 md:px-12 lg:px-16 xl:px-28 border-t border-border">
+      {/* drifting ambient accent blobs */}
+      <motion.div
+        aria-hidden
+        className="pointer-events-none absolute -left-24 top-40 h-72 w-72 rounded-full blur-[100px]"
+        style={{ background: "oklch(0.56 0.075 135 / 0.12)" }}
+        animate={{ y: [0, 40, 0], x: [0, 20, 0] }}
+        transition={{ duration: 14, ease: "easeInOut", repeat: Infinity }}
+      />
+      <motion.div
+        aria-hidden
+        className="pointer-events-none absolute -right-24 bottom-24 h-80 w-80 rounded-full blur-[110px]"
+        style={{ background: "oklch(0.63 0.15 35 / 0.10)" }}
+        animate={{ y: [0, -50, 0], x: [0, -24, 0] }}
+        transition={{ duration: 18, ease: "easeInOut", repeat: Infinity }}
+      />
+
+      <div className="relative mx-auto max-w-[1480px]">
+        {/* animated masthead */}
+        <div className="mb-14 flex items-end justify-between gap-6">
+          <div>
+            <Reveal>
+              <div className="eyebrow mb-3 flex items-center gap-2">
+                <span className="h-1.5 w-1.5 rounded-full bg-accent" /> The people
+              </div>
             </Reveal>
+            <Reveal delay={80}>
+              <h2 className="serif flex items-center gap-4 text-4xl md:text-6xl">
+                Meet the <span className="serif-italic">team</span>
+                <motion.span
+                  aria-hidden
+                  className="text-accent"
+                  animate={{ rotate: 360 }}
+                  transition={{ duration: 24, ease: "linear", repeat: Infinity }}
+                >
+                  <Asterisk className="h-7 w-7 md:h-9 md:w-9" />
+                </motion.span>
+              </h2>
+            </Reveal>
+          </div>
+          <Reveal delay={120}>
+            <div className="serif-italic text-sm text-ink-soft shrink-0">
+              / {String(team.length).padStart(2, "0")} humans / ©
+            </div>
+          </Reveal>
+        </div>
+
+        <div className="grid grid-cols-2 gap-6 lg:grid-cols-3">
+          {team.map((m, i) => (
+            <Parallax key={m.n} amount={[34, 62, 46][i % 3]}>
+              <TeamCard m={m} i={i} onOpen={() => setSelected(m)} />
+            </Parallax>
           ))}
         </div>
       </div>

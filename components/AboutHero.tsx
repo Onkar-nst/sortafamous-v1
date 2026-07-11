@@ -1,8 +1,15 @@
 "use client";
 
 import { Reveal } from "./Reveal";
-import { Parallax } from "./motion";
+import { Counter } from "./motion";
 import { WordCascade } from "./WordCascade";
+
+const stats = [
+  { to: 250, suffix: "+", label: "Media features earned" },
+  { to: 90, suffix: "+", label: "Brands made famous" },
+  { to: 40, suffix: "+", label: "Tier-1 placements / year" },
+  { to: 98, suffix: "%", label: "Client retention" },
+];
 
 export function AboutHero() {
   return (
@@ -35,15 +42,27 @@ export function AboutHero() {
         </div>
 
         <Reveal delay={200}>
-          <div className="mt-12 md:mt-16 overflow-hidden rounded-[2rem] bg-muted">
-            <Parallax amount={40} className="aspect-[16/8] md:aspect-[16/6]">
-              <img
-                src="/images/art/story-strategy.jpg"
-                alt="The Sorta Famous studio at work"
-                className="h-[120%] w-full object-cover"
-                loading="lazy"
-              />
-            </Parallax>
+          <div className="mt-12 md:mt-16">
+            <div className="eyebrow mb-5 flex items-center gap-2">
+              <span className="h-1.5 w-1.5 rounded-full bg-accent" /> By the numbers
+            </div>
+            <div className="overflow-hidden rounded-[2rem] border border-border">
+              <div className="grid grid-cols-2 gap-px bg-border md:grid-cols-4">
+                {stats.map((s) => (
+                  <div
+                    key={s.label}
+                    className="group bg-card p-8 md:p-10 transition-colors duration-500 hover:bg-cream"
+                  >
+                    <Counter
+                      to={s.to}
+                      suffix={s.suffix}
+                      className="serif text-5xl md:text-6xl leading-none text-ink transition-colors duration-500 group-hover:text-brand"
+                    />
+                    <div className="mt-4 text-sm text-ink-soft leading-snug">{s.label}</div>
+                  </div>
+                ))}
+              </div>
+            </div>
           </div>
         </Reveal>
       </div>

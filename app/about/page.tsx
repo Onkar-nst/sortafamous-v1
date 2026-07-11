@@ -4,6 +4,7 @@ import { AboutHero } from "@/components/AboutHero";
 import { AboutManifesto } from "@/components/AboutManifesto";
 import { AboutPrinciples } from "@/components/AboutPrinciples";
 import { AboutValues } from "@/components/AboutValues";
+import { AboutNote } from "@/components/AboutNote";
 import { AboutPhilosophy } from "@/components/AboutPhilosophy";
 import { Team } from "@/components/Team";
 import { CTA } from "@/components/CTA";
@@ -29,6 +30,7 @@ export default function AboutPage() {
         <AboutManifesto />
         <AboutPrinciples />
         <AboutValues />
+        <AboutNote />
         <AboutPhilosophy />
         <Team />
         <CTA />

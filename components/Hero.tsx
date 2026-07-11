@@ -31,20 +31,21 @@ export function Hero() {
     mq.addEventListener("change", update);
     return () => mq.removeEventListener("change", update);
   }, []);
-  // Gentle parallax: image drifts up, whole hero fades as sections blanket over it.
-  const imgY = useTransform(scrollYProgress, [0, 1], ["0%", isDesktop ? "-32%" : "-50%"]);
+  // Gentle parallax on desktop only; on mobile the statue sits in normal flow
+  // below the copy, so no vertical drift (it would leave a gap).
+  const imgY = useTransform(scrollYProgress, [0, 1], ["0%", isDesktop ? "-32%" : "0%"]);
   const opacity = useTransform(scrollYProgress, [0, 0.85], [1, 0]);
 
   return (
     <section
       ref={ref}
-      className="sticky top-0 h-[100svh] overflow-hidden bg-cream"
+      className="relative min-h-[100svh] overflow-hidden bg-cream lg:sticky lg:top-0 lg:h-[100svh] lg:min-h-0"
     >
       <motion.div
         style={{ opacity }}
         className="relative lg:absolute lg:inset-0 px-6 md:px-12 lg:px-16 xl:px-28 pt-24 pb-8 lg:pt-24 lg:pb-16"
       >
-        <div className="mx-auto max-w-[1480px] min-h-[80svh] lg:min-h-0 lg:h-full relative">
+        <div className="mx-auto max-w-[1480px] lg:h-full relative">
           <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 lg:h-full lg:items-end">
             <div className="relative z-10 order-1 lg:order-none lg:pb-[7vh]">
               <motion.span
@@ -117,7 +118,7 @@ export function Hero() {
 
             <motion.div
               style={{ y: imgY }}
-              className="pointer-events-none absolute inset-x-0 bottom-0 z-0 h-[44vh] order-2 lg:pointer-events-auto lg:relative lg:inset-auto lg:z-auto lg:h-full lg:order-last"
+              className="relative z-0 mt-2 h-[46vh] order-last lg:mt-0 lg:h-full"
             >
               {/* solid circle backdrop behind the bust — desktop only, image sits on top */}
               <div
