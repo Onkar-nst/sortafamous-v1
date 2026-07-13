@@ -4,18 +4,18 @@ import { Nav } from "@/components/Nav";
 import { Hero } from "@/components/Hero";
 import { About } from "@/components/About";
 // import { OurClients } from "@/components/OurClients"; // hidden for now
-import { Clients } from "@/components/Clients";
+// import { Clients } from "@/components/Clients"; // hidden for now, minimal homepage
 // import { Bento } from "@/components/Bento"; // hidden for now
 import { Services } from "@/components/Services";
 // import { Craft } from "@/components/Craft"; // hidden for now
 import { Process } from "@/components/Process";
-import { Values } from "@/components/Values";
+// Values now lives inside <About /> — the "Who we are" & "Our values" sections are merged.
 import { Work } from "@/components/Work";
 import { Team } from "@/components/Team";
-import { Testimonials } from "@/components/Testimonials";
-import { BrandQuote } from "@/components/BrandQuote";
+// import { Testimonials } from "@/components/Testimonials"; // hidden for now, minimal homepage
+// import { BrandQuote } from "@/components/BrandQuote"; // removed per brief (avatar scatter section)
 // import { Pricing } from "@/components/Pricing"; // hidden for now
-import { Journal } from "@/components/Journal";
+// import { Journal } from "@/components/Journal"; // hidden for now, minimal homepage
 import { CTA } from "@/components/CTA";
 import { FAQ } from "@/components/FAQ";
 import { Contact } from "@/components/Contact";
@@ -40,19 +40,19 @@ export default function Home() {
         {/* Wrapper makes following sections scroll OVER the sticky hero like a blanket */}
         <div className="relative z-10 bg-cream">
           {/* <OurClients /> hidden for now */}
+          {/* About now includes the merged "Our values" content */}
           <About />
-          <Values />
+          {/* <Clients /> hidden for now, minimal homepage */}
           {/* <Bento /> hidden for now */}
-          <Clients />
           <Services />
           {/* <Craft /> hidden for now */}
           <Process />
           <Work />
           <Team />
-          <Testimonials />
-          <BrandQuote />
+          {/* <Testimonials /> hidden for now, minimal homepage */}
+          {/* <BrandQuote /> removed per brief */}
           {/* <Pricing /> hidden for now */}
-          <Journal />
+          {/* <Journal /> hidden for now, minimal homepage */}
           <CTA />
           <FAQ />
           <Contact />

@@ -95,7 +95,7 @@ export function Contact() {
 
               <a
                 href="mailto:hellothere@sortafamous.in"
-                className="mt-10 inline-flex w-full items-center justify-center gap-2 rounded-full bg-ink text-cream px-8 py-4 text-sm hover:opacity-90 transition"
+                className="mt-10 inline-flex w-full items-center justify-center gap-2 rounded-full bg-brand text-cream px-8 py-4 text-sm hover:opacity-90 transition"
               >
                 Let&apos;s get Sorta Famous <ArrowRight className="h-4 w-4" />
               </a>

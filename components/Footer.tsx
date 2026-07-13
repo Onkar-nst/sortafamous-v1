@@ -52,7 +52,7 @@ export function Footer() {
 
           <div className="flex flex-col md:items-end md:text-right justify-between gap-8">
             <h2 className="serif text-[clamp(2rem,4vw,3.6rem)] leading-[1.05] max-w-md">
-              Let&apos;s get you <span className="serif-italic text-brand">Sorta Famous.</span>
+              Let&apos;s get you <span className="serif-italic text-accent">Sorta Famous.</span>
             </h2>
             <a
               href="/contact"

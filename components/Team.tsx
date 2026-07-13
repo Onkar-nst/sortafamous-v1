@@ -140,7 +140,7 @@ function TeamCard({
     >
       <motion.div
         style={{ rotateX: rx, rotateY: ry, transformPerspective: 1000, transformStyle: "preserve-3d" }}
-        className="relative mb-5 aspect-[3/4] overflow-hidden rounded-3xl bg-muted"
+        className="relative mb-4 aspect-[4/3] overflow-hidden rounded-3xl bg-muted"
       >
         {/* accent halo behind image on hover */}
         <div
@@ -153,7 +153,7 @@ function TeamCard({
           src={m.img}
           alt={m.n}
           loading="lazy"
-          className="h-full w-full scale-100 object-cover grayscale transition-all duration-[900ms] ease-out group-hover:scale-[1.06] group-hover:grayscale-0"
+          className="h-full w-full scale-100 object-cover object-[center_20%] grayscale transition-all duration-[900ms] ease-out group-hover:scale-[1.06] group-hover:grayscale-0"
         />
 
         {/* accent gradient wash blooms in on hover */}

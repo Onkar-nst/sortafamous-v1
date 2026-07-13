@@ -10,7 +10,7 @@ function Logo() {
   return (
     <a href="/" aria-label="Sorta Famous, home" className="inline-flex items-center">
       <img
-        src="/logo-mark.png"
+        src="/new-logo-final.png"
         alt="Sorta Famous"
         className="h-7 md:h-9 w-auto select-none"
         draggable={false}
@@ -92,7 +92,7 @@ export function Nav() {
                 </a>
               ))}
             </nav>
-            <a href="/contact" className="hidden sm:inline-flex items-center gap-2 rounded-full bg-ink text-cream px-5 py-2.5 text-sm hover:opacity-90 transition">
+            <a href="/contact" className="hidden sm:inline-flex items-center gap-2 rounded-full bg-brand text-cream px-5 py-2.5 text-sm hover:opacity-90 transition">
               Get Started
             </a>
             {/* hamburger / close */}
@@ -100,7 +100,7 @@ export function Nav() {
               aria-label={open ? "Close menu" : "Open menu"}
               aria-expanded={open}
               onClick={() => setOpen((o) => !o)}
-              className="h-10 w-10 grid place-items-center rounded-full bg-ink text-cream lg:hidden"
+              className="h-10 w-10 grid place-items-center rounded-full bg-brand text-cream lg:hidden"
             >
               <span className="relative block h-4 w-4">
                 <motion.span
@@ -156,7 +156,7 @@ export function Nav() {
               <a
                 href="/contact"
                 onClick={() => setOpen(false)}
-                className="w-full inline-flex items-center justify-center gap-2 rounded-full bg-ink text-cream px-6 py-4 text-sm active:opacity-80"
+                className="w-full inline-flex items-center justify-center gap-2 rounded-full bg-brand text-cream px-6 py-4 text-sm active:opacity-80"
               >
                 Let&apos;s get Sorta Famous <span aria-hidden>→</span>
               </a>

@@ -83,7 +83,7 @@ export function Services() {
   return (
     <section
       id="services"
-      className="relative z-[60] bg-cream py-16 md:py-28 px-6 md:px-12 lg:px-16 xl:px-28 border-t border-border overflow-hidden"
+      className="relative z-[60] -mt-8 rounded-t-[2.5rem] bg-cream py-16 md:py-24 px-6 md:px-12 lg:px-16 xl:px-28 overflow-hidden"
     >
       {/* faint dotted texture in the top-right, tinted by the hovered service */}
       <div

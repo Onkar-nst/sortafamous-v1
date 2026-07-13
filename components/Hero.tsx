@@ -89,7 +89,7 @@ export function Hero() {
                 <Magnetic strength={0.4}>
                   <a
                     href="/contact"
-                    className="inline-flex items-center gap-2 rounded-full bg-ink text-cream px-6 py-3.5 text-sm hover:opacity-90 transition"
+                    className="inline-flex items-center gap-2 rounded-full bg-brand text-cream px-6 py-3.5 text-sm hover:opacity-90 transition"
                   >
                     Let&apos;s get Sorta Famous
                   </a>

@@ -13,18 +13,18 @@ const cases = [
 
 export function Work() {
   return (
-    <section className="relative z-[100] bg-cream py-16 md:py-28 px-6 md:px-12 lg:px-16 xl:px-28 rounded-t-[2.5rem]">
+    <section className="relative z-[100] bg-cream py-16 md:py-24 px-6 md:px-12 lg:px-16 xl:px-28 rounded-t-[2.5rem]">
       <div className="mx-auto max-w-[1480px]">
         <SectionHeader
           eyebrow="In practice"
           title={<>Selected <span className="serif-italic">work</span></>}
-          className="mb-14"
+          className="mb-10"
         />
-        <div className="grid md:grid-cols-2 gap-6">
+        <div className="grid md:grid-cols-2 gap-5">
           {cases.map((c, i) => (
             <Reveal key={c.t} delay={(i % 2) * 100}>
               <a href="#" className="group block">
-                <div className="relative aspect-[16/10] md:aspect-[5/2] rounded-3xl overflow-hidden bg-muted">
+                <div className="relative aspect-[16/9] md:aspect-[13/5] rounded-3xl overflow-hidden bg-muted">
                   <Parallax amount={30} className="absolute inset-0">
                     <img
                       src={c.img}
@@ -43,9 +43,9 @@ export function Work() {
                       ↗
                     </span>
                   </span>
-                  <div className="absolute bottom-0 left-0 p-8 text-cream">
-                    <h3 className="serif text-4xl md:text-5xl">{c.t}</h3>
-                    <p className="text-cream/80 mt-1">{c.d}</p>
+                  <div className="absolute bottom-0 left-0 p-6 text-cream">
+                    <h3 className="serif text-3xl md:text-4xl">{c.t}</h3>
+                    <p className="text-cream/80 mt-1 text-sm">{c.d}</p>
                   </div>
                 </div>
               </a>

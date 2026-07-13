@@ -19,18 +19,6 @@ const faqs = [
     q: "What is your pricing model?",
     a: "Most partnerships run as a monthly retainer scoped to your goals, with project based options for launches and standalone campaigns. We share a clear proposal after our first call, no surprises.",
   },
-  {
-    q: "Who will I be working with?",
-    a: "A dedicated lead strategist supported by our PR, content and social specialists. You get a single point of contact and a team that actually knows your brand, not a rotating cast of account managers.",
-  },
-  {
-    q: "How do you measure success?",
-    a: "We agree on the metrics that matter to you up front, earned media, share of voice, qualified inbound, follower and engagement growth, and report against them transparently every month.",
-  },
-  {
-    q: "How long until we see results?",
-    a: "Momentum builds from the first month, but meaningful reputation and visibility compound over a quarter or two. We're built for lasting credibility, not a one-week spike.",
-  },
 ];
 
 export function FAQ() {
@@ -62,7 +50,7 @@ export function FAQ() {
                     <h3 className={`serif text-2xl md:text-4xl flex-1 transition-colors duration-300 ${isOpen ? "" : "group-hover:text-ink-soft"}`}>
                       {f.q}
                     </h3>
-                    <span className="relative h-11 w-11 shrink-0 rounded-full border border-ink/25 grid place-items-center group-hover:bg-ink group-hover:text-cream transition-colors duration-300">
+                    <span className="relative h-11 w-11 shrink-0 rounded-full border border-ink/25 grid place-items-center group-hover:bg-brand group-hover:text-cream transition-colors duration-300">
                       <span className="absolute h-px w-4 bg-current" />
                       <motion.span
                         className="absolute h-4 w-px bg-current"

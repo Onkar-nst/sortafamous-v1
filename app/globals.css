@@ -30,9 +30,10 @@
   --muted: oklch(0.9 0.015 86);
   --muted-foreground: oklch(0.45 0.012 80);
   --border: oklch(0.85 0.018 86);
-  /* Brand sage green, sampled from the Sorta Famous logo (#607058). */
-  --brand: oklch(0.525 0.041 135);
-  --accent: oklch(0.56 0.075 135);
+  /* Deep forest green, sampled from the new Sorta Famous logo (#26533f).
+     Used for solid brand surfaces/buttons that were previously near-black. */
+  --brand: oklch(0.42 0.062 162);
+  --accent: oklch(0.6 0.09 156);
   --card: oklch(0.965 0.012 86);
   --card-foreground: var(--ink);
   --font-display: var(--font-instrument), "Cormorant Garamond", Georgia, serif;
@@ -61,10 +62,10 @@
   background: oklch(0.9 0.02 86); font-size: 0.78rem;
 }
 
-/* Deep green to black gradient used on the site's dark panels. */
+/* Deep forest-green gradient used on the site's dark panels (brand green, not black). */
 @utility bg-ink-gradient {
-  background-color: var(--ink);
-  background-image: linear-gradient(145deg, oklch(0.37 0.078 150) 0%, oklch(0.25 0.042 150) 44%, oklch(0.165 0.012 150) 100%);
+  background-color: oklch(0.24 0.03 162);
+  background-image: linear-gradient(145deg, oklch(0.44 0.075 158) 0%, oklch(0.32 0.055 160) 44%, oklch(0.22 0.03 163) 100%);
 }
 
 @keyframes marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }

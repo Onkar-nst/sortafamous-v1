@@ -32,7 +32,7 @@ export function Preloader() {
           }}
         >
           <motion.img
-            src="/logo-mark.png"
+            src="/new-logo-final.png"
             alt="Sorta Famous"
             className="h-14 md:h-20 w-auto select-none"
             draggable={false}
