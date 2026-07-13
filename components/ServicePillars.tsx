@@ -1,6 +1,6 @@
 "use client";
 
-import { Megaphone, Gem, Share2, ArrowUpRight, type LucideIcon } from "lucide-react";
+import { Megaphone, Gem, Share2, type LucideIcon } from "lucide-react";
 import { Reveal } from "./Reveal";
 import { SectionHeader } from "./SectionHeader";
 import { EASE } from "./motion";
@@ -170,28 +170,6 @@ export function ServicePillars() {
                         </motion.li>
                       ))}
                     </ul>
-
-                    <a
-                      href="#plans"
-                      className="group/link mt-9 inline-flex items-center gap-2 rounded-pill border px-5 py-2.5 text-sm transition-colors duration-300"
-                      style={{ borderColor: p.tint }}
-                      onMouseEnter={(e) => {
-                        e.currentTarget.style.background = p.accent;
-                        e.currentTarget.style.color = "var(--cream)";
-                        e.currentTarget.style.borderColor = p.accent;
-                      }}
-                      onMouseLeave={(e) => {
-                        e.currentTarget.style.background = "transparent";
-                        e.currentTarget.style.color = "inherit";
-                        e.currentTarget.style.borderColor = p.tint;
-                      }}
-                    >
-                      Explore this practice
-                      <ArrowUpRight
-                        className="h-4 w-4 transition-transform duration-300 group-hover/link:translate-x-0.5 group-hover/link:-translate-y-0.5"
-                        strokeWidth={1.8}
-                      />
-                    </a>
                   </div>
                 </div>
               </Reveal>
