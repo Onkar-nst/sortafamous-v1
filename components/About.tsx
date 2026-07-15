@@ -8,7 +8,6 @@ import {
 } from "framer-motion";
 import { useRef, type CSSProperties } from "react";
 import { BotanicalBranch } from "./BotanicalBranch";
-import { Reveal } from "./Reveal";
 
 const CREAM = "#f1ebdf";
 // Deep brand forest green (from the new logo) — replaces the old near-black
@@ -19,15 +18,6 @@ const INK = "#1e3b2c";
 const TEXT =
   "We're Sorta Famous, helping founders, startups and modern brands earn the right kind of attention. We don't chase clout we shape reputations. Visibility sticks, and it's the smart kind.";
 const ITALIC = new Set([1, 2]); // "Sorta Famous"
-
-// Our values, merged into this section so "Who we are" and "Our values" read as
-// one continuous story, resolving onto the same deep-green canvas.
-const values = [
-  { t: "Our Vision", d: "Empowering brands to own their narrative and lead with influence in the digital era." },
-  { t: "Our Mission", d: "Delivering impactful strategies that combine creativity, authenticity and measurable results." },
-  { t: "Our Approach", d: "Data driven insights meet bold creativity, because smart strategies deserve fearless execution." },
-  { t: "Our Promise", d: "Partnership built on transparency, consistency, and results that speak louder than buzz." },
-];
 
 export function About() {
   const ref = useRef<HTMLDivElement>(null);
@@ -58,26 +48,23 @@ export function About() {
   const leafY = useTransform(scrollYProgress, [0, 1], [50, -50]);
   const leafOpacity = useTransform(scrollYProgress, [0, 0.12, 0.9, 1], [0, 0.9, 0.9, 0.6]);
 
+  // The section deliberately carries no z-index: one would open a stacking
+  // context and trap the leaf layer below <Services />. At z-auto it still
+  // paints in DOM order (first, under everything after it), exactly as z-20 did.
   return (
-    <section id="about" className="relative z-20">
-      {/* Part 1 — the "Who we are" manifesto, revealed word by word.
-          The scroll target is this trimmed wrapper (not the whole section) so
-          the reveal timing stays tied to the manifesto alone. */}
+    <section id="about" className="relative">
+      {/* The "Who we are" manifesto, revealed word by word. The scroll target is
+          this trimmed wrapper (not the whole section) so the reveal timing stays
+          tied to the manifesto alone. */}
       <div ref={ref} className="relative h-[170vh]" style={{ backgroundColor: INK }}>
         <motion.div
           style={{ backgroundColor: bg }}
           className="sticky top-0 h-[100svh] overflow-hidden flex items-center justify-center px-6 md:px-12 lg:px-16 xl:px-28"
         >
-          {/* botanical branches, top-left & bottom-right */}
+          {/* top-left branch, happily clipped by the pane it lives in */}
           <motion.div
             style={{ y: leafY, opacity: leafOpacity }}
             className="pointer-events-none absolute -left-12 -top-8 sm:-left-4 sm:top-0 w-32 sm:w-44 lg:w-56 -rotate-6"
-          >
-            <BotanicalBranch />
-          </motion.div>
-          <motion.div
-            style={{ y: leafY, opacity: leafOpacity }}
-            className="pointer-events-none absolute -right-12 -bottom-8 sm:-right-4 sm:bottom-0 w-32 sm:w-44 lg:w-56 rotate-[186deg]"
           >
             <BotanicalBranch />
           </motion.div>
@@ -115,32 +102,20 @@ export function About() {
             </motion.p>
           </div>
         </motion.div>
-      </div>
 
-      {/* Part 2 — "Our values", presented on the same deep-green canvas the
-          manifesto resolves onto, so the two sections feel merged. */}
-      <div
-        style={{ backgroundColor: INK }}
-        className="text-cream px-6 md:px-12 lg:px-16 xl:px-28 pb-20 pt-4 md:pb-28"
-      >
-        <div className="mx-auto max-w-[1480px]">
-          <Reveal>
-            <div className="eyebrow mb-3 flex items-center gap-2 text-cream/55">
-              <span className="h-1.5 w-1.5 rounded-full bg-accent" /> Our values
-            </div>
-            <h2 className="serif text-3xl md:text-5xl mb-12 max-w-2xl">
-              Values that guide <span className="serif-italic">every campaign</span>
-            </h2>
-          </Reveal>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
-            {values.map((v, i) => (
-              <Reveal key={v.t} delay={i * 90}>
-                <div className="border-t border-cream/20 pt-6 h-full">
-                  <h3 className="serif text-2xl md:text-3xl">{v.t}</h3>
-                  <p className="text-cream/70 mt-4 leading-relaxed text-sm">{v.d}</p>
-                </div>
-              </Reveal>
-            ))}
+        {/* The bottom-right branch lives outside the pane above, because that
+            pane's overflow-hidden would cut it off at the seam. This layer sits
+            at z-70 — over <Services /> (z-60) — so the leaf carries on across the
+            cream instead of stopping at its edge. Its sticky child mirrors the
+            pane, so the leaf's position and parallax are unchanged. */}
+        <div className="pointer-events-none absolute inset-0 z-[70]">
+          <div className="sticky top-0 h-[100svh]">
+            <motion.div
+              style={{ y: leafY, opacity: leafOpacity }}
+              className="absolute -right-12 -bottom-8 sm:-right-4 sm:bottom-0 w-32 sm:w-44 lg:w-56 rotate-[186deg]"
+            >
+              <BotanicalBranch />
+            </motion.div>
           </div>
         </div>
       </div>

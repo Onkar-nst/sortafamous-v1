@@ -2,10 +2,10 @@ import type { Metadata } from "next";
 import { Nav } from "@/components/Nav";
 import { AboutHero } from "@/components/AboutHero";
 import { AboutManifesto } from "@/components/AboutManifesto";
-import { AboutPrinciples } from "@/components/AboutPrinciples";
+// import { AboutPrinciples } from "@/components/AboutPrinciples"; // hidden for now
 import { AboutValues } from "@/components/AboutValues";
 import { AboutNote } from "@/components/AboutNote";
-import { AboutPhilosophy } from "@/components/AboutPhilosophy";
+// import { AboutPhilosophy } from "@/components/AboutPhilosophy"; // hidden for now
 import { Team } from "@/components/Team";
 import { CTA } from "@/components/CTA";
 import { Footer } from "@/components/Footer";
@@ -27,11 +27,12 @@ export default function AboutPage() {
       <Nav />
       <main>
         <AboutHero />
-        <AboutManifesto />
-        <AboutPrinciples />
+        {/* Values take the slot the "By the numbers" stats used to hold */}
         <AboutValues />
         <AboutNote />
-        <AboutPhilosophy />
+        <AboutManifesto />
+        {/* <AboutPrinciples /> hidden for now */}
+        {/* <AboutPhilosophy /> hidden for now */}
         <Team />
         <CTA />
       </main>

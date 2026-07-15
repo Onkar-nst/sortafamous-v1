@@ -41,7 +41,7 @@ const principles: Principle[] = [
 
 export function AboutPrinciples() {
   return (
-    <section className="relative z-30 bg-cream py-16 md:py-28 px-6 md:px-12 lg:px-16 xl:px-28 border-t border-border">
+    <section className="relative z-50 bg-cream py-16 md:py-28 px-6 md:px-12 lg:px-16 xl:px-28 border-t border-border">
       <div className="mx-auto max-w-[1480px]">
         <SectionHeader
           eyebrow="How we work"

@@ -5,7 +5,7 @@ import { WordReveal } from "./motion";
 
 export function AboutManifesto() {
   return (
-    <section className="relative z-20 bg-cream py-20 md:py-32 px-6 md:px-12 lg:px-16 xl:px-28 border-t border-border">
+    <section className="relative z-40 bg-cream py-20 md:py-32 px-6 md:px-12 lg:px-16 xl:px-28 border-t border-border">
       <div className="mx-auto max-w-[1480px]">
         <Reveal>
           <div className="eyebrow mb-10 flex items-center gap-2">

@@ -76,7 +76,10 @@ const pillars: Pillar[] = [
 
 export function ServicePillars() {
   return (
-    <section className="relative z-20 bg-cream py-16 md:py-28 px-6 md:px-12 lg:px-16 xl:px-28 border-t border-border overflow-hidden">
+    <section
+      id="practices"
+      className="relative z-20 bg-cream py-16 md:py-28 px-6 md:px-12 lg:px-16 xl:px-28 border-t border-border overflow-hidden scroll-mt-24"
+    >
       <div className="mx-auto max-w-[1480px]">
         <SectionHeader
           eyebrow="What we offer"

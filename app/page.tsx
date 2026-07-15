@@ -9,10 +9,9 @@ import { About } from "@/components/About";
 import { Services } from "@/components/Services";
 // import { Craft } from "@/components/Craft"; // hidden for now
 import { Process } from "@/components/Process";
-// Values now lives inside <About /> — the "Who we are" & "Our values" sections are merged.
 import { Work } from "@/components/Work";
 import { Team } from "@/components/Team";
-import { Testimonials } from "@/components/Testimonials";
+// import { Testimonials } from "@/components/Testimonials"; // hidden for now
 // import { BrandQuote } from "@/components/BrandQuote"; // removed per brief (avatar scatter section)
 // import { Pricing } from "@/components/Pricing"; // hidden for now
 // import { Journal } from "@/components/Journal"; // hidden for now, minimal homepage
@@ -40,7 +39,6 @@ export default function Home() {
         {/* Wrapper makes following sections scroll OVER the sticky hero like a blanket */}
         <div className="relative z-10 bg-cream">
           {/* <OurClients /> hidden for now */}
-          {/* About now includes the merged "Our values" content */}
           <About />
           {/* <Clients /> hidden for now, minimal homepage */}
           {/* <Bento /> hidden for now */}
@@ -49,7 +47,7 @@ export default function Home() {
           <Process />
           <Work />
           <Team />
-          <Testimonials />
+          {/* <Testimonials /> hidden for now */}
           {/* <BrandQuote /> removed per brief */}
           {/* <Pricing /> hidden for now */}
           {/* <Journal /> hidden for now, minimal homepage */}

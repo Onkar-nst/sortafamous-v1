@@ -28,16 +28,16 @@ export function ServicesHero() {
           <Reveal delay={200}>
             <div className="mt-10 flex flex-wrap items-center gap-4">
               <a
-                href="#plans"
+                href="/contact"
                 className="inline-flex items-center gap-2 rounded-full bg-ink text-cream px-6 py-3.5 text-sm hover:opacity-90 transition"
               >
-                See the plans <span aria-hidden>→</span>
+                Book a consult <span aria-hidden>→</span>
               </a>
               <a
-                href="/contact"
+                href="#practices"
                 className="inline-flex items-center gap-2 text-sm px-3 py-3.5 hover:translate-x-1 transition"
               >
-                Book a consult <span aria-hidden>→</span>
+                See what we do <span aria-hidden>→</span>
               </a>
             </div>
           </Reveal>
