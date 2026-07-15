@@ -40,23 +40,6 @@ const pillars: Pillar[] = [
   },
   {
     n: "02",
-    Icon: Gem,
-    t: "Brand Management",
-    d: "Building, keeping and growing strong brands, rooted in clarity, consistency and long term business value.",
-    img: "/images/art/svc2.jpg",
-    accent: "oklch(0.68 0.12 75)", // ochre
-    tint: "oklch(0.68 0.12 75 / 0.10)",
-    feel: "So people feel something the moment they meet you.",
-    items: [
-      { name: "Brand planning & positioning", desc: "Research led, content driven strategy that makes your business stand out." },
-      { name: "Identity & consistency", desc: "Visual features, messaging rules and standards, uniform across every touchpoint." },
-      { name: "Digital brand management", desc: "A consistent brand across websites, social, content and online ads." },
-      { name: "Reputation & brand trust", desc: "Tracking how people talk and feel about you to protect your image." },
-      { name: "Communication & storytelling", desc: "Real brand stories that connect with people on an emotional level." },
-    ],
-  },
-  {
-    n: "03",
     Icon: Share2,
     t: "Social Media Marketing",
     d: "A clear plan, stories that make sense, and constant optimisation, social that connects with customers and grows your business.",
@@ -70,6 +53,23 @@ const pillars: Pillar[] = [
       { name: "Account management", desc: "Publishing, quick replies to comments and messages, and daily monitoring." },
       { name: "Paid social advertising", desc: "Targeted campaigns optimised for reach, discovery and ROI." },
       { name: "Analytics & optimisation", desc: "Reach, engagement and conversion tracking that guides the strategy." },
+    ],
+  },
+  {
+    n: "03",
+    Icon: Gem,
+    t: "Brand Management",
+    d: "Building, keeping and growing strong brands, rooted in clarity, consistency and long term business value.",
+    img: "/images/art/svc2.jpg",
+    accent: "oklch(0.68 0.12 75)", // ochre
+    tint: "oklch(0.68 0.12 75 / 0.10)",
+    feel: "So people feel something the moment they meet you.",
+    items: [
+      { name: "Brand planning & positioning", desc: "Research led, content driven strategy that makes your business stand out." },
+      { name: "Identity & consistency", desc: "Visual features, messaging rules and standards, uniform across every touchpoint." },
+      { name: "Digital brand management", desc: "A consistent brand across websites, social, content and online ads." },
+      { name: "Reputation & brand trust", desc: "Tracking how people talk and feel about you to protect your image." },
+      { name: "Communication & storytelling", desc: "Real brand stories that connect with people on an emotional level." },
     ],
   },
 ];

@@ -101,19 +101,6 @@ export function Hero() {
                   See what we do <span aria-hidden>→</span>
                 </a>
               </motion.div>
-
-              <motion.div
-                custom={4}
-                variants={rise}
-                initial="hidden"
-                animate="show"
-                className="mt-6 lg:mt-8 flex items-center gap-4"
-              >
-                <span className="serif text-5xl leading-none">3.4×</span>
-                <span className="text-sm text-ink-soft leading-tight max-w-[9rem] lg:max-w-none lg:whitespace-nowrap">
-                  average client growth in the first year
-                </span>
-              </motion.div>
             </div>
 
             <motion.div
