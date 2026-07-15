@@ -17,7 +17,7 @@ const faces = [
  */
 export function AboutNote() {
   return (
-    <section className="relative z-30 bg-cream px-6 md:px-12 lg:px-16 xl:px-28 py-16 md:py-28">
+    <section className="relative z-40 bg-cream px-6 md:px-12 lg:px-16 xl:px-28 py-16 md:py-28 border-t border-border">
       <div className="mx-auto max-w-[1480px]">
         <div className="relative overflow-hidden rounded-[2.5rem] border border-border bg-card px-7 py-12 md:px-16 md:py-20">
           {/* soft accent wash */}

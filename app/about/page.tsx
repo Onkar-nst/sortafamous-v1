@@ -29,8 +29,8 @@ export default function AboutPage() {
         <AboutHero />
         {/* Values take the slot the "By the numbers" stats used to hold */}
         <AboutValues />
-        <AboutNote />
         <AboutManifesto />
+        <AboutNote />
         {/* <AboutPrinciples /> hidden for now */}
         {/* <AboutPhilosophy /> hidden for now */}
         <Team />

@@ -7,6 +7,7 @@ import { About } from "@/components/About";
 // import { Clients } from "@/components/Clients"; // hidden for now, minimal homepage
 // import { Bento } from "@/components/Bento"; // hidden for now
 import { Services } from "@/components/Services";
+import { ServiceLeadPopup } from "@/components/ServiceLeadPopup";
 // import { Craft } from "@/components/Craft"; // hidden for now
 import { Process } from "@/components/Process";
 import { Work } from "@/components/Work";
@@ -43,6 +44,8 @@ export default function Home() {
           {/* <Clients /> hidden for now, minimal homepage */}
           {/* <Bento /> hidden for now */}
           <Services />
+          {/* Lead capture, fires once per session at the Services/Process seam */}
+          <ServiceLeadPopup />
           {/* <Craft /> hidden for now */}
           <Process />
           <Work />
