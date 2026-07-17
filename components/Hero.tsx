@@ -76,8 +76,7 @@ export function Hero() {
                 animate="show"
                 className="mt-6 max-w-md text-ink-soft leading-relaxed"
               >
-                Insight led 360° marketing across brand, social, content and PR. Visibility that
-                lasts longer than the news cycle, no clout chasing, just status with substance.
+                Insight-led 360° Marketing Agency across brand, social, content, and PR. Visibility that lasts longer than the news cycle—no clout chasing, just status with substance.
               </motion.p>
               <motion.div
                 custom={3}

@@ -15,48 +15,59 @@ import { EASE } from "./motion";
    move through the list — dot, number, row glow and preview frame all tint. */
 const services = [
   {
-    t: "Strategic PR",
+    t: "Brand Endorsement",
+    course: "Brand",
+    img: "/images/art/svc2.jpg",
+    accent: "oklch(0.68 0.12 75)", // ochre
+    tint: "oklch(0.68 0.12 75 / 0.10)",
+    items: ["Positioning", "Identity", "Digital brand", "Reputation"],
+    feel: "So people feel something the moment they meet you.",
+    body:
+      "Building, keeping and growing strong brands, rooted in clarity, consistency and long term business value.",
+  },
+  {
+    t: "PR Services",
     course: "Public relations",
     img: "/images/art/svc1.jpg",
     accent: "oklch(0.56 0.075 135)", // sage, on brand
     tint: "oklch(0.56 0.075 135 / 0.10)",
-    items: ["Press strategy", "Newsroom", "Crisis comms", "Spokesperson prep"],
+    items: ["Media relations", "Press releases", "Online PR", "Thought leadership"],
+    feel: "So the right people say your name in the right rooms.",
     body:
       "Strategy and storytelling that puts your brand in the rooms, and the publications, that move the needle.",
-    stat: { n: "40+", l: "tier 1 placements / year" },
   },
   {
-    t: "Social Performance",
+    t: "Social Media Marketing",
     course: "Paid & organic",
     img: "/images/art/svc3.jpg",
     accent: "oklch(0.63 0.15 35)", // terracotta
     tint: "oklch(0.63 0.15 35 / 0.10)",
-    items: ["Paid social", "Creator partnerships", "Always on", "Reporting"],
+    items: ["Strategy", "Content", "Community", "Paid social"],
+    feel: "So the scroll stops, and the following becomes a community.",
     body:
-      "Performance social that converts attention into pipeline, optimised channel by channel and post by post.",
-    stat: { n: "6.2×", l: "avg. return on ad spend" },
+      "A clear plan, stories that make sense and constant optimisation, social that connects with customers and grows your business.",
   },
   {
-    t: "Content & Editorial",
-    course: "Owned media",
+    t: "Performance Marketing",
+    course: "Performance",
     img: "/images/art/svc4.jpg",
-    accent: "oklch(0.68 0.12 75)", // ochre
-    tint: "oklch(0.68 0.12 75 / 0.10)",
-    items: ["Thought leadership", "Opinion pieces", "Newsletters", "Long form"],
-    body:
-      "Editorial substance and a publishing rhythm that compounds, owned media that earns its share of voice.",
-    stat: { n: "3.4M", l: "words that actually landed" },
-  },
-  {
-    t: "Founder Brand",
-    course: "Personal brand",
-    img: "/images/art/svc2.jpg",
     accent: "oklch(0.5 0.11 300)", // plum
     tint: "oklch(0.5 0.11 300 / 0.10)",
-    items: ["Positioning", "LinkedIn", "Keynotes", "Podcast tour"],
+    items: ["Paid search", "Paid social", "Optimisation", "Reporting"],
+    feel: "Reach the right audience, increase conversions, and maximize every ad spend.",
     body:
-      "We sharpen the person behind the brand, clear point of view, sharper presence, real authority.",
-    stat: { n: "1", l: "unmistakable point of view" },
+      "Data-driven campaigns built to generate qualified leads, grow sales and maximise returns on every advertising dollar.",
+  },
+  {
+    t: "Personal Branding",
+    course: "Personal brand",
+    img: "/images/art/craft.jpg",
+    accent: "oklch(0.55 0.11 250)", // steel blue
+    tint: "oklch(0.55 0.11 250 / 0.10)",
+    items: ["Positioning", "LinkedIn", "Thought leadership", "Reputation"],
+    feel: "Build trust, attract opportunities, and stand out as an industry leader.",
+    body:
+      "Strategic personal branding focused on building credibility, growing influence and creating meaningful opportunities across digital platforms.",
   },
 ];
 
@@ -78,7 +89,9 @@ export function Services() {
     my.set(e.clientY - r.top);
   }
 
-  const active = hover >= 0 ? services[hover] : null;
+  // Suppress the floating cursor-preview while a service is expanded, so the
+  // opened detail view isn't covered by the hover image.
+  const active = hover >= 0 && open === -1 ? services[hover] : null;
 
   return (
     <section
@@ -103,7 +116,7 @@ export function Services() {
             </h2>
           </Reveal>
           <Reveal delay={80}>
-            <div className="serif-italic text-sm text-ink-soft">/ 4 / ©</div>
+            <div className="serif-italic text-sm text-ink-soft">/ 5 / ©</div>
           </Reveal>
         </div>
         <Reveal>
@@ -233,9 +246,17 @@ export function Services() {
                       >
                         <div className="grid md:grid-cols-[1.4fr_1fr] gap-8 pb-10 pl-4 md:pl-[4rem] pr-4">
                           <div className="flex flex-col justify-between gap-6">
-                            <p className="text-ink-soft text-lg md:text-xl leading-relaxed max-w-xl">
-                              {s.body}
-                            </p>
+                            <div>
+                              <p
+                                className="serif-italic text-2xl md:text-3xl leading-snug"
+                                style={{ color: s.accent }}
+                              >
+                                {s.feel}
+                              </p>
+                              <p className="mt-4 text-ink-soft text-lg md:text-xl leading-relaxed max-w-xl">
+                                {s.body}
+                              </p>
+                            </div>
 
                             <div>
                               <div className="flex flex-wrap gap-2 mb-6">
@@ -252,22 +273,10 @@ export function Services() {
                                 ))}
                               </div>
 
-                              <div className="flex items-end justify-between gap-6 flex-wrap">
-                                <div className="flex items-baseline gap-3">
-                                  <span
-                                    className="serif text-5xl md:text-6xl leading-none"
-                                    style={{ color: s.accent }}
-                                  >
-                                    {s.stat.n}
-                                  </span>
-                                  <span className="text-ink-soft text-sm max-w-[10rem] leading-tight">
-                                    {s.stat.l}
-                                  </span>
-                                </div>
-
+                              <div className="flex items-end justify-end gap-6 flex-wrap">
                                 <Magnetic>
                                   <a
-                                    href="#contact"
+                                    href="/services"
                                     className="inline-flex items-center gap-2 rounded-pill border border-ink/20 px-5 py-2.5 text-sm transition-colors duration-300 hover:text-cream"
                                     style={{ ["--hoverbg" as string]: s.accent }}
                                     onMouseEnter={(e) => {

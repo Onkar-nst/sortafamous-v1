@@ -68,6 +68,34 @@ const team: Member[] = [
     bio: "Palak gives the strategy a face. She designs the visual language of every campaign, clean, considered, and unmistakably on brand.",
     focus: ["Visual design", "Brand identity", "Content"],
   },
+  {
+    img: "/images/art/team1.jpg",
+    n: "Aarav Sharma",
+    r: "Content Strategist",
+    bio: "Aarav turns positioning into words that travel. He plans the content that carries each brand's point of view, editorial, sharp, and built to be shared.",
+    focus: ["Content strategy", "Editorial", "Storytelling"],
+  },
+  {
+    img: "/images/art/team2.jpg",
+    n: "Meera Iyer",
+    r: "Social Media Manager",
+    bio: "Meera runs the feeds that keep brands top of mind. She shapes the day to day voice on social, growing communities that actually stick around.",
+    focus: ["Social media", "Community", "Engagement"],
+  },
+  {
+    img: "/images/art/team3.jpg",
+    n: "Kabir Malhotra",
+    r: "PR Associate",
+    bio: "Kabir chases the story until it lands. He supports media outreach and pitching, opening the doors that put clients in the right headlines.",
+    focus: ["Media outreach", "Pitching", "PR"],
+  },
+  {
+    img: "/images/art/team4.jpg",
+    n: "Ananya Reddy",
+    r: "Copywriter",
+    bio: "Ananya writes the lines people remember. From taglines to long form, she finds the words that make a brand sound exactly like itself.",
+    focus: ["Copywriting", "Messaging", "Brand voice"],
+  },
 ];
 
 const ACCENTS = [
@@ -136,11 +164,11 @@ function TeamCard({
       initial={{ opacity: 0, y: 44, filter: "blur(12px)" }}
       whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
       viewport={{ once: true, margin: "0px 0px -12% 0px" }}
-      transition={{ duration: 0.85, ease: EASE, delay: (i % 3) * 0.12 }}
+      transition={{ duration: 0.85, ease: EASE, delay: (i % 5) * 0.08 }}
     >
       <motion.div
         style={{ rotateX: rx, rotateY: ry, transformPerspective: 1000, transformStyle: "preserve-3d" }}
-        className="relative mb-4 aspect-[4/3] overflow-hidden rounded-3xl bg-muted"
+        className="relative mb-4 aspect-[4/5] overflow-hidden rounded-3xl bg-muted"
       >
         {/* accent halo behind image on hover */}
         <div
@@ -359,7 +387,7 @@ export function Team() {
         transition={{ duration: 18, ease: "easeInOut", repeat: Infinity }}
       />
 
-      <div className="relative mx-auto max-w-[1480px]">
+      <div className="relative mx-auto max-w-[1640px]">
         {/* animated masthead */}
         <div className="mb-14 flex items-end justify-between gap-6">
           <div>
@@ -389,9 +417,9 @@ export function Team() {
           </Reveal>
         </div>
 
-        <div className="grid grid-cols-2 gap-6 lg:grid-cols-3">
+        <div className="grid grid-cols-2 gap-6 md:grid-cols-3 lg:grid-cols-5">
           {team.map((m, i) => (
-            <Parallax key={m.n} amount={[34, 62, 46][i % 3]}>
+            <Parallax key={m.n} amount={[34, 62, 46, 58, 40][i % 5]}>
               <TeamCard m={m} i={i} onOpen={() => setSelected(m)} />
             </Parallax>
           ))}

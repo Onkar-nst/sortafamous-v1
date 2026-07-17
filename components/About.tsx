@@ -7,7 +7,6 @@ import {
   useMotionValueEvent,
 } from "framer-motion";
 import { useRef, type CSSProperties } from "react";
-import { BotanicalBranch } from "./BotanicalBranch";
 
 const CREAM = "#f1ebdf";
 // Deep brand forest green (from the new logo) — replaces the old near-black
@@ -45,9 +44,6 @@ export function About() {
   const textColor = useTransform(scrollYProgress, [0.42, 0.56], [INK, CREAM]);
   const eyebrow = useTransform(scrollYProgress, [0.42, 0.56], ["#8a8578", "#a9c2b0"]);
 
-  const leafY = useTransform(scrollYProgress, [0, 1], [50, -50]);
-  const leafOpacity = useTransform(scrollYProgress, [0, 0.12, 0.9, 1], [0, 0.9, 0.9, 0.6]);
-
   // The section deliberately carries no z-index: one would open a stacking
   // context and trap the leaf layer below <Services />. At z-auto it still
   // paints in DOM order (first, under everything after it), exactly as z-20 did.
@@ -61,14 +57,6 @@ export function About() {
           style={{ backgroundColor: bg }}
           className="sticky top-0 h-[100svh] overflow-hidden flex items-center justify-center px-6 md:px-12 lg:px-16 xl:px-28"
         >
-          {/* top-left branch, happily clipped by the pane it lives in */}
-          <motion.div
-            style={{ y: leafY, opacity: leafOpacity }}
-            className="pointer-events-none absolute -left-12 -top-8 sm:-left-4 sm:top-0 w-32 sm:w-44 lg:w-56 -rotate-6"
-          >
-            <BotanicalBranch />
-          </motion.div>
-
           <div
             ref={holder}
             className="relative mx-auto max-w-[1060px] text-center"
@@ -102,22 +90,6 @@ export function About() {
             </motion.p>
           </div>
         </motion.div>
-
-        {/* The bottom-right branch lives outside the pane above, because that
-            pane's overflow-hidden would cut it off at the seam. This layer sits
-            at z-70 — over <Services /> (z-60) — so the leaf carries on across the
-            cream instead of stopping at its edge. Its sticky child mirrors the
-            pane, so the leaf's position and parallax are unchanged. */}
-        <div className="pointer-events-none absolute inset-0 z-[70]">
-          <div className="sticky top-0 h-[100svh]">
-            <motion.div
-              style={{ y: leafY, opacity: leafOpacity }}
-              className="absolute -right-12 -bottom-8 sm:-right-4 sm:bottom-0 w-32 sm:w-44 lg:w-56 rotate-[186deg]"
-            >
-              <BotanicalBranch />
-            </motion.div>
-          </div>
-        </div>
       </div>
     </section>
   );

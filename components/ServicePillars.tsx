@@ -1,6 +1,6 @@
 "use client";
 
-import { Megaphone, Gem, Share2, type LucideIcon } from "lucide-react";
+import { Megaphone, Gem, Share2, Target, UserRound, type LucideIcon } from "lucide-react";
 import { Reveal } from "./Reveal";
 import { SectionHeader } from "./SectionHeader";
 import { EASE } from "./motion";
@@ -23,6 +23,23 @@ type Pillar = {
 const pillars: Pillar[] = [
   {
     n: "01",
+    Icon: Gem,
+    t: "Brand Endorsement",
+    d: "Building, keeping and growing strong brands, rooted in clarity, consistency and long term business value.",
+    img: "/images/art/svc2.jpg",
+    accent: "oklch(0.68 0.12 75)", // ochre
+    tint: "oklch(0.68 0.12 75 / 0.10)",
+    feel: "So people feel something the moment they meet you.",
+    items: [
+      { name: "Brand planning & positioning", desc: "Research led, content driven strategy that makes your business stand out." },
+      { name: "Identity & consistency", desc: "Visual features, messaging rules and standards, uniform across every touchpoint." },
+      { name: "Digital brand management", desc: "A consistent brand across websites, social, content and online ads." },
+      { name: "Reputation & brand trust", desc: "Tracking how people talk and feel about you to protect your image." },
+      { name: "Communication & storytelling", desc: "Real brand stories that connect with people on an emotional level." },
+    ],
+  },
+  {
+    n: "02",
     Icon: Megaphone,
     t: "PR Services",
     d: "Public relations that builds reputation, earns media attention, and strengthens your public image across digital and traditional platforms.",
@@ -39,7 +56,7 @@ const pillars: Pillar[] = [
     ],
   },
   {
-    n: "02",
+    n: "03",
     Icon: Share2,
     t: "Social Media Marketing",
     d: "A clear plan, stories that make sense, and constant optimisation, social that connects with customers and grows your business.",
@@ -56,20 +73,37 @@ const pillars: Pillar[] = [
     ],
   },
   {
-    n: "03",
-    Icon: Gem,
-    t: "Brand Management",
-    d: "Building, keeping and growing strong brands, rooted in clarity, consistency and long term business value.",
-    img: "/images/art/svc2.jpg",
-    accent: "oklch(0.68 0.12 75)", // ochre
-    tint: "oklch(0.68 0.12 75 / 0.10)",
-    feel: "So people feel something the moment they meet you.",
+    n: "04",
+    Icon: Target,
+    t: "Performance Marketing",
+    d: "Data-driven marketing campaigns focused on generating qualified leads, increasing sales, and maximizing returns on every advertising dollar.",
+    img: "/images/art/svc4.jpg",
+    accent: "oklch(0.5 0.11 300)", // plum
+    tint: "oklch(0.5 0.11 300 / 0.10)",
+    feel: "Reach the right audience, increase conversions, and maximize every ad spend.",
     items: [
-      { name: "Brand planning & positioning", desc: "Research led, content driven strategy that makes your business stand out." },
-      { name: "Identity & consistency", desc: "Visual features, messaging rules and standards, uniform across every touchpoint." },
-      { name: "Digital brand management", desc: "A consistent brand across websites, social, content and online ads." },
-      { name: "Reputation & brand trust", desc: "Tracking how people talk and feel about you to protect your image." },
-      { name: "Communication & storytelling", desc: "Real brand stories that connect with people on an emotional level." },
+      { name: "Performance marketing strategy", desc: "Growth-focused strategies built around your business goals, audience, and measurable KPIs." },
+      { name: "Paid search (Google Ads)", desc: "Reach high-intent customers through optimized search, shopping, display and YouTube campaigns." },
+      { name: "Paid social advertising", desc: "High-performing campaigns across Meta, LinkedIn, TikTok and other platforms to drive conversions." },
+      { name: "Campaign management & optimization", desc: "Continuous testing, audience refinement and bid optimization to reduce acquisition costs." },
+      { name: "Conversion tracking & reporting", desc: "Accurate tracking, insightful reporting and data-driven recommendations to maximize ROI." },
+    ],
+  },
+  {
+    n: "05",
+    Icon: UserRound,
+    t: "Personal Branding",
+    d: "Strategic personal branding focused on building credibility, growing influence, and creating meaningful opportunities across digital platforms.",
+    img: "/images/art/craft.jpg",
+    accent: "oklch(0.55 0.11 250)", // steel blue
+    tint: "oklch(0.55 0.11 250 / 0.10)",
+    feel: "Build trust, attract opportunities, and stand out as an industry leader.",
+    items: [
+      { name: "Personal brand strategy", desc: "A clear brand identity, positioning, messaging and growth roadmap aligned with your goals." },
+      { name: "Content strategy & creation", desc: "Impactful content that showcases your expertise, builds credibility and engages your audience." },
+      { name: "LinkedIn & profile optimization", desc: "Optimised professional profiles that enhance visibility and attract the right opportunities." },
+      { name: "Thought leadership & authority", desc: "Position yourself as an expert through consistent, value-driven content and storytelling." },
+      { name: "Reputation & performance tracking", desc: "Monitor your online presence, manage perception and measure growth with actionable insight." },
     ],
   },
 ];
@@ -83,8 +117,8 @@ export function ServicePillars() {
       <div className="mx-auto max-w-[1480px]">
         <SectionHeader
           eyebrow="What we offer"
-          title={<>Three practices, <span className="serif-italic">one system</span></>}
-          marker="/ 03 / ©"
+          title={<>Five practices, <span className="serif-italic">one system</span></>}
+          marker="/ 05 / ©"
           className="mb-16 md:mb-24"
         />
 
