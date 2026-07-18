@@ -31,6 +31,7 @@ const pillars: Pillar[] = [
     tint: "oklch(0.68 0.12 75 / 0.10)",
     feel: "So people feel something the moment they meet you.",
     items: [
+      { name: "Brand endorsement", desc: "Partnering with trusted creators, celebrities and industry voices to amplify your brand with authenticity." },
       { name: "Brand planning & positioning", desc: "Research led, content driven strategy that makes your business stand out." },
       { name: "Identity & consistency", desc: "Visual features, messaging rules and standards, uniform across every touchpoint." },
       { name: "Digital brand management", desc: "A consistent brand across websites, social, content and online ads." },
