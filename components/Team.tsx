@@ -168,8 +168,6 @@ function TeamCard({
     ry.set(0);
   }
 
-  const no = String(i + 1).padStart(2, "0");
-
   return (
     <motion.button
       ref={ref}
@@ -218,14 +216,6 @@ function TeamCard({
           style={{ ["--tw-ring-color" as string]: accent.a }}
         />
 
-        {/* index number, pops forward in 3D */}
-        <span
-          className="serif absolute left-4 top-3 text-5xl leading-none text-cream/85 drop-shadow-lg"
-          style={{ transform: "translateZ(45px)" }}
-        >
-          {no}
-        </span>
-
         {/* spinning asterisk badge */}
         <motion.span
           aria-hidden
@@ -266,7 +256,6 @@ function TeamCard({
 }
 
 function ProfileModal({ member, onClose }: { member: Member; onClose: () => void }) {
-  const no = String(team.indexOf(member) + 1).padStart(2, "0");
   const dropCap = member.bio.charAt(0);
   const bioRest = member.bio.slice(1);
 
@@ -336,15 +325,12 @@ function ProfileModal({ member, onClose }: { member: Member; onClose: () => void
               The People
             </span>
             <Asterisk className="absolute right-4 top-4 h-6 w-6 text-cream/85" />
-            <span className="serif absolute bottom-3 left-5 text-6xl leading-none text-cream/25">{no}</span>
           </div>
 
           {/* Feature copy */}
           <div className="flex flex-col p-8 md:p-10">
-            <div className="flex items-center justify-between">
-              <span className="eyebrow text-ink-soft">Sorta Famous · The People</span>
-              <span className="serif-italic text-sm text-ink-soft">No. {no}</span>
-            </div>
+            {/* Leaves room on the right for the close button */}
+            <span className="eyebrow block pr-12 text-ink-soft">Sorta Famous · The People</span>
             <div className="mt-4 h-px w-full bg-ink/15" />
 
             <span className="eyebrow mt-6 flex items-center gap-2 text-ink-soft">
