@@ -141,13 +141,6 @@ export function ProjectServices() {
                 <p className="text-ink-soft mt-3 leading-relaxed text-[0.95rem]">
                   {p.d}
                 </p>
-
-                <div className="mt-auto pt-6">
-                  <span className="inline-flex items-center gap-2 text-sm font-medium text-brand transition-all duration-500 group-hover:gap-3">
-                    <span className="h-1.5 w-1.5 rounded-full bg-accent" />
-                    Available as a project
-                  </span>
-                </div>
               </article>
             </RevealItem>
           ))}
