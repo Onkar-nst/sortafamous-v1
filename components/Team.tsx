@@ -247,7 +247,7 @@ function TeamCard({
       </motion.div>
 
       {/* name + role with growing accent underline */}
-      <h3 className="serif text-2xl">
+      <h3 className="serif text-2xl lg:text-xl">
         <span className="relative inline-block">
           {m.n}
           <span
@@ -257,8 +257,8 @@ function TeamCard({
           />
         </span>
       </h3>
-      <p className="mt-1.5 flex items-center gap-2 text-sm text-ink-soft">
-        <span className="h-1.5 w-1.5 rounded-full transition-colors duration-500" style={{ background: accent.a }} />
+      <p className="mt-1.5 flex items-start gap-2 text-sm leading-snug text-ink-soft lg:text-[0.8rem]">
+        <span className="mt-[0.45em] h-1.5 w-1.5 shrink-0 rounded-full transition-colors duration-500" style={{ background: accent.a }} />
         {m.r}
       </p>
     </motion.button>
@@ -433,8 +433,8 @@ export function Team() {
           </Reveal>
         </div>
 
-        {/* 12 members, a 4-column grid fills three clean rows */}
-        <div className="grid grid-cols-2 gap-6 md:grid-cols-3 lg:grid-cols-4">
+        {/* 12 members, a 6-column grid fills two clean rows */}
+        <div className="grid grid-cols-2 gap-6 md:grid-cols-3 lg:grid-cols-6 lg:gap-5">
           {team.map((m, i) => (
             <Parallax key={m.n} amount={[34, 62, 46, 58, 40][i % 5]}>
               <TeamCard m={m} i={i} onOpen={() => setSelected(m)} />
