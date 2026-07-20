@@ -12,10 +12,16 @@ import { Reveal } from "./Reveal";
 import { EASE, Parallax } from "./motion";
 
 /**
- * Team roster, the real Sorta Famous team (sortafamous.in/about-us). The site
- * publishes only names and roles, so the bios below are written to match each
- * role and the agency's stated positioning. Clicking a card opens a profile
- * modal with the portrait and fuller detail.
+ * Team roster, built from the client-supplied portraits in the SF Website
+ * assets pack. Names and photographs are the client's own.
+ *
+ * Roles: Nandini's and Palak's are confirmed against sortafamous.in/about-us.
+ * The remaining ten are drawn from the agency's role list but the
+ * person-to-role pairing is UNCONFIRMED and needs a client review pass.
+ * Bios are deliberately role-descriptive, they make no personal claims about
+ * an individual beyond the function stated here.
+ *
+ * Clicking a card opens a profile modal with the portrait and fuller detail.
  */
 type Member = {
   img: string;
@@ -27,74 +33,88 @@ type Member = {
 
 const team: Member[] = [
   {
-    img: "/images/art/team3.jpg",
+    img: "/images/art/team-nandini.jpg",
     n: "Nandini Mahant",
     r: "Founder & Creative Director",
     bio: "Nandini founded Sorta Famous on a simple conviction: fame is earned, not bought. She leads creative direction and brand strategy, shaping narratives that turn visibility into lasting credibility for founders and modern brands.",
     focus: ["Brand strategy", "Creative direction", "Founder narratives"],
   },
   {
-    img: "/images/art/team1.jpg",
-    n: "Prajakta Mehul Sheth",
+    img: "/images/art/team-tejas.jpg",
+    n: "Tejas",
     r: "Sr. Account Manager",
-    bio: "Prajakta is the steady hand behind every engagement, translating strategy into day to day momentum. She keeps clients close, timelines honest, and campaigns moving from idea to earned coverage.",
+    bio: "Senior account management at Sorta Famous means translating strategy into day to day momentum, keeping clients close, timelines honest, and campaigns moving from idea to earned coverage.",
     focus: ["Client partnerships", "Campaign delivery", "PR strategy"],
   },
   {
-    img: "/images/art/team2.jpg",
-    n: "Samriddha Adhikary",
+    img: "/images/art/team-darshan.jpg",
+    n: "Darshan",
     r: "Sales & Marketing Coordinator",
-    bio: "Samriddha connects the right brands with the right kind of attention. He coordinates outreach and marketing, making sure the Sorta Famous story reaches the founders who need it most.",
+    bio: "Sales and marketing coordination connects the right brands with the right kind of attention, running outreach so the Sorta Famous story reaches the founders who need it most.",
     focus: ["Growth", "Outreach", "Marketing"],
   },
   {
-    img: "/images/art/team4.jpg",
-    n: "Riya Kapoor",
+    img: "/images/art/team-komal.jpg",
+    n: "Komal",
     r: "Operations Assistant",
-    bio: "Riya keeps the engine running. From process to logistics, she makes sure the work behind the visibility stays organised, on schedule, and quietly excellent.",
+    bio: "Operations keeps the engine running. From process to logistics, this is the work that keeps everything behind the visibility organised, on schedule, and quietly excellent.",
     focus: ["Operations", "Process", "Coordination"],
   },
   {
-    img: "/images/art/team3.jpg",
-    n: "Srinidhi K",
+    img: "/images/art/team-khwahish.jpg",
+    n: "Khwahish",
     r: "Media Assistant",
-    bio: "Srinidhi lives where brands meet the press. She supports media relations and placements, building the relationships that put clients in front of the audiences that matter.",
+    bio: "Media support is where brands meet the press, backing media relations and placements and building the relationships that put clients in front of the audiences that matter.",
     focus: ["Media relations", "Placements", "Press"],
   },
   {
-    img: "/images/art/team4.jpg",
+    img: "/images/art/team-palak.jpg",
     n: "Palak Nagar",
     r: "Graphic Designer",
-    bio: "Palak gives the strategy a face. She designs the visual language of every campaign, clean, considered, and unmistakably on brand.",
+    bio: "Design gives the strategy a face. Palak shapes the visual language of every campaign, clean, considered, and unmistakably on brand.",
     focus: ["Visual design", "Brand identity", "Content"],
   },
   {
-    img: "/images/art/team1.jpg",
-    n: "Aarav Sharma",
+    img: "/images/art/team-annanya.jpg",
+    n: "Annanya",
     r: "Content Strategist",
-    bio: "Aarav turns positioning into words that travel. He plans the content that carries each brand's point of view, editorial, sharp, and built to be shared.",
+    bio: "Content strategy turns positioning into words that travel, planning the content that carries each brand's point of view, editorial, sharp, and built to be shared.",
     focus: ["Content strategy", "Editorial", "Storytelling"],
   },
   {
-    img: "/images/art/team2.jpg",
-    n: "Meera Iyer",
+    img: "/images/art/team-sanya.jpg",
+    n: "Sanya",
     r: "Social Media Manager",
-    bio: "Meera runs the feeds that keep brands top of mind. She shapes the day to day voice on social, growing communities that actually stick around.",
+    bio: "Social management runs the feeds that keep brands top of mind, shaping the day to day voice and growing communities that actually stick around.",
     focus: ["Social media", "Community", "Engagement"],
   },
   {
-    img: "/images/art/team3.jpg",
-    n: "Kabir Malhotra",
+    img: "/images/art/team-nipun.jpg",
+    n: "Nipun",
     r: "PR Associate",
-    bio: "Kabir chases the story until it lands. He supports media outreach and pitching, opening the doors that put clients in the right headlines.",
+    bio: "PR support chases the story until it lands, backing media outreach and pitching and opening the doors that put clients in the right headlines.",
     focus: ["Media outreach", "Pitching", "PR"],
   },
   {
-    img: "/images/art/team4.jpg",
-    n: "Ananya Reddy",
+    img: "/images/art/team-tanvi.jpg",
+    n: "Tanvi",
     r: "Copywriter",
-    bio: "Ananya writes the lines people remember. From taglines to long form, she finds the words that make a brand sound exactly like itself.",
+    bio: "Copy is where a brand finds its voice. From taglines to long form, this is the work of finding the words that make a brand sound exactly like itself.",
     focus: ["Copywriting", "Messaging", "Brand voice"],
+  },
+  {
+    img: "/images/art/team-ashwini.jpg",
+    n: "Ashwini",
+    r: "Performance Marketing Executive",
+    bio: "Performance marketing turns spend into outcomes, running paid search and paid social with continuous testing so every rupee is accountable to a number.",
+    focus: ["Paid media", "Optimisation", "Reporting"],
+  },
+  {
+    img: "/images/art/team-maushmi.jpg",
+    n: "Maushmi",
+    r: "Brand Executive",
+    bio: "Brand execution holds the details together, keeping identity, messaging and tone consistent across every touchpoint a client shows up in.",
+    focus: ["Brand management", "Consistency", "Client support"],
   },
 ];
 
@@ -179,7 +199,7 @@ function TeamCard({
           src={m.img}
           alt={m.n}
           loading="lazy"
-          className="h-full w-full scale-100 object-cover object-[center_20%] grayscale transition-all duration-[900ms] ease-out group-hover:scale-[1.06] group-hover:grayscale-0"
+          className="h-full w-full scale-100 object-cover object-[center_20%] transition-all duration-[900ms] ease-out group-hover:scale-[1.06]"
         />
 
         {/* accent gradient wash blooms in on hover */}
@@ -413,7 +433,8 @@ export function Team() {
           </Reveal>
         </div>
 
-        <div className="grid grid-cols-2 gap-6 md:grid-cols-3 lg:grid-cols-5">
+        {/* 12 members, a 4-column grid fills three clean rows */}
+        <div className="grid grid-cols-2 gap-6 md:grid-cols-3 lg:grid-cols-4">
           {team.map((m, i) => (
             <Parallax key={m.n} amount={[34, 62, 46, 58, 40][i % 5]}>
               <TeamCard m={m} i={i} onOpen={() => setSelected(m)} />

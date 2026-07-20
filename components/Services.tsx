@@ -15,7 +15,7 @@ const services = [
   {
     t: "Public Relations (PR)",
     course: "Public relations",
-    img: "/images/art/svc1.jpg",
+    img: "/images/services/public-relations.jpg",
     items: ["Media relations", "Press releases", "Online PR", "Thought leadership"],
     feel: "So the right people say your name in the right rooms.",
     body:
@@ -24,7 +24,7 @@ const services = [
   {
     t: "Social Media Marketing",
     course: "Paid & organic",
-    img: "/images/art/svc3.jpg",
+    img: "/images/services/social-media-marketing.jpg",
     items: ["Strategy", "Content", "Community", "Paid social"],
     feel: "So the scroll stops, and the following becomes a community.",
     body:
@@ -33,7 +33,7 @@ const services = [
   {
     t: "Brand Management",
     course: "Brand",
-    img: "/images/art/svc2.jpg",
+    img: "/images/services/brand-management.jpg",
     items: ["Positioning", "Identity", "Digital brand", "Reputation"],
     feel: "So people feel something the moment they meet you.",
     body:
@@ -42,7 +42,7 @@ const services = [
   {
     t: "Performance Marketing",
     course: "Performance",
-    img: "/images/art/svc4.jpg",
+    img: "/images/services/performance-marketing.jpg",
     items: ["Paid search", "Paid social", "Optimisation", "Reporting"],
     feel: "Reach the right audience, increase conversions, and maximize every ad spend.",
     body:
@@ -51,7 +51,7 @@ const services = [
   {
     t: "Personal Branding",
     course: "Personal brand",
-    img: "/images/art/craft.jpg",
+    img: "/images/services/personal-branding.jpg",
     items: ["Positioning", "LinkedIn", "Thought leadership", "Reputation"],
     feel: "Build trust, attract opportunities, and stand out as an industry leader.",
     body:
