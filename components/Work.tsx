@@ -23,7 +23,7 @@ export function Work() {
         <div className="grid md:grid-cols-2 gap-5">
           {cases.map((c, i) => (
             <Reveal key={c.t} delay={(i % 2) * 100}>
-              <a href="#" className="group block">
+              <div className="group block">
                 <div className="relative aspect-[16/9] md:aspect-[13/5] rounded-3xl overflow-hidden bg-muted">
                   <Parallax amount={30} className="absolute inset-0">
                     <img
@@ -48,7 +48,7 @@ export function Work() {
                     <p className="text-cream/80 mt-1 text-sm">{c.d}</p>
                   </div>
                 </div>
-              </a>
+              </div>
             </Reveal>
           ))}
         </div>

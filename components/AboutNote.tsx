@@ -23,13 +23,11 @@ export function AboutNote() {
           {/* soft accent wash */}
           <div
             aria-hidden
-            className="pointer-events-none absolute -left-24 -top-24 h-80 w-80 rounded-full blur-[90px]"
-            style={{ background: "oklch(0.56 0.075 135 / 0.18)" }}
+            className="pointer-events-none absolute -left-24 -top-24 h-80 w-80 rounded-full bg-brand/[0.14] blur-[90px]"
           />
           <div
             aria-hidden
-            className="pointer-events-none absolute -right-16 -bottom-24 h-72 w-72 rounded-full blur-[90px]"
-            style={{ background: "oklch(0.68 0.12 75 / 0.14)" }}
+            className="pointer-events-none absolute -right-16 -bottom-24 h-72 w-72 rounded-full bg-accent/[0.12] blur-[90px]"
           />
 
           <div className="relative mx-auto max-w-3xl">

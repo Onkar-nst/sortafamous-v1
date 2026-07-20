@@ -19,6 +19,10 @@ const faqs = [
     q: "What is your pricing model?",
     a: "Most partnerships run as a monthly retainer scoped to your goals, with project based options for launches and standalone campaigns. We share a clear proposal after our first call, no surprises.",
   },
+  {
+    q: "Need support for a specific requirement without committing to a long-term retainer?",
+    a: "We offer one time, project-based services that are cost effective, goal-oriented, and tailored to your business needs.",
+  },
 ];
 
 export function FAQ() {

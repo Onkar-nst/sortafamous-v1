@@ -17,12 +17,13 @@
  * hellothere@sortafamous.in via Resend, then POST to "/api/lead" from here.
  */
 
-/** Mirrors the four services on the homepage, plus an escape hatch. */
+/** Mirrors the five services on the homepage, plus an escape hatch. */
 export const SERVICES = [
-  "Strategic PR",
-  "Social Performance",
-  "Content & Editorial",
-  "Founder Brand",
+  "Public Relations (PR)",
+  "Social Media Marketing",
+  "Brand Management",
+  "Performance Marketing",
+  "Personal Branding",
   "Not sure yet",
 ] as const;
 

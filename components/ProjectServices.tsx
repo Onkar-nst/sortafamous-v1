@@ -18,8 +18,6 @@ type Project = {
   Icon: LucideIcon;
   t: string;
   d: string;
-  accent: string;
-  tint: string;
 };
 
 const projects: Project[] = [
@@ -28,48 +26,36 @@ const projects: Project[] = [
     Icon: Gauge,
     t: "Brand Audit & Performance Analysis",
     d: "An in-depth analysis of your brand’s digital presence, social media, website, SEO and advertising performance, with actionable recommendations for improvement.",
-    accent: "oklch(0.68 0.12 75)", // ochre
-    tint: "oklch(0.68 0.12 75 / 0.10)",
   },
   {
     n: "02",
     Icon: Megaphone,
     t: "Public Relations (PR)",
     d: "Strengthen your brand reputation through strategic media outreach, press releases and targeted PR campaigns.",
-    accent: "oklch(0.56 0.075 135)", // sage
-    tint: "oklch(0.56 0.075 135 / 0.10)",
   },
   {
     n: "03",
     Icon: Sparkles,
     t: "Influencer Marketing",
     d: "Collaborate with carefully selected creators to increase brand awareness, credibility and audience engagement.",
-    accent: "oklch(0.63 0.15 35)", // terracotta
-    tint: "oklch(0.63 0.15 35 / 0.10)",
   },
   {
     n: "04",
     Icon: TrendingUp,
     t: "Performance Marketing",
     d: "Launch and optimise high-performing ad campaigns across Google, Meta, LinkedIn and other digital platforms to achieve measurable results.",
-    accent: "oklch(0.5 0.11 300)", // plum
-    tint: "oklch(0.5 0.11 300 / 0.10)",
   },
   {
     n: "05",
     Icon: PenTool,
     t: "Content Strategy & Creative",
     d: "Develop content strategies and creative assets that align with your brand, engage your audience and support your business objectives.",
-    accent: "oklch(0.55 0.11 250)", // steel blue
-    tint: "oklch(0.55 0.11 250 / 0.10)",
   },
   {
     n: "06",
     Icon: Code2,
     t: "Website Design & Development",
     d: "Build or revamp responsive, user-friendly and conversion-focused websites that deliver a seamless customer experience.",
-    accent: "oklch(0.58 0.09 190)", // teal
-    tint: "oklch(0.58 0.09 190 / 0.10)",
   },
 ];
 
@@ -87,8 +73,7 @@ export function ProjectServices() {
             {/* soft glow */}
             <div
               aria-hidden
-              className="pointer-events-none absolute -top-20 -right-16 h-80 w-80 rounded-full opacity-40 blur-3xl"
-              style={{ background: "oklch(0.68 0.12 75 / 0.35)" }}
+              className="pointer-events-none absolute -top-20 -right-16 h-80 w-80 rounded-full bg-accent/35 opacity-40 blur-3xl"
             />
             <div className="relative grid gap-8 lg:grid-cols-[1.5fr_1fr] lg:items-end">
               <div>
@@ -135,27 +120,19 @@ export function ProjectServices() {
                 {/* accent wash on hover */}
                 <div
                   aria-hidden
-                  className="pointer-events-none absolute inset-0 opacity-0 transition-opacity duration-500 group-hover:opacity-100"
-                  style={{ background: p.tint }}
+                  className="pointer-events-none absolute inset-0 bg-brand/[0.05] opacity-0 transition-opacity duration-500 group-hover:opacity-100"
                 />
                 {/* accent top bar */}
                 <span
                   aria-hidden
-                  className="absolute left-0 top-0 h-1 w-full origin-left scale-x-0 transition-transform duration-500 ease-out group-hover:scale-x-100"
-                  style={{ background: p.accent }}
+                  className="absolute left-0 top-0 h-1 w-full origin-left scale-x-0 bg-brand transition-transform duration-500 ease-out group-hover:scale-x-100"
                 />
 
                 <div className="relative flex items-center justify-between">
-                  <span
-                    className="grid h-12 w-12 place-items-center rounded-2xl text-cream shadow-lg transition-transform duration-500 group-hover:scale-110"
-                    style={{ background: p.accent }}
-                  >
+                  <span className="grid h-12 w-12 place-items-center rounded-2xl bg-brand/10 text-brand transition-all duration-500 group-hover:scale-110 group-hover:bg-brand group-hover:text-cream group-hover:shadow-lg">
                     <p.Icon className="h-5 w-5" strokeWidth={1.6} />
                   </span>
-                  <span
-                    className="serif text-4xl leading-none transition-colors duration-500"
-                    style={{ color: p.tint }}
-                  >
+                  <span className="serif text-4xl leading-none text-ink/10 transition-colors duration-500 group-hover:text-brand/25">
                     {p.n}
                   </span>
                 </div>
@@ -166,14 +143,8 @@ export function ProjectServices() {
                 </p>
 
                 <div className="mt-auto pt-6">
-                  <span
-                    className="inline-flex items-center gap-2 text-sm font-medium transition-all duration-500 group-hover:gap-3"
-                    style={{ color: p.accent }}
-                  >
-                    <span
-                      className="h-1.5 w-1.5 rounded-full"
-                      style={{ background: p.accent }}
-                    />
+                  <span className="inline-flex items-center gap-2 text-sm font-medium text-brand transition-all duration-500 group-hover:gap-3">
+                    <span className="h-1.5 w-1.5 rounded-full bg-accent" />
                     Available as a project
                   </span>
                 </div>

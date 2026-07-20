@@ -5,12 +5,12 @@ import { Reveal } from "./Reveal";
 import { EASE } from "./motion";
 
 const tags = [
-  { t: "Brand Audit & Performance Analysis", accent: "oklch(0.68 0.12 75)" },
-  { t: "Public Relations (PR)", accent: "oklch(0.56 0.075 135)" },
-  { t: "Influencer Marketing", accent: "oklch(0.63 0.15 35)" },
-  { t: "Performance Marketing", accent: "oklch(0.5 0.11 300)" },
-  { t: "Content Strategy & Creative", accent: "oklch(0.55 0.11 250)" },
-  { t: "Website Design & Development", accent: "oklch(0.58 0.09 190)" },
+  "Brand Audit & Performance Analysis",
+  "Public Relations (PR)",
+  "Influencer Marketing",
+  "Performance Marketing",
+  "Content Strategy & Creative",
+  "Website Design & Development",
 ];
 
 /** Homepage teaser for the project-based offering — links to the full
@@ -26,8 +26,7 @@ export function ProjectServicesPreview() {
           <div className="relative overflow-hidden rounded-[2rem] bg-ink-gradient text-cream p-8 md:p-12">
             <div
               aria-hidden
-              className="pointer-events-none absolute -bottom-24 -left-16 h-80 w-80 rounded-full opacity-40 blur-3xl"
-              style={{ background: "oklch(0.56 0.075 135 / 0.35)" }}
+              className="pointer-events-none absolute -bottom-24 -left-16 h-80 w-80 rounded-full bg-accent/35 opacity-40 blur-3xl"
             />
             <div className="relative grid gap-8 lg:grid-cols-[1fr_1.1fr] lg:items-center">
               <div>
@@ -55,14 +54,11 @@ export function ProjectServicesPreview() {
               <div className="flex flex-wrap gap-2.5 lg:justify-end">
                 {tags.map((tag) => (
                   <span
-                    key={tag.t}
+                    key={tag}
                     className="inline-flex items-center gap-2 rounded-pill border border-cream/15 bg-cream/5 px-4 py-2.5 text-sm text-cream/85"
                   >
-                    <span
-                      className="h-1.5 w-1.5 rounded-full"
-                      style={{ background: tag.accent }}
-                    />
-                    {tag.t}
+                    <span className="h-1.5 w-1.5 rounded-full bg-accent" />
+                    {tag}
                   </span>
                 ))}
               </div>

@@ -11,26 +11,11 @@ import { Reveal } from "./Reveal";
 import { Magnetic } from "./motion";
 import { EASE } from "./motion";
 
-/* Each service carries its own hue so the whole section shifts mood as you
-   move through the list — dot, number, row glow and preview frame all tint. */
 const services = [
   {
-    t: "Brand Endorsement",
-    course: "Brand",
-    img: "/images/art/svc2.jpg",
-    accent: "oklch(0.68 0.12 75)", // ochre
-    tint: "oklch(0.68 0.12 75 / 0.10)",
-    items: ["Positioning", "Identity", "Digital brand", "Reputation"],
-    feel: "So people feel something the moment they meet you.",
-    body:
-      "Building, keeping and growing strong brands, rooted in clarity, consistency and long term business value.",
-  },
-  {
-    t: "PR Services",
+    t: "Public Relations (PR)",
     course: "Public relations",
     img: "/images/art/svc1.jpg",
-    accent: "oklch(0.56 0.075 135)", // sage, on brand
-    tint: "oklch(0.56 0.075 135 / 0.10)",
     items: ["Media relations", "Press releases", "Online PR", "Thought leadership"],
     feel: "So the right people say your name in the right rooms.",
     body:
@@ -40,19 +25,24 @@ const services = [
     t: "Social Media Marketing",
     course: "Paid & organic",
     img: "/images/art/svc3.jpg",
-    accent: "oklch(0.63 0.15 35)", // terracotta
-    tint: "oklch(0.63 0.15 35 / 0.10)",
     items: ["Strategy", "Content", "Community", "Paid social"],
     feel: "So the scroll stops, and the following becomes a community.",
     body:
       "A clear plan, stories that make sense and constant optimisation, social that connects with customers and grows your business.",
   },
   {
+    t: "Brand Management",
+    course: "Brand",
+    img: "/images/art/svc2.jpg",
+    items: ["Positioning", "Identity", "Digital brand", "Reputation"],
+    feel: "So people feel something the moment they meet you.",
+    body:
+      "Building, keeping and growing strong brands, rooted in clarity, consistency and long term business value.",
+  },
+  {
     t: "Performance Marketing",
     course: "Performance",
     img: "/images/art/svc4.jpg",
-    accent: "oklch(0.5 0.11 300)", // plum
-    tint: "oklch(0.5 0.11 300 / 0.10)",
     items: ["Paid search", "Paid social", "Optimisation", "Reporting"],
     feel: "Reach the right audience, increase conversions, and maximize every ad spend.",
     body:
@@ -62,8 +52,6 @@ const services = [
     t: "Personal Branding",
     course: "Personal brand",
     img: "/images/art/craft.jpg",
-    accent: "oklch(0.55 0.11 250)", // steel blue
-    tint: "oklch(0.55 0.11 250 / 0.10)",
     items: ["Positioning", "LinkedIn", "Thought leadership", "Reputation"],
     feel: "Build trust, attract opportunities, and stand out as an industry leader.",
     body:
@@ -98,11 +86,10 @@ export function Services() {
       id="services"
       className="relative z-[60] -mt-8 rounded-t-[2.5rem] bg-cream py-16 md:py-24 px-6 md:px-12 lg:px-16 xl:px-28 overflow-hidden"
     >
-      {/* faint dotted texture in the top-right, tinted by the hovered service */}
+      {/* faint glow in the top-right, appears while a service is hovered */}
       <div
         aria-hidden
-        className="pointer-events-none absolute -top-16 right-0 h-96 w-96 rounded-full opacity-[0.5] blur-3xl transition-colors duration-700"
-        style={{ background: active ? active.tint : "transparent" }}
+        className={`pointer-events-none absolute -top-16 right-0 h-96 w-96 rounded-full bg-brand/10 blur-3xl transition-opacity duration-700 ${active ? "opacity-50" : "opacity-0"}`}
       />
 
       <div className="relative mx-auto max-w-[1480px]">
@@ -150,10 +137,7 @@ export function Services() {
                   className="relative -translate-x-1/2 -translate-y-1/2"
                   style={{ transform: "translate(-50%, -50%) rotate(-5deg)" }}
                 >
-                  <div
-                    className="h-64 w-[22rem] overflow-hidden rounded-2xl border-4 shadow-2xl"
-                    style={{ borderColor: active.accent }}
-                  >
+                  <div className="h-64 w-[22rem] overflow-hidden rounded-2xl border-4 border-brand shadow-2xl">
                     <img
                       src={active.img}
                       alt={active.t}
@@ -176,16 +160,14 @@ export function Services() {
             return (
               <Reveal key={s.t} delay={i * 60}>
                 <div
-                  className="relative border-t border-ink/15 transition-colors duration-500"
-                  style={{ background: isHot ? s.tint : "transparent" }}
+                  className={`relative border-t border-ink/15 transition-colors duration-500 ${isHot ? "bg-brand/[0.05]" : "bg-transparent"}`}
                   onMouseEnter={() => setHover(i)}
                   onMouseLeave={() => setHover((h) => (h === i ? -1 : h))}
                 >
                   {/* accent rail that grows on hover / open */}
                   <motion.span
                     aria-hidden
-                    className="absolute left-0 top-0 bottom-0 w-[3px] origin-top"
-                    style={{ background: s.accent }}
+                    className="absolute left-0 top-0 bottom-0 w-[3px] origin-top bg-brand"
                     initial={false}
                     animate={{ scaleY: isHot || isOpen ? 1 : 0 }}
                     transition={{ duration: 0.4, ease: EASE }}
@@ -197,8 +179,7 @@ export function Services() {
                     aria-expanded={isOpen}
                   >
                     <span
-                      className="serif-italic text-sm w-8 shrink-0 transition-colors duration-300"
-                      style={{ color: isHot || isOpen ? s.accent : undefined }}
+                      className={`serif-italic text-sm w-8 shrink-0 transition-colors duration-300 ${isHot || isOpen ? "text-brand" : ""}`}
                     >
                       0{i + 1}
                     </span>
@@ -206,25 +187,30 @@ export function Services() {
                       {s.course}
                     </span>
                     <h3
-                      className="serif text-3xl md:text-5xl flex-1 transition-colors duration-300"
-                      style={{ color: isHot && !isOpen ? s.accent : undefined }}
+                      className={`serif text-3xl md:text-5xl flex-1 transition-colors duration-300 ${isHot && !isOpen ? "text-brand" : ""}`}
                     >
                       {s.t}
                     </h3>
-                    <div className="hidden lg:flex flex-nowrap gap-2 justify-end">
+                    <motion.div
+                      className="hidden lg:flex flex-nowrap gap-2 justify-end"
+                      initial={false}
+                      animate={{ opacity: isOpen ? 0 : 1 }}
+                      transition={{ duration: 0.3, ease: EASE }}
+                      style={{ pointerEvents: isOpen ? "none" : undefined }}
+                      aria-hidden={isOpen}
+                    >
                       {s.items.map((it) => (
                         <span key={it} className="pill whitespace-nowrap">
                           {it}
                         </span>
                       ))}
-                    </div>
+                    </motion.div>
                     <span
-                      className="relative h-11 w-11 shrink-0 rounded-full border grid place-items-center transition-colors duration-300"
-                      style={{
-                        borderColor: isHot || isOpen ? s.accent : "oklch(0.18 0.008 80 / 0.25)",
-                        background: isHot || isOpen ? s.accent : "transparent",
-                        color: isHot || isOpen ? "var(--cream)" : "inherit",
-                      }}
+                      className={`relative h-11 w-11 shrink-0 rounded-full border grid place-items-center transition-colors duration-300 ${
+                        isHot || isOpen
+                          ? "border-brand bg-brand text-cream"
+                          : "border-ink/25 bg-transparent"
+                      }`}
                     >
                       <span className="absolute h-px w-4 bg-current" />
                       <motion.span
@@ -247,10 +233,7 @@ export function Services() {
                         <div className="grid md:grid-cols-[1.4fr_1fr] gap-8 pb-10 pl-4 md:pl-[4rem] pr-4">
                           <div className="flex flex-col justify-between gap-6">
                             <div>
-                              <p
-                                className="serif-italic text-2xl md:text-3xl leading-snug"
-                                style={{ color: s.accent }}
-                              >
+                              <p className="serif-italic text-2xl md:text-3xl leading-snug text-brand">
                                 {s.feel}
                               </p>
                               <p className="mt-4 text-ink-soft text-lg md:text-xl leading-relaxed max-w-xl">
@@ -277,17 +260,7 @@ export function Services() {
                                 <Magnetic>
                                   <a
                                     href="/services"
-                                    className="inline-flex items-center gap-2 rounded-pill border border-ink/20 px-5 py-2.5 text-sm transition-colors duration-300 hover:text-cream"
-                                    style={{ ["--hoverbg" as string]: s.accent }}
-                                    onMouseEnter={(e) => {
-                                      e.currentTarget.style.background = s.accent;
-                                      e.currentTarget.style.borderColor = s.accent;
-                                    }}
-                                    onMouseLeave={(e) => {
-                                      e.currentTarget.style.background = "transparent";
-                                      e.currentTarget.style.borderColor =
-                                        "oklch(0.18 0.008 80 / 0.2)";
-                                    }}
+                                    className="inline-flex items-center gap-2 rounded-pill border border-ink/20 px-5 py-2.5 text-sm transition-colors duration-300 hover:border-brand hover:bg-brand hover:text-cream"
                                   >
                                     Start a project <span aria-hidden>↗</span>
                                   </a>
@@ -296,20 +269,14 @@ export function Services() {
                             </div>
                           </div>
 
-                          <div
-                            className="relative aspect-[16/10] rounded-2xl overflow-hidden bg-muted border-2"
-                            style={{ borderColor: s.tint }}
-                          >
+                          <div className="relative aspect-[16/10] rounded-2xl overflow-hidden bg-muted border-2 border-brand/15">
                             <img
                               src={s.img}
                               alt={s.t}
                               loading="lazy"
                               className="h-full w-full object-cover"
                             />
-                            <span
-                              className="absolute top-3 left-3 rounded-pill px-3 py-1 text-xs text-cream backdrop-blur-sm"
-                              style={{ background: s.accent }}
-                            >
+                            <span className="absolute top-3 left-3 rounded-pill bg-brand px-3 py-1 text-xs text-cream backdrop-blur-sm">
                               {s.course}
                             </span>
                           </div>
@@ -329,21 +296,14 @@ export function Services() {
           <div className="relative mt-12 flex overflow-hidden [mask-image:linear-gradient(to_right,transparent,black_8%,black_92%,transparent)]">
             <div className="flex shrink-0 items-center gap-3 pr-3 animate-marquee">
               {services
-                .flatMap((s) => s.items.map((it) => ({ it, accent: s.accent })))
-                .concat(
-                  services.flatMap((s) =>
-                    s.items.map((it) => ({ it, accent: s.accent })),
-                  ),
-                )
-                .map(({ it, accent }, k) => (
+                .flatMap((s) => s.items)
+                .concat(services.flatMap((s) => s.items))
+                .map((it, k) => (
                   <span
                     key={k}
                     className="inline-flex items-center gap-2 whitespace-nowrap rounded-pill border border-ink/15 px-4 py-2 text-sm text-ink-soft"
                   >
-                    <span
-                      className="h-1.5 w-1.5 rounded-full"
-                      style={{ background: accent }}
-                    />
+                    <span className="h-1.5 w-1.5 rounded-full bg-accent" />
                     {it}
                   </span>
                 ))}

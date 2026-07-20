@@ -98,11 +98,9 @@ const team: Member[] = [
   },
 ];
 
+/* Single on-brand accent for every card — keeps the roster uniform. */
 const ACCENTS = [
-  { a: "oklch(0.56 0.075 135)", t: "oklch(0.56 0.075 135 / 0.16)" }, // sage
-  { a: "oklch(0.68 0.12 75)", t: "oklch(0.68 0.12 75 / 0.16)" }, // ochre
-  { a: "oklch(0.63 0.15 35)", t: "oklch(0.63 0.15 35 / 0.16)" }, // terracotta
-  { a: "oklch(0.5 0.11 300)", t: "oklch(0.5 0.11 300 / 0.16)" }, // plum
+  { a: "var(--brand)", t: "color-mix(in oklch, var(--brand) 16%, transparent)" },
 ];
 
 /** Brand eight-point asterisk, used as the feature's masthead mark. */
@@ -374,15 +372,13 @@ export function Team() {
       {/* drifting ambient accent blobs */}
       <motion.div
         aria-hidden
-        className="pointer-events-none absolute -left-24 top-40 h-72 w-72 rounded-full blur-[100px]"
-        style={{ background: "oklch(0.56 0.075 135 / 0.12)" }}
+        className="pointer-events-none absolute -left-24 top-40 h-72 w-72 rounded-full bg-brand/[0.12] blur-[100px]"
         animate={{ y: [0, 40, 0], x: [0, 20, 0] }}
         transition={{ duration: 14, ease: "easeInOut", repeat: Infinity }}
       />
       <motion.div
         aria-hidden
-        className="pointer-events-none absolute -right-24 bottom-24 h-80 w-80 rounded-full blur-[110px]"
-        style={{ background: "oklch(0.63 0.15 35 / 0.10)" }}
+        className="pointer-events-none absolute -right-24 bottom-24 h-80 w-80 rounded-full bg-accent/[0.10] blur-[110px]"
         animate={{ y: [0, -50, 0], x: [0, -24, 0] }}
         transition={{ duration: 18, ease: "easeInOut", repeat: Infinity }}
       />

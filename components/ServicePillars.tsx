@@ -14,8 +14,6 @@ type Pillar = {
   t: string;
   d: string;
   img: string;
-  accent: string;
-  tint: string;
   feel: string; // one warm, human line
   items: Offering[];
 };
@@ -23,12 +21,40 @@ type Pillar = {
 const pillars: Pillar[] = [
   {
     n: "01",
+    Icon: Megaphone,
+    t: "Public Relations (PR)",
+    d: "Public relations that builds reputation, earns media attention, and strengthens your public image across digital and traditional platforms.",
+    img: "/images/art/svc1.jpg",
+    feel: "So the right people say your name in the right rooms.",
+    items: [
+      { name: "Strategic PR solutions", desc: "Long term strategy that protects brand value, not just short term buzz." },
+      { name: "Media relations & press coverage", desc: "Attention from trusted news outlets, trade press and online publications." },
+      { name: "Press release writing & distribution", desc: "Concise, compelling releases for launches, milestones and partnerships." },
+      { name: "Online PR & digital reputation", desc: "Monitoring and managing the articles and stories written about you." },
+      { name: "Thought leadership & positioning", desc: "Expert articles, interviews and opinion pieces that build trust over time." },
+    ],
+  },
+  {
+    n: "02",
+    Icon: Share2,
+    t: "Social Media Marketing",
+    d: "A clear plan, stories that make sense, and constant optimisation, social that connects with customers and grows your business.",
+    img: "/images/art/svc3.jpg",
+    feel: "So the scroll stops, and the following becomes a community.",
+    items: [
+      { name: "Strategic social planning", desc: "Goals, audience and competitor research to find the right platforms." },
+      { name: "Content & brand storytelling", desc: "Brand appropriate content and real stories that engage your audience." },
+      { name: "Account management", desc: "Publishing, quick replies to comments and messages, and daily monitoring." },
+      { name: "Paid social advertising", desc: "Targeted campaigns optimised for reach, discovery and ROI." },
+      { name: "Analytics & optimisation", desc: "Reach, engagement and conversion tracking that guides the strategy." },
+    ],
+  },
+  {
+    n: "03",
     Icon: Gem,
-    t: "Brand Endorsement",
+    t: "Brand Management",
     d: "Building, keeping and growing strong brands, rooted in clarity, consistency and long term business value.",
     img: "/images/art/svc2.jpg",
-    accent: "oklch(0.68 0.12 75)", // ochre
-    tint: "oklch(0.68 0.12 75 / 0.10)",
     feel: "So people feel something the moment they meet you.",
     items: [
       { name: "Brand endorsement", desc: "Partnering with trusted creators, celebrities and industry voices to amplify your brand with authenticity." },
@@ -40,47 +66,11 @@ const pillars: Pillar[] = [
     ],
   },
   {
-    n: "02",
-    Icon: Megaphone,
-    t: "PR Services",
-    d: "Public relations that builds reputation, earns media attention, and strengthens your public image across digital and traditional platforms.",
-    img: "/images/art/svc1.jpg",
-    accent: "oklch(0.56 0.075 135)", // sage
-    tint: "oklch(0.56 0.075 135 / 0.10)",
-    feel: "So the right people say your name in the right rooms.",
-    items: [
-      { name: "Strategic PR solutions", desc: "Long term strategy that protects brand value, not just short term buzz." },
-      { name: "Media relations & press coverage", desc: "Attention from trusted news outlets, trade press and online publications." },
-      { name: "Press release writing & distribution", desc: "Concise, compelling releases for launches, milestones and partnerships." },
-      { name: "Online PR & digital reputation", desc: "Monitoring and managing the articles and stories written about you." },
-      { name: "Thought leadership & positioning", desc: "Expert articles, interviews and opinion pieces that build trust over time." },
-    ],
-  },
-  {
-    n: "03",
-    Icon: Share2,
-    t: "Social Media Marketing",
-    d: "A clear plan, stories that make sense, and constant optimisation, social that connects with customers and grows your business.",
-    img: "/images/art/svc3.jpg",
-    accent: "oklch(0.63 0.15 35)", // terracotta
-    tint: "oklch(0.63 0.15 35 / 0.10)",
-    feel: "So the scroll stops, and the following becomes a community.",
-    items: [
-      { name: "Strategic social planning", desc: "Goals, audience and competitor research to find the right platforms." },
-      { name: "Content & brand storytelling", desc: "Brand appropriate content and real stories that engage your audience." },
-      { name: "Account management", desc: "Publishing, quick replies to comments and messages, and daily monitoring." },
-      { name: "Paid social advertising", desc: "Targeted campaigns optimised for reach, discovery and ROI." },
-      { name: "Analytics & optimisation", desc: "Reach, engagement and conversion tracking that guides the strategy." },
-    ],
-  },
-  {
     n: "04",
     Icon: Target,
     t: "Performance Marketing",
     d: "Data-driven marketing campaigns focused on generating qualified leads, increasing sales, and maximizing returns on every advertising dollar.",
     img: "/images/art/svc4.jpg",
-    accent: "oklch(0.5 0.11 300)", // plum
-    tint: "oklch(0.5 0.11 300 / 0.10)",
     feel: "Reach the right audience, increase conversions, and maximize every ad spend.",
     items: [
       { name: "Performance marketing strategy", desc: "Growth-focused strategies built around your business goals, audience, and measurable KPIs." },
@@ -96,8 +86,6 @@ const pillars: Pillar[] = [
     t: "Personal Branding",
     d: "Strategic personal branding focused on building credibility, growing influence, and creating meaningful opportunities across digital platforms.",
     img: "/images/art/craft.jpg",
-    accent: "oklch(0.55 0.11 250)", // steel blue
-    tint: "oklch(0.55 0.11 250 / 0.10)",
     feel: "Build trust, attract opportunities, and stand out as an industry leader.",
     items: [
       { name: "Personal brand strategy", desc: "A clear brand identity, positioning, messaging and growth roadmap aligned with your goals." },
@@ -135,13 +123,9 @@ export function ServicePillars() {
                       {/* soft accent halo behind the frame */}
                       <div
                         aria-hidden
-                        className="pointer-events-none absolute -inset-6 rounded-[2.5rem] opacity-0 blur-2xl transition-opacity duration-700 group-hover/row:opacity-100"
-                        style={{ background: p.tint }}
+                        className="pointer-events-none absolute -inset-6 rounded-[2.5rem] bg-brand/10 opacity-0 blur-2xl transition-opacity duration-700 group-hover/row:opacity-100"
                       />
-                      <div
-                        className="relative aspect-[4/3] overflow-hidden rounded-[2rem] border bg-muted"
-                        style={{ borderColor: p.tint }}
-                      >
+                      <div className="relative aspect-[4/3] overflow-hidden rounded-[2rem] border border-brand/15 bg-muted">
                         <img
                           src={p.img}
                           alt={p.t}
@@ -150,10 +134,7 @@ export function ServicePillars() {
                         />
                         {/* icon plate */}
                         <div className="absolute left-5 top-5 flex items-center gap-3">
-                          <span
-                            className="grid h-12 w-12 place-items-center rounded-2xl text-cream shadow-lg backdrop-blur-sm"
-                            style={{ background: p.accent }}
-                          >
+                          <span className="grid h-12 w-12 place-items-center rounded-2xl bg-brand text-cream shadow-lg backdrop-blur-sm">
                             <p.Icon className="h-5 w-5" strokeWidth={1.6} />
                           </span>
                         </div>
@@ -167,21 +148,15 @@ export function ServicePillars() {
                   {/* Text side */}
                   <div className={flipped ? "lg:order-1" : ""}>
                     <div className="flex items-center gap-3">
-                      <span
-                        className="h-2 w-2 rounded-full"
-                        style={{ background: p.accent }}
-                      />
-                      <span className="eyebrow" style={{ color: p.accent }}>
+                      <span className="h-2 w-2 rounded-full bg-accent" />
+                      <span className="eyebrow text-brand">
                         Practice {p.n}
                       </span>
                     </div>
 
                     <h3 className="serif text-4xl md:text-5xl mt-4">{p.t}</h3>
 
-                    <p
-                      className="serif-italic text-xl md:text-2xl mt-3"
-                      style={{ color: p.accent }}
-                    >
+                    <p className="serif-italic text-xl md:text-2xl mt-3 text-brand">
                       {p.feel}
                     </p>
 
@@ -197,10 +172,7 @@ export function ServicePillars() {
                           viewport={{ once: true, margin: "0px 0px -10% 0px" }}
                           transition={{ delay: j * 0.05, duration: 0.6, ease: EASE }}
                         >
-                          <span
-                            className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full"
-                            style={{ background: p.accent }}
-                          />
+                          <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-accent" />
                           <div>
                             <div className="text-sm font-medium text-ink">{it.name}</div>
                             <div className="text-sm text-ink-soft leading-snug mt-0.5">{it.desc}</div>
