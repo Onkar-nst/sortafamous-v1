@@ -164,6 +164,19 @@ export function Services() {
                   onMouseEnter={() => setHover(i)}
                   onMouseLeave={() => setHover((h) => (h === i ? -1 : h))}
                 >
+                  {/* The panel image only mounts once the row is opened, so on
+                      touch (no hover to warm it) the fetch starts on tap and the
+                      frame sits empty. This decoy loads the same URL as the row
+                      nears the viewport, so the real one is a cache hit. */}
+                  <img
+                    src={s.img}
+                    alt=""
+                    aria-hidden
+                    loading="lazy"
+                    decoding="async"
+                    className="pointer-events-none absolute h-px w-px opacity-0"
+                  />
+
                   {/* accent rail that grows on hover / open */}
                   <motion.span
                     aria-hidden
