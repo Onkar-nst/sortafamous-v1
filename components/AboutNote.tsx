@@ -2,12 +2,13 @@
 
 import { Reveal } from "./Reveal";
 
+/** The first five of the team, in the same order as the Meet the team roster. */
 const faces = [
-  "/images/scatter/avatar-15.webp",
-  "/images/scatter/avatar-16.webp",
-  "/images/scatter/avatar-17.webp",
-  "/images/scatter/avatar-18.webp",
-  "/images/scatter/avatar-19.webp",
+  { src: "/images/art/team-nandini.jpg", name: "Nandini Mahant" },
+  { src: "/images/art/team-tanvi.jpg", name: "Tanvi Patel" },
+  { src: "/images/art/team-komal.jpg", name: "Komal Singh" },
+  { src: "/images/art/team-ashwini.jpg", name: "Ashwini Rajput" },
+  { src: "/images/art/team-sanya.jpg", name: "Sanya Mishra" },
 ];
 
 /**
@@ -60,15 +61,15 @@ export function AboutNote() {
               <div className="mt-10 flex flex-wrap items-center justify-between gap-6">
                 <div className="flex items-center gap-4">
                   <div className="flex -space-x-3">
-                    {faces.map((src, i) => (
+                    {faces.map((face, i) => (
                       <span
-                        key={src}
+                        key={face.src}
                         className="relative h-11 w-11 overflow-hidden rounded-full border-2 border-card bg-muted"
                         style={{ zIndex: faces.length - i }}
                       >
                         <img
-                          src={src}
-                          alt=""
+                          src={face.src}
+                          alt={face.name}
                           loading="lazy"
                           className="h-full w-full object-cover"
                         />

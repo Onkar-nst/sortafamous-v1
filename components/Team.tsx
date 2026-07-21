@@ -12,14 +12,16 @@ import { Reveal } from "./Reveal";
 import { EASE, Parallax } from "./motion";
 
 /**
- * Team roster, built from the client-supplied portraits in the SF Website
- * assets pack. Names and photographs are the client's own.
+ * Team roster. Names, roles and bios are the client's own, transcribed
+ * verbatim from the roster they supplied, in the order they gave. Portraits
+ * are matched to people by the first name on each asset filename.
  *
- * Roles: Nandini's and Palak's are confirmed against sortafamous.in/about-us.
- * The remaining ten are drawn from the agency's role list but the
- * person-to-role pairing is UNCONFIRMED and needs a client review pass.
- * Bios are deliberately role-descriptive, they make no personal claims about
- * an individual beyond the function stated here.
+ * Bios are the client's wording, so the voice varies between entries (the
+ * founder's reads third person, the rest first person). Don't "fix" that
+ * without asking, it is how they wrote themselves.
+ *
+ * `focus` tags are ours, derived from each stated role. They are the only
+ * field here not supplied by the client.
  *
  * Clicking a card opens a profile modal with the portrait and fuller detail.
  */
@@ -40,81 +42,74 @@ const team: Member[] = [
     focus: ["Brand strategy", "Creative direction", "Founder narratives"],
   },
   {
-    img: "/images/art/team-tejas.jpg",
-    n: "Tejas",
-    r: "Sr. Account Manager",
-    bio: "Senior account management at Sorta Famous means translating strategy into day to day momentum, keeping clients close, timelines honest, and campaigns moving from idea to earned coverage.",
-    focus: ["Client partnerships", "Campaign delivery", "PR strategy"],
-  },
-  {
-    img: "/images/art/team-darshan.jpg",
-    n: "Darshan",
-    r: "Sales & Marketing Coordinator",
-    bio: "Sales and marketing coordination connects the right brands with the right kind of attention, running outreach so the Sorta Famous story reaches the founders who need it most.",
-    focus: ["Growth", "Outreach", "Marketing"],
+    img: "/images/art/team-tanvi.jpg",
+    n: "Tanvi Patel",
+    r: "Business Development Manager",
+    bio: "I'm responsible for helping a company grow by finding new business opportunities, building relationships, and bringing in clients.",
+    focus: ["Business development", "Partnerships", "Client growth"],
   },
   {
     img: "/images/art/team-komal.jpg",
-    n: "Komal",
-    r: "Operations Assistant",
-    bio: "Operations keeps the engine running. From process to logistics, this is the work that keeps everything behind the visibility organised, on schedule, and quietly excellent.",
-    focus: ["Operations", "Process", "Coordination"],
+    n: "Komal Singh",
+    r: "HR Manager",
+    bio: "Being an HR Manager, I like interacting with people, knowing what drives them and contribute to creating high performing teams for organizations.",
+    focus: ["People & culture", "Hiring", "Team development"],
+  },
+  {
+    img: "/images/art/team-ashwini.jpg",
+    n: "Ashwini Rajput",
+    r: "Senior PR Manager",
+    bio: "Like to think strategy, love to see them get executed.",
+    focus: ["PR strategy", "Media relations", "Campaign delivery"],
+  },
+  {
+    img: "/images/art/team-sanya.jpg",
+    n: "Sanya Mishra",
+    r: "PR Specialist",
+    bio: "My Fuel? Constant thrill of getting good work done",
+    focus: ["Public relations", "Press outreach", "Coverage"],
   },
   {
     img: "/images/art/team-khwahish.jpg",
-    n: "Khwahish",
-    r: "Media Assistant",
-    bio: "Media support is where brands meet the press, backing media relations and placements and building the relationships that put clients in front of the audiences that matter.",
+    n: "Khwaish Hingad",
+    r: "Media Relations Specialist",
+    bio: "Which universe do I belong to? Media Universe.",
     focus: ["Media relations", "Placements", "Press"],
+  },
+  {
+    img: "/images/art/team-tejas.jpg",
+    n: "Tejas Tank",
+    r: "Senior Social Media Manager",
+    bio: "Crafting content strategies that make brands impossible to ignore.",
+    focus: ["Social strategy", "Content", "Community"],
+  },
+  {
+    img: "/images/art/team-annanya.jpg",
+    n: "Ananya Rana",
+    r: "Social Media Manager",
+    bio: "I work in Marketing and I'm someone who's always curious to learn and take on new challenges.",
+    focus: ["Social media", "Content", "Engagement"],
   },
   {
     img: "/images/art/team-palak.jpg",
     n: "Palak Nagar",
     r: "Graphic Designer",
-    bio: "Design gives the strategy a face. Palak shapes the visual language of every campaign, clean, considered, and unmistakably on brand.",
+    bio: "From blank canvases to brand magic, I design ideas that people remember.",
     focus: ["Visual design", "Brand identity", "Content"],
   },
   {
-    img: "/images/art/team-annanya.jpg",
-    n: "Annanya",
-    r: "Content Strategist",
-    bio: "Content strategy turns positioning into words that travel, planning the content that carries each brand's point of view, editorial, sharp, and built to be shared.",
-    focus: ["Content strategy", "Editorial", "Storytelling"],
-  },
-  {
-    img: "/images/art/team-sanya.jpg",
-    n: "Sanya",
-    r: "Social Media Manager",
-    bio: "Social management runs the feeds that keep brands top of mind, shaping the day to day voice and growing communities that actually stick around.",
-    focus: ["Social media", "Community", "Engagement"],
-  },
-  {
-    img: "/images/art/team-nipun.jpg",
-    n: "Nipun",
-    r: "PR Associate",
-    bio: "PR support chases the story until it lands, backing media outreach and pitching and opening the doors that put clients in the right headlines.",
-    focus: ["Media outreach", "Pitching", "PR"],
-  },
-  {
-    img: "/images/art/team-tanvi.jpg",
-    n: "Tanvi",
-    r: "Copywriter",
-    bio: "Copy is where a brand finds its voice. From taglines to long form, this is the work of finding the words that make a brand sound exactly like itself.",
-    focus: ["Copywriting", "Messaging", "Brand voice"],
-  },
-  {
-    img: "/images/art/team-ashwini.jpg",
-    n: "Ashwini",
-    r: "Performance Marketing Executive",
-    bio: "Performance marketing turns spend into outcomes, running paid search and paid social with continuous testing so every rupee is accountable to a number.",
+    img: "/images/art/team-darshan.jpg",
+    n: "Darshan Rathod",
+    r: "Performance Marketing Manager",
+    bio: "I turn ad spend into revenue and emerging brands into market leaders.",
     focus: ["Paid media", "Optimisation", "Reporting"],
   },
   {
-    img: "/images/art/team-maushmi.jpg",
-    n: "Maushmi",
-    r: "Brand Executive",
-    bio: "Brand execution holds the details together, keeping identity, messaging and tone consistent across every touchpoint a client shows up in.",
-    focus: ["Brand management", "Consistency", "Client support"],
+    img: "/images/art/team-nipun.jpg",
+    n: "Nipun Rahul",
+    r: "Brand Manager",
+    bio: "Crafting stories that resonate. Building brands that last.",
+    focus: ["Brand management", "Storytelling", "Positioning"],
   },
 ];
 
@@ -256,9 +251,6 @@ function TeamCard({
 }
 
 function ProfileModal({ member, onClose }: { member: Member; onClose: () => void }) {
-  const dropCap = member.bio.charAt(0);
-  const bioRest = member.bio.slice(1);
-
   // Close on Escape and lock body scroll while the modal is open.
   useEffect(() => {
     const onKey = (e: KeyboardEvent) => {
@@ -339,10 +331,7 @@ function ProfileModal({ member, onClose }: { member: Member; onClose: () => void
             <h3 className="serif mt-3 text-4xl leading-[1.04] md:text-5xl">{member.n}</h3>
 
             <p className="mt-6 text-base leading-relaxed text-ink-soft">
-              <span className="serif float-left mr-3 mt-1 text-[3.4rem] leading-[0.66] text-ink">
-                {dropCap}
-              </span>
-              {bioRest}
+              {member.bio}
             </p>
 
             <div className="mt-7">
