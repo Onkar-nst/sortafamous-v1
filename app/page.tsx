@@ -12,7 +12,7 @@ import { ServiceLeadPopup } from "@/components/ServiceLeadPopup";
 // import { Craft } from "@/components/Craft"; // hidden for now
 import { Process } from "@/components/Process";
 import { Work } from "@/components/Work";
-import { Team } from "@/components/Team";
+// import { Team } from "@/components/Team"; // hidden for now
 // import { Testimonials } from "@/components/Testimonials"; // hidden for now
 // import { BrandQuote } from "@/components/BrandQuote"; // removed per brief (avatar scatter section)
 // import { Pricing } from "@/components/Pricing"; // hidden for now
@@ -52,7 +52,7 @@ export default function Home() {
           {/* <Craft /> hidden for now */}
           <Process />
           <Work />
-          <Team />
+          {/* <Team /> hidden for now */}
           {/* <Testimonials /> hidden for now */}
           {/* <BrandQuote /> removed per brief */}
           {/* <Pricing /> hidden for now */}

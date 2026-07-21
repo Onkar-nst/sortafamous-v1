@@ -15,6 +15,16 @@ export type CaseStudy = {
   inside: string;
   /** Caption sitting under the coverage image on the detail page. */
   insideCaption: string;
+  /**
+   * Further coverage stacked below the inside asset on the detail page, in
+   * order. Use when one campaign has more than a single piece of artwork.
+   */
+  extra?: { src: string; caption: string }[];
+  /**
+   * Kept out of the Selected work grid. The detail page still builds and stays
+   * reachable by URL, so this hides a case without discarding its copy.
+   */
+  hidden?: boolean;
   outlet: string;
   services: string[];
   summary: string;
@@ -31,6 +41,9 @@ export const cases: CaseStudy[] = [
     cover: "/images/work/ambar-house-womans-era-cover.jpg",
     inside: "/images/work/ambar-house-womans-era-inside.jpg",
     insideCaption: "Ambar House featured in Woman's Era.",
+    // The coverage now sits on the Ambar House digital case, so this one is
+    // kept off the grid rather than shown twice.
+    hidden: true,
     outlet: "Woman's Era",
     services: ["Public Relations", "Brand storytelling", "Print media"],
     summary:
@@ -50,6 +63,12 @@ export const cases: CaseStudy[] = [
     cover: "/images/work/ambar-house-digital-cover.jpg",
     inside: "/images/work/ambar-house-digital-inside.jpg",
     insideCaption: "The Ambar House social presence, strategy through execution.",
+    extra: [
+      {
+        src: "/images/work/ambar-house-womans-era-inside.jpg",
+        caption: "Ambar House featured in Woman's Era.",
+      },
+    ],
     outlet: "Social & digital",
     services: ["Social media", "Content", "Brand identity"],
     summary:

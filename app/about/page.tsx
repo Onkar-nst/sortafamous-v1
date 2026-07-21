@@ -6,7 +6,7 @@ import { AboutManifesto } from "@/components/AboutManifesto";
 import { AboutValues } from "@/components/AboutValues";
 import { AboutNote } from "@/components/AboutNote";
 // import { AboutPhilosophy } from "@/components/AboutPhilosophy"; // hidden for now
-import { Team } from "@/components/Team";
+// import { Team } from "@/components/Team"; // hidden for now
 import { CTA } from "@/components/CTA";
 import { Footer } from "@/components/Footer";
 
@@ -33,7 +33,7 @@ export default function AboutPage() {
         <AboutNote />
         {/* <AboutPrinciples /> hidden for now */}
         {/* <AboutPhilosophy /> hidden for now */}
-        <Team />
+        {/* <Team /> hidden for now */}
         <CTA />
       </main>
       <Footer />

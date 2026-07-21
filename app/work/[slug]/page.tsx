@@ -61,6 +61,15 @@ export default async function CasePage({
               className="w-full"
             />
           </div>
+
+          {study.extra?.map((piece) => (
+            <div
+              key={piece.src}
+              className="mt-8 overflow-hidden rounded-[2rem] bg-muted"
+            >
+              <img src={piece.src} alt={piece.caption} className="w-full" />
+            </div>
+          ))}
         </div>
       </main>
       <Footer />

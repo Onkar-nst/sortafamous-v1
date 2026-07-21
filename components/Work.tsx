@@ -6,6 +6,8 @@ import { SectionHeader } from "./SectionHeader";
 import { cases } from "@/lib/cases";
 
 export function Work() {
+  const visible = cases.filter((c) => !c.hidden);
+
   return (
     <section id="work" className="relative z-[100] bg-cream py-16 md:py-24 px-6 md:px-12 lg:px-16 xl:px-28 rounded-t-[2.5rem]">
       <div className="mx-auto max-w-[1480px]">
@@ -17,7 +19,7 @@ export function Work() {
         {/* The cover artwork already carries its own headline, so the card keeps
             the image clean and puts client + context underneath it. */}
         <div className="grid md:grid-cols-2 gap-x-5 gap-y-10">
-          {cases.map((c, i) => (
+          {visible.map((c, i) => (
             <Reveal key={c.slug} delay={(i % 2) * 100}>
               <Link
                 href={`/work/${c.slug}`}
