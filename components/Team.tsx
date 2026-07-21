@@ -419,8 +419,8 @@ export function Team() {
           </Reveal>
         </div>
 
-        {/* 12 members, a 6-column grid fills two clean rows */}
-        <div className="grid grid-cols-2 gap-6 md:grid-cols-3 lg:grid-cols-6 lg:gap-5">
+        {/* 12 members, a 4-column grid fills three clean rows */}
+        <div className="grid grid-cols-2 gap-6 md:grid-cols-3 lg:grid-cols-4 lg:gap-5">
           {team.map((m, i) => (
             <Parallax key={m.n} amount={[34, 62, 46, 58, 40][i % 5]}>
               <TeamCard m={m} i={i} onOpen={() => setSelected(m)} />

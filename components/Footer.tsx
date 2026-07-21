@@ -13,6 +13,34 @@ const company = [
   { href: "#", label: "Privacy Policy" },
 ];
 
+// lucide v1 dropped brand glyphs, so these are inline paths.
+const socials = [
+  {
+    label: "Instagram",
+    href: "https://www.instagram.com/sortafamous.in/",
+    filled: false,
+    path: (
+      <>
+        <rect x="2" y="2" width="20" height="20" rx="5" />
+        <circle cx="12" cy="12" r="4" />
+        <circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none" />
+      </>
+    ),
+  },
+  {
+    label: "LinkedIn",
+    href: "https://www.linkedin.com/company/sortaa-famous/",
+    filled: false,
+    path: (
+      <>
+        <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-9h4v1.5" />
+        <rect x="2" y="9" width="4" height="12" />
+        <circle cx="4" cy="4" r="2" />
+      </>
+    ),
+  },
+];
+
 export function Footer() {
   return (
     <footer className="relative z-[150] bg-ink-gradient text-cream overflow-hidden">
@@ -27,26 +55,58 @@ export function Footer() {
 
         {/* middle, nav columns + closing CTA */}
         <div className="grid md:grid-cols-2 gap-12 py-14 md:py-16">
-          <div className="grid grid-cols-2 gap-8 max-w-md">
-            <div>
-              <div className="eyebrow mb-5 text-cream/60">Navigation</div>
-              <ul className="space-y-3 text-cream/60">
-                {nav.map((l) => (
-                  <li key={l.label}>
-                    <a href={l.href} className="hover:text-cream transition">{l.label}</a>
-                  </li>
-                ))}
-              </ul>
+          <div className="max-w-md">
+            <div className="grid grid-cols-2 gap-8">
+              <div>
+                <div className="eyebrow mb-5 text-cream/60">Navigation</div>
+                <ul className="space-y-3 text-cream/60">
+                  {nav.map((l) => (
+                    <li key={l.label}>
+                      <a href={l.href} className="hover:text-cream transition">{l.label}</a>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+              <div>
+                <div className="eyebrow mb-5 text-cream/60">Company</div>
+                <ul className="space-y-3 text-cream/60">
+                  {company.map((l) => (
+                    <li key={l.label}>
+                      <a href={l.href} className="hover:text-cream transition">{l.label}</a>
+                    </li>
+                  ))}
+                </ul>
+              </div>
             </div>
-            <div>
-              <div className="eyebrow mb-5 text-cream/60">Company</div>
-              <ul className="space-y-3 text-cream/60">
-                {company.map((l) => (
-                  <li key={l.label}>
-                    <a href={l.href} className="hover:text-cream transition">{l.label}</a>
-                  </li>
+
+            {/* social buttons */}
+            <div className="mt-12">
+              <div className="eyebrow mb-5 text-cream/60">Follow</div>
+              <div className="flex gap-3">
+                {socials.map((s) => (
+                  <a
+                    key={s.label}
+                    href={s.href}
+                    aria-label={s.label}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="h-11 w-11 grid place-items-center rounded-full border border-cream/20 text-cream/60 hover:text-ink hover:bg-cream hover:border-cream transition"
+                  >
+                    <svg
+                      viewBox="0 0 24 24"
+                      className="h-4 w-4"
+                      fill={s.filled ? "currentColor" : "none"}
+                      stroke={s.filled ? "none" : "currentColor"}
+                      strokeWidth={1.6}
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      aria-hidden="true"
+                    >
+                      {s.path}
+                    </svg>
+                  </a>
                 ))}
-              </ul>
+              </div>
             </div>
           </div>
 
