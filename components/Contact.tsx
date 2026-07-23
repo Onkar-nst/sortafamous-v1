@@ -1,8 +1,10 @@
 "use client";
 
-import { Mail, Phone, MapPin, ArrowRight, Sparkles, Users } from "lucide-react";
+import { useState } from "react";
+import { Mail, Phone, MapPin, ArrowRight, Sparkles, Users, Check } from "lucide-react";
 import { Reveal } from "./Reveal";
 import { SectionHeader } from "./SectionHeader";
+import { submitLead } from "@/lib/submitLead";
 
 const fields = [
   { id: "name", label: "Your name", type: "text", placeholder: "Jane Doe" },
@@ -21,7 +23,57 @@ const info = [
   { Icon: MapPin, v: "203 Patel Commercial Premises, Andheri West, Mumbai 400053" },
 ];
 
+type Values = { name: string; email: string; service: string; details: string };
+
+const EMPTY: Values = { name: "", email: "", service: "", details: "" };
+
 export function Contact() {
+  const [values, setValues] = useState<Values>(EMPTY);
+  const [errors, setErrors] = useState<Partial<Record<keyof Values, string>>>({});
+  const [formError, setFormError] = useState("");
+  const [status, setStatus] = useState<"idle" | "sending" | "done">("idle");
+
+  const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+  function validate(v: Values) {
+    const errs: Partial<Record<keyof Values, string>> = {};
+    if (!v.name.trim()) errs.name = "Please tell us your name.";
+    if (!EMAIL_RE.test(v.email)) errs.email = "Enter a valid email address.";
+    if (!v.service.trim()) errs.service = "Tell us what you're after.";
+    return errs;
+  }
+
+  function update(field: keyof Values, value: string) {
+    setValues((prev) => ({ ...prev, [field]: value }));
+    setErrors((prev) => (prev[field] ? { ...prev, [field]: undefined } : prev));
+  }
+
+  async function onSubmit(event: React.FormEvent) {
+    event.preventDefault();
+    if (status === "sending") return;
+
+    const found = validate(values);
+    setErrors(found);
+    if (Object.keys(found).length > 0) return;
+
+    setStatus("sending");
+    setFormError("");
+
+    const result = await submitLead({
+      ...values,
+      source: "contact-form",
+      submittedAt: new Date().toISOString(),
+    });
+
+    if (!result.ok) {
+      setStatus("idle");
+      setFormError(result.error);
+      return;
+    }
+
+    setStatus("done");
+  }
+
   return (
     <section
       id="contact"
@@ -65,40 +117,78 @@ export function Contact() {
 
           {/* RIGHT, form + contact info */}
           <Reveal delay={100}>
-            <form onSubmit={(e) => e.preventDefault()} className="flex flex-col">
-              <div className="space-y-7">
-                {fields.map((f) => (
-                  <div key={f.id}>
-                    <label htmlFor={f.id} className="block text-base text-ink-soft mb-2.5">
-                      {f.label}
-                    </label>
-                    <input
-                      id={f.id}
-                      type={f.type}
-                      placeholder={f.placeholder}
-                      className="w-full bg-transparent border-b border-ink/20 pb-3 text-lg outline-none focus:border-ink transition-colors placeholder:text-ink/30"
-                    />
-                  </div>
-                ))}
-                <div>
-                  <label htmlFor="details" className="block text-base text-ink-soft mb-2.5">
-                    Project details
-                  </label>
-                  <textarea
-                    id="details"
-                    rows={2}
-                    placeholder="Tell us a little about what you're building…"
-                    className="w-full bg-transparent border-b border-ink/20 pb-3 text-lg outline-none focus:border-ink transition-colors resize-none placeholder:text-ink/30"
-                  />
+            <div className="flex flex-col h-full justify-between">
+              {status === "done" ? (
+                <div className="py-12 px-6 text-center border border-brand/20 bg-brand/5 rounded-[2rem] flex flex-col items-center justify-center my-auto">
+                  <span className="mb-5 grid h-14 w-14 place-items-center rounded-full bg-brand text-cream">
+                    <Check className="h-6 w-6" strokeWidth={1.8} />
+                  </span>
+                  <h3 className="serif text-3xl leading-tight text-brand">
+                    Message sent!
+                  </h3>
+                  <p className="mt-3 text-base text-ink-soft max-w-md">
+                    Thanks, {values.name.split(" ")[0]}. We&apos;ve sent a confirmation email to <span className="font-semibold">{values.email}</span>. A strategist will get back to you shortly.
+                  </p>
                 </div>
-              </div>
+              ) : (
+                <form onSubmit={onSubmit} noValidate className="flex flex-col">
+                  <div className="space-y-7">
+                    {fields.map((f) => (
+                      <div key={f.id}>
+                        <label htmlFor={f.id} className="block text-base text-ink-soft mb-2.5">
+                          {f.label}
+                        </label>
+                        <input
+                          id={f.id}
+                          type={f.type}
+                          placeholder={f.placeholder}
+                          value={values[f.id as keyof Values]}
+                          onChange={(e) => update(f.id as keyof Values, e.target.value)}
+                          className="w-full bg-transparent border-b border-ink/20 pb-3 text-lg outline-none focus:border-ink transition-colors placeholder:text-ink/30"
+                        />
+                        {errors[f.id as keyof Values] && (
+                          <p role="alert" className="mt-2 text-xs text-red-700">
+                            {errors[f.id as keyof Values]}
+                          </p>
+                        )}
+                      </div>
+                    ))}
+                    <div>
+                      <label htmlFor="details" className="block text-base text-ink-soft mb-2.5">
+                        Project details
+                      </label>
+                      <textarea
+                        id="details"
+                        rows={2}
+                        placeholder="Tell us a little about what you're building…"
+                        value={values.details}
+                        onChange={(e) => update("details", e.target.value)}
+                        className="w-full bg-transparent border-b border-ink/20 pb-3 text-lg outline-none focus:border-ink transition-colors resize-none placeholder:text-ink/30"
+                      />
+                    </div>
+                  </div>
 
-              <a
-                href="mailto:hellothere@sortafamous.in"
-                className="mt-10 inline-flex w-full items-center justify-center gap-2 rounded-full bg-brand text-cream px-8 py-4 text-sm hover:opacity-90 transition"
-              >
-                Let&apos;s get Sorta Famous <ArrowRight className="h-4 w-4" />
-              </a>
+                  {formError && (
+                    <p role="alert" className="mt-4 text-sm text-red-700">
+                      {formError}
+                    </p>
+                  )}
+
+                  <button
+                    type="submit"
+                    disabled={status === "sending"}
+                    className="mt-10 inline-flex w-full items-center justify-center gap-2 rounded-full bg-brand text-cream px-8 py-4 text-sm hover:opacity-90 transition cursor-pointer disabled:opacity-60"
+                  >
+                    {status === "sending" ? (
+                      "Sending…"
+                    ) : (
+                      <>
+                        Let&apos;s get Sorta Famous <ArrowRight className="h-4 w-4" />
+                      </>
+                    )}
+                  </button>
+                </form>
+              )}
 
               <div className="mt-10 space-y-4">
                 {info.map(({ Icon, v, href }) => (
@@ -116,7 +206,7 @@ export function Contact() {
                   </div>
                 ))}
               </div>
-            </form>
+            </div>
           </Reveal>
         </div>
       </div>

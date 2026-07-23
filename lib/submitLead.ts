@@ -32,8 +32,9 @@ export type Service = (typeof SERVICES)[number];
 export type Lead = {
   name: string;
   email: string;
-  phone: string;
-  service: Service;
+  phone?: string;
+  service: string;
+  details?: string;
   /** Which surface captured the lead, so destinations can segment later. */
   source: string;
   submittedAt: string;
@@ -42,11 +43,21 @@ export type Lead = {
 export type LeadResult = { ok: true } | { ok: false; error: string };
 
 export async function submitLead(lead: Lead): Promise<LeadResult> {
-  // Placeholder: logs instead of sending. Swap this out to go live.
-  console.info("[lead captured]", lead);
+  try {
+    const res = await fetch("/api/lead", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(lead),
+    });
 
-  // Mimics network latency so the pending UI is exercised in development.
-  await new Promise((resolve) => setTimeout(resolve, 600));
+    if (!res.ok) {
+      const data = await res.json().catch(() => ({}));
+      return { ok: false, error: data.error || "Failed to submit request." };
+    }
 
-  return { ok: true };
+    return { ok: true };
+  } catch (error: any) {
+    console.error("Error submitting lead:", error);
+    return { ok: false, error: "Network error. Please try again." };
+  }
 }
