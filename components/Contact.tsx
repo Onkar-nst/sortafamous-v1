@@ -20,7 +20,12 @@ const perks = [
 const info = [
   { Icon: Mail, v: "hellothere@sortafamous.in", href: "mailto:hellothere@sortafamous.in" },
   { Icon: Phone, v: "+91 8814 999 939", href: "tel:+918814999939" },
-  { Icon: MapPin, v: "203 Patel Commercial Premises, Andheri West, Mumbai 400053" },
+  {
+    Icon: MapPin,
+    v: "Patel Commercial Premises, 203, Off New Link Rd, opp. T-Series, above HDFC bank, Veera Desai Industrial Estate, Andheri West, Mumbai, Maharashtra 400053",
+    href: "https://www.google.com/maps/search/?api=1&query=" +
+      encodeURIComponent("Patel Commercial Premises, 203, Off New Link Rd, opp. T-Series, above HDFC bank, Veera Desai Industrial Estate, Andheri West, Mumbai, Maharashtra 400053"),
+  },
 ];
 
 type Values = { name: string; email: string; service: string; details: string };
@@ -197,7 +202,14 @@ export function Contact() {
                       <Icon className="h-4 w-4 text-ink-soft" strokeWidth={1.6} />
                     </span>
                     {href ? (
-                      <a href={href} className="text-ink-soft hover:text-ink transition">
+                      <a
+                        href={href}
+                        // Open the map in a new tab, keep mailto/tel in place.
+                        {...(href.startsWith("http")
+                          ? { target: "_blank", rel: "noopener noreferrer" }
+                          : {})}
+                        className="text-ink-soft hover:text-ink transition"
+                      >
                         {v}
                       </a>
                     ) : (
