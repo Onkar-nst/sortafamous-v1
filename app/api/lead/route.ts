@@ -25,8 +25,8 @@ export async function POST(request: Request) {
       );
     }
 
-    // Create SMTP Transporter (defaults to Hostinger)
-    const host = process.env.EMAIL_HOST?.trim() || "smtp.hostinger.com";
+    // Create SMTP Transporter (defaults to Gmail)
+    const host = process.env.EMAIL_HOST?.trim() || "smtp.gmail.com";
     const port = parseInt(process.env.EMAIL_PORT?.trim() || "465");
     const secure = process.env.EMAIL_SECURE?.trim() !== "false";
 

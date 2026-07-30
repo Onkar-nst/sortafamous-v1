@@ -1,4 +1,4 @@
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, Mail, Phone, MapPin } from "lucide-react";
 
 const nav = [
   { href: "/", label: "Home" },
@@ -110,16 +110,49 @@ export function Footer() {
             </div>
           </div>
 
-          <div className="flex flex-col md:items-end md:text-right justify-between gap-8">
-            <h2 className="serif text-[clamp(2rem,4vw,3.6rem)] leading-[1.05] max-w-md">
+          <div className="flex flex-col gap-6 md:pl-8 lg:pl-16">
+            <h2 className="serif text-[clamp(2rem,4vw,3.2rem)] leading-[1.05]">
               Let&apos;s get you <span className="serif-italic text-accent">Sorta Famous.</span>
             </h2>
-            <a
-              href="/contact"
-              className="inline-flex w-fit items-center gap-2 rounded-full bg-cream text-ink px-7 py-4 text-sm hover:opacity-90 transition"
-            >
-              Let&apos;s work together <ArrowRight className="h-4 w-4" />
-            </a>
+
+            <div className="space-y-4 text-cream/70 text-sm">
+              <div className="flex items-start gap-3">
+                <Mail className="h-4 w-4 mt-0.5 shrink-0 text-accent" />
+                <a href="mailto:hellothere@sortafamous.in" className="hover:text-cream transition">
+                  hellothere@sortafamous.in
+                </a>
+              </div>
+              <div className="flex items-start gap-3">
+                <Phone className="h-4 w-4 mt-0.5 shrink-0 text-accent" />
+                <a href="tel:+918814999939" className="hover:text-cream transition">
+                  +91 8814 999 939
+                </a>
+              </div>
+              <div className="flex items-start gap-3">
+                <MapPin className="h-4 w-4 mt-0.5 shrink-0 text-accent" />
+                <a
+                  href={"https://www.google.com/maps/search/?api=1&query=" + encodeURIComponent("Patel Commercial Premises, 203, Off New Link Rd, opp. T-Series, above HDFC bank, Veera Desai Industrial Estate, Andheri West, Mumbai, Maharashtra 400053")}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-cream transition leading-relaxed text-left"
+                >
+                  Patel Commercial Premises, 203, Off New Link Rd, opp. T-Series, above HDFC bank, Veera Desai Industrial Estate, Andheri West, Mumbai, Maharashtra 400053
+                </a>
+              </div>
+            </div>
+
+            <div className="w-full h-44 rounded-2xl overflow-hidden border border-cream/10 grayscale opacity-80 hover:grayscale-0 hover:opacity-100 transition-all duration-300">
+              <iframe
+                title="Sorta Famous Location Map"
+                src="https://maps.google.com/maps?q=Patel%20Commercial%20Premises%20203%20Veera%20Desai%20Industrial%20Estate%20Andheri%20West%20Mumbai&t=&z=15&ie=UTF8&iwloc=&output=embed"
+                width="100%"
+                height="100%"
+                style={{ border: 0 }}
+                allowFullScreen={false}
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+              />
+            </div>
           </div>
         </div>
 

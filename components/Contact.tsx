@@ -93,8 +93,8 @@ export function Contact() {
 
         <div className="grid lg:grid-cols-2 gap-6 lg:gap-10 items-stretch">
           {/* LEFT, image card with headline + perks */}
-          <Reveal>
-            <div className="relative rounded-[2rem] overflow-hidden min-h-[520px] lg:h-full flex flex-col justify-between p-8 md:p-10 bg-ink-gradient">
+          <Reveal className="lg:h-full">
+            <div className="relative rounded-[2rem] overflow-hidden min-h-[720px] lg:h-full flex flex-col justify-between p-8 md:p-10 bg-ink-gradient">
               <img
                 src="/images/art/scene1.jpg"
                 alt=""
@@ -121,8 +121,8 @@ export function Contact() {
           </Reveal>
 
           {/* RIGHT, form + contact info */}
-          <Reveal delay={100}>
-            <div className="flex flex-col h-full justify-between">
+          <Reveal delay={100} className="lg:h-full">
+            <div className="lg:sticky lg:top-32 flex flex-col">
               {status === "done" ? (
                 <div className="py-12 px-6 text-center border border-brand/20 bg-brand/5 rounded-[2rem] flex flex-col items-center justify-center my-auto">
                   <span className="mb-5 grid h-14 w-14 place-items-center rounded-full bg-brand text-cream">
@@ -195,29 +195,7 @@ export function Contact() {
                 </form>
               )}
 
-              <div className="mt-10 space-y-4">
-                {info.map(({ Icon, v, href }) => (
-                  <div key={v} className="flex items-center gap-4">
-                    <span className="h-11 w-11 shrink-0 rounded-full bg-card grid place-items-center">
-                      <Icon className="h-4 w-4 text-ink-soft" strokeWidth={1.6} />
-                    </span>
-                    {href ? (
-                      <a
-                        href={href}
-                        // Open the map in a new tab, keep mailto/tel in place.
-                        {...(href.startsWith("http")
-                          ? { target: "_blank", rel: "noopener noreferrer" }
-                          : {})}
-                        className="text-ink-soft hover:text-ink transition"
-                      >
-                        {v}
-                      </a>
-                    ) : (
-                      <span className="text-ink-soft">{v}</span>
-                    )}
-                  </div>
-                ))}
-              </div>
+
             </div>
           </Reveal>
         </div>
