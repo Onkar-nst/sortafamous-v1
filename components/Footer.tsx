@@ -131,12 +131,12 @@ export function Footer() {
               <div className="flex items-start gap-3">
                 <MapPin className="h-4 w-4 mt-0.5 shrink-0 text-accent" />
                 <a
-                  href={"https://www.google.com/maps/search/?api=1&query=" + encodeURIComponent("Patel Commercial Premises, 203, Off New Link Rd, opp. T-Series, above HDFC bank, Veera Desai Industrial Estate, Andheri West, Mumbai, Maharashtra 400053")}
+                  href={"https://www.google.com/maps/search/?api=1&query=" + encodeURIComponent("Sorta Famous, Patel Commercial Premises, 203, Off New Link Rd, opp. T-Series, above HDFC bank, Veera Desai Industrial Estate, Andheri West, Mumbai, Maharashtra 400053")}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="hover:text-cream transition leading-relaxed text-left"
                 >
-                  Patel Commercial Premises, 203, Off New Link Rd, opp. T-Series, above HDFC bank, Veera Desai Industrial Estate, Andheri West, Mumbai, Maharashtra 400053
+                  Sorta Famous, Patel Commercial Premises, 203, Off New Link Rd, opp. T-Series, above HDFC bank, Veera Desai Industrial Estate, Andheri West, Mumbai, Maharashtra 400053
                 </a>
               </div>
             </div>
@@ -144,7 +144,7 @@ export function Footer() {
             <div className="w-full h-44 rounded-2xl overflow-hidden border border-cream/10 grayscale opacity-80 hover:grayscale-0 hover:opacity-100 transition-all duration-300">
               <iframe
                 title="Sorta Famous Location Map"
-                src="https://maps.google.com/maps?q=Patel%20Commercial%20Premises%20203%20Veera%20Desai%20Industrial%20Estate%20Andheri%20West%20Mumbai&t=&z=15&ie=UTF8&iwloc=&output=embed"
+                src={"https://maps.google.com/maps?q=" + encodeURIComponent("Sorta Famous, Patel Commercial Premises, 203, Off New Link Rd, opp. T-Series, above HDFC bank, Veera Desai Industrial Estate, Andheri West, Mumbai, Maharashtra 400053") + "&t=&z=15&ie=UTF8&iwloc=&output=embed"}
                 width="100%"
                 height="100%"
                 style={{ border: 0 }}

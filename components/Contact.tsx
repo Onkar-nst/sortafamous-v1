@@ -22,9 +22,9 @@ const info = [
   { Icon: Phone, v: "+91 8814 999 939", href: "tel:+918814999939" },
   {
     Icon: MapPin,
-    v: "Patel Commercial Premises, 203, Off New Link Rd, opp. T-Series, above HDFC bank, Veera Desai Industrial Estate, Andheri West, Mumbai, Maharashtra 400053",
+    v: "Sorta Famous, Patel Commercial Premises, 203, Off New Link Rd, opp. T-Series, above HDFC bank, Veera Desai Industrial Estate, Andheri West, Mumbai, Maharashtra 400053",
     href: "https://www.google.com/maps/search/?api=1&query=" +
-      encodeURIComponent("Patel Commercial Premises, 203, Off New Link Rd, opp. T-Series, above HDFC bank, Veera Desai Industrial Estate, Andheri West, Mumbai, Maharashtra 400053"),
+      encodeURIComponent("Sorta Famous, Patel Commercial Premises, 203, Off New Link Rd, opp. T-Series, above HDFC bank, Veera Desai Industrial Estate, Andheri West, Mumbai, Maharashtra 400053"),
   },
 ];
 
