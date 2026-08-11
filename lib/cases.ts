@@ -139,6 +139,46 @@ export const cases: CaseStudy[] = [
       "Both landed as exclusives with top-tier entertainment desks, establishing Sudhir as a name worth calling rather than a one-track credit.",
     ],
   },
+  {
+    slug: "kredme",
+    n: "06",
+    client: "KredMe",
+    t: "Performance Meets Precision",
+    d: "Performance marketing driving app downloads for a credit card app",
+    cover: "/images/work/kredme-cover.jpg",
+    inside: "/images/work/kredme-inside.jpg",
+    insideCaption:
+      "KredMe, reaching the right audience and driving app downloads through strategic performance marketing.",
+    outlet: "Performance marketing",
+    services: ["Performance marketing", "Paid media", "App growth"],
+    summary:
+      "KredMe tells you which card earns the most before you pay. We run the performance marketing that puts the app in front of the people who will actually use it.",
+    body: [
+      "A card-rewards app only works once it is on the phone, so every rupee of spend is judged on one thing: installs from people who open it again.",
+      "We built the targeting around the moment of intent — shoppers comparing cards at checkout — and wrote creative that leads with the payoff rather than the feature list.",
+      "Strategic performance marketing keeps the cost per install honest while the audience stays the right one.",
+    ],
+  },
+  {
+    slug: "sraavyam",
+    n: "07",
+    client: "Sraavyam",
+    t: "Curating Social Media Presence",
+    d: "Building an Andhra kitchen's digital presence from the ground up",
+    cover: "/images/work/sraavyam-cover.jpg",
+    inside: "/images/work/sraavyam-inside.jpg",
+    insideCaption:
+      "Sraavyam The Andhra Kitchen, built from launch planning through social media management and influencer collaborations.",
+    outlet: "Social & digital",
+    services: ["Social media", "Influencer marketing", "Launch strategy"],
+    summary:
+      "Sraavyam The Andhra Kitchen came to us before it opened. We handle launch planning, social media management, and influencer collaborations, building the digital presence from the ground up.",
+    body: [
+      "A restaurant's first impression now happens on a profile, not at the door. Sraavyam needed one that already looked like a place worth booking on opening week.",
+      "We set the positioning — authentic Andhra, pure veg, bold flavours, honest ingredients — then built the grid, highlights, and launch calendar underneath it.",
+      "Influencer collaborations brought the first wave of tables in, and the content pipeline keeps the feed running past launch.",
+    ],
+  },
 ];
 
 export function getCase(slug: string) {
