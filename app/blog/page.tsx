@@ -38,7 +38,7 @@ export default async function BlogPage({
       <main className="flex-grow pt-32 md:pt-40 px-6 md:px-12 lg:px-16 xl:px-28">
         <div className="mx-auto max-w-5xl">
           <h1 className="serif text-[clamp(3rem,6vw,5rem)] leading-none tracking-[-0.02em] mb-8">
-            Journal
+            Blog
           </h1>
           
           <div className="mb-12 flex flex-col gap-6">

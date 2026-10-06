@@ -9,7 +9,7 @@ const nav = [
 ];
 const company = [
   { href: "/#work", label: "Selected work" },
-  { href: "/#journal", label: "Journal" },
+  { href: "/blog", label: "Blog" },
   { href: "/contact", label: "Contact" },
   { href: "/privacy-policy", label: "Privacy Policy" },
   { href: "/terms", label: "Terms of Use" },

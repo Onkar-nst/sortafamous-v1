@@ -46,7 +46,7 @@ export function BlogList({
       <div className="grid gap-x-6 gap-y-12 grid-cols-2 lg:grid-cols-3">
         {posts.map((post) => (
           <article key={post.id} className="group flex flex-col gap-4">
-            <Link href={`/${post.slug}`} className="block overflow-hidden rounded-2xl aspect-[4/3] bg-muted relative">
+            <Link href={`/${post.slug}`} className="block overflow-hidden rounded-2xl aspect-[16/9] bg-muted relative">
               {post.featuredImageUrl ? (
                 <img
                   src={post.featuredImageUrl}
