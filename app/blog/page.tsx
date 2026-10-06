@@ -3,7 +3,7 @@ import Link from 'next/link';
 import { Nav } from '@/components/Nav';
 import { CTA } from '@/components/CTA';
 import { Footer } from '@/components/Footer';
-import { getBlogPosts, getBlogCategories, getBlogTags } from '@/lib/blogs';
+import { getBlogPosts, getBlogCategories } from '@/lib/blogs';
 import { BlogList } from '@/components/BlogList';
 
 export const metadata: Metadata = {
@@ -19,7 +19,7 @@ export default async function BlogPage({
   const { page, search, category, tag } = await searchParams;
   const currentPage = page ? parseInt(page, 10) : 1;
   
-  const [postsRes, categories, tags] = await Promise.all([
+  const [postsRes, categories] = await Promise.all([
     getBlogPosts({
       page: currentPage,
       search: search || undefined,
@@ -27,7 +27,6 @@ export default async function BlogPage({
       tagId: tag ? parseInt(tag, 10) : undefined,
     }),
     getBlogCategories(),
-    getBlogTags(),
   ]);
 
   const { posts, totalPages } = postsRes;
@@ -60,21 +59,6 @@ export default async function BlogPage({
                     className={`px-4 py-1.5 rounded-full border text-sm transition bg-transparent border-ink/20 hover:border-ink/50 text-ink-soft`}
                   >
                     {c.name} {c.count ? `(${c.count})` : ''}
-                  </Link>
-                ))}
-              </div>
-            )}
-            
-            {tags.length > 0 && (
-              <div className="flex flex-wrap items-center gap-2">
-                <span className="text-sm font-medium text-ink mr-2">Tags:</span>
-                {tags.map((t) => (
-                  <Link
-                    key={t.id}
-                    href={`/tag/${t.slug}`}
-                    className={`px-4 py-1.5 rounded-full border text-sm transition bg-transparent border-ink/20 hover:border-ink/50 text-ink-soft`}
-                  >
-                    #{t.name}
                   </Link>
                 ))}
               </div>

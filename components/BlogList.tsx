@@ -67,11 +67,11 @@ export function BlogList({
                 <span>{post.formattedDate}</span>
               </div>
               <Link href={`/${post.slug}`}>
-                <h2 className="serif text-2xl leading-tight group-hover:text-ink-soft transition-colors">
+                <h2 className="serif text-2xl leading-tight line-clamp-2 group-hover:text-ink-soft transition-colors">
                   {post.title}
                 </h2>
               </Link>
-              <p className="text-ink-soft line-clamp-3 text-sm mt-1">
+              <p className="text-ink-soft line-clamp-2 text-sm mt-1">
                 {post.excerpt}
               </p>
             </div>
