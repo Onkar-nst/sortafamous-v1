@@ -47,12 +47,12 @@ export default async function PostPage({ params }: { params: Promise<{ slug: str
         )}
         
         <article className="px-6 md:px-12 lg:px-16 xl:px-28">
-          <div className="mx-auto max-w-3xl pt-32 md:pt-40">
+          <div className="mx-auto max-w-[1000px] pt-32 md:pt-40">
             <a
               href="/blog"
               className="inline-flex items-center gap-2 text-sm text-ink-soft transition hover:text-ink"
             >
-              <span aria-hidden>←</span> Back to journal
+              <span aria-hidden>←</span> Back to blog
             </a>
 
             <div className="mt-10 flex flex-wrap items-center gap-x-4 gap-y-3 text-sm text-ink-soft">
@@ -86,7 +86,7 @@ export default async function PostPage({ params }: { params: Promise<{ slug: str
             </div>
           )}
 
-          <div className="mx-auto mt-16 max-w-[700px] pb-16">
+          <div className="mx-auto mt-16 max-w-[1000px] pb-16">
             <div 
               className="prose prose-lg prose-ink max-w-none prose-headings:font-serif prose-headings:font-normal prose-headings:tracking-tight prose-a:text-brand prose-a:underline hover:prose-a:text-brand/80 transition-colors prose-img:rounded-2xl prose-img:shadow-sm prose-p:leading-relaxed prose-blockquote:border-l-brand prose-blockquote:bg-brand/5 prose-blockquote:py-2 prose-blockquote:px-5 prose-blockquote:rounded-r-xl prose-blockquote:not-italic prose-li:marker:text-brand/60 prose-strong:text-ink prose-strong:font-medium"
               dangerouslySetInnerHTML={{ __html: post.contentHtml }} 

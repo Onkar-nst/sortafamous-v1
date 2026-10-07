@@ -46,7 +46,7 @@ export function BlogList({
       <div className="grid gap-x-6 gap-y-12 grid-cols-2 lg:grid-cols-3">
         {posts.map((post) => (
           <article key={post.id} className="group flex flex-col gap-4">
-            <Link href={`/${post.slug}`} className="block overflow-hidden rounded-2xl aspect-[4/3] bg-muted relative">
+            <Link href={`/${post.slug}`} className="block overflow-hidden rounded-2xl aspect-[16/9] bg-muted relative">
               {post.featuredImageUrl ? (
                 <img
                   src={post.featuredImageUrl}
@@ -67,11 +67,11 @@ export function BlogList({
                 <span>{post.formattedDate}</span>
               </div>
               <Link href={`/${post.slug}`}>
-                <h2 className="serif text-2xl leading-tight group-hover:text-ink-soft transition-colors">
+                <h2 className="serif text-2xl leading-tight line-clamp-2 group-hover:text-ink-soft transition-colors">
                   {post.title}
                 </h2>
               </Link>
-              <p className="text-ink-soft line-clamp-3 text-sm mt-1">
+              <p className="text-ink-soft line-clamp-2 text-sm mt-1">
                 {post.excerpt}
               </p>
             </div>

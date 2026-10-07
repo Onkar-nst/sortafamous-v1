@@ -1,4 +1,5 @@
 import { ArrowRight, Mail, Phone, MapPin } from "lucide-react";
+import Link from "next/link";
 
 const nav = [
   { href: "/", label: "Home" },
@@ -8,9 +9,10 @@ const nav = [
 ];
 const company = [
   { href: "/#work", label: "Selected work" },
-  { href: "/#journal", label: "Journal" },
+  { href: "/blog", label: "Blog" },
   { href: "/contact", label: "Contact" },
-  { href: "#", label: "Privacy Policy" },
+  { href: "/privacy-policy", label: "Privacy Policy" },
+  { href: "/terms", label: "Terms of Use" },
 ];
 
 // lucide v1 dropped brand glyphs, so these are inline paths.
@@ -160,8 +162,8 @@ export function Footer() {
         <div className="flex flex-wrap items-center justify-between gap-4 py-6 border-t border-cream/15 text-xs text-cream/60">
           <div>© 2026 Sorta Famous · All rights reserved</div>
           <div className="flex gap-6">
-            <a href="#" className="hover:text-cream transition">Privacy Policy</a>
-            <a href="#" className="hover:text-cream transition">Terms &amp; Conditions</a>
+            <Link href="/privacy-policy" className="hover:text-cream transition">Privacy Policy</Link>
+            <Link href="/terms" className="hover:text-cream transition">Terms of Use</Link>
           </div>
         </div>
       </div>
