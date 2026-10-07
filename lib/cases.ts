@@ -32,6 +32,8 @@ export type CaseStudy = {
    * detail page. The first sentence is set as the serif lead-in.
    */
   scope?: string;
+  /** The client's Instagram profile, linked from the detail page. */
+  instagram?: string;
   summary: string;
   body: string[];
 };
@@ -49,6 +51,7 @@ export const cases: CaseStudy[] = [
     // The coverage now sits on the Ambar House digital case, so this one is
     // kept off the grid rather than shown twice.
     hidden: true,
+    instagram: "https://www.instagram.com/ambarhousejewellery",
     outlet: "Woman's Era",
     services: ["Public Relations", "Brand storytelling", "Print media"],
     summary:
@@ -74,6 +77,7 @@ export const cases: CaseStudy[] = [
         caption: "Ambar House featured in Woman's Era.",
       },
     ],
+    instagram: "https://www.instagram.com/ambarhousejewellery",
     outlet: "Social & digital",
     services: ["Social media", "Content", "Brand identity"],
     scope:
@@ -162,6 +166,7 @@ export const cases: CaseStudy[] = [
     inside: "/images/work/kredme-inside.jpg",
     insideCaption:
       "KredMe, reaching the right audience and driving app downloads through strategic performance marketing.",
+    instagram: "https://www.instagram.com/kredmeapp",
     outlet: "Performance marketing",
     services: ["Performance marketing", "Paid media", "App growth"],
     scope:
@@ -184,6 +189,7 @@ export const cases: CaseStudy[] = [
     inside: "/images/work/sraavyam-inside.jpg",
     insideCaption:
       "Sraavyam The Andhra Kitchen, built from launch planning through social media management and influencer collaborations.",
+    instagram: "https://www.instagram.com/sraavyam_pune",
     outlet: "Social & digital",
     services: ["Social media", "Influencer marketing", "Launch strategy"],
     summary:

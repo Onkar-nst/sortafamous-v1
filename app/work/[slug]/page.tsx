@@ -86,15 +86,49 @@ export default async function CasePage({
                   </p>
                 </div>
 
-                <div className="flex flex-wrap gap-3 lg:justify-end">
-                  {study.services.map((service) => (
-                    <span
-                      key={service}
-                      className="inline-flex items-center rounded-pill border border-cream/20 bg-cream/5 px-4 py-2 text-sm text-cream/80"
+                <div className="flex flex-col gap-6 lg:items-end">
+                  <div className="flex flex-wrap gap-3 lg:justify-end">
+                    {study.services.map((service) => (
+                      <span
+                        key={service}
+                        className="inline-flex items-center rounded-pill border border-cream/20 bg-cream/5 px-4 py-2 text-sm text-cream/80"
+                      >
+                        {service}
+                      </span>
+                    ))}
+                  </div>
+
+                  {study.instagram && (
+                    <a
+                      href={study.instagram}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="group inline-flex items-center gap-2.5 self-start rounded-pill bg-cream px-5 py-3 text-sm text-ink transition-transform duration-300 hover:-translate-y-0.5 lg:self-end"
                     >
-                      {service}
-                    </span>
-                  ))}
+                      {/* lucide v1 dropped brand glyphs, same path as the footer */}
+                      <svg
+                        aria-hidden
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        strokeWidth={1.8}
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        className="h-4 w-4"
+                      >
+                        <rect x="2" y="2" width="20" height="20" rx="5" />
+                        <circle cx="12" cy="12" r="4" />
+                        <circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none" />
+                      </svg>
+                      @{study.instagram.replace(/\/+$/, "").split("/").pop()}
+                      <span
+                        aria-hidden
+                        className="transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5"
+                      >
+                        ↗
+                      </span>
+                    </a>
+                  )}
                 </div>
               </div>
             </header>
