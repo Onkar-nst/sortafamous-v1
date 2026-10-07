@@ -24,6 +24,7 @@ const links = [
   { href: "/about", label: "About" },
   { href: "/how-it-works", label: "How it works" },
   { href: "/blog", label: "Blog" },
+  { href: "/careers", label: "Careers" },
   { href: "/contact", label: "Contact" },
 ];
 
@@ -80,9 +81,6 @@ export function Nav() {
           <div className="justify-self-center">
             <div className="md:hidden">
               <Logo />
-            </div>
-            <div className="hidden md:block">
-              <Clock />
             </div>
           </div>
           <div className="justify-self-end flex items-center gap-3">

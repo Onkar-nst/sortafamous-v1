@@ -37,7 +37,19 @@ export default async function PostPage({ params }: { params: Promise<{ slug: str
   const { slug } = await params;
   const post = await getBlogPostBySlug(slug);
   if (!post) notFound();
- 
+
+  // Other posts for the sticky sidebar, same-category posts first.
+  const { posts: recent }: { posts: BlogPost[] } = await getBlogPosts({ perPage: 8 });
+  const categoryIds = new Set(post.categories?.map((c) => c.id));
+  const related = recent
+    .filter((r) => r.slug !== post.slug)
+    .sort(
+      (a, b) =>
+        Number(b.categories?.some((c) => categoryIds.has(c.id))) -
+        Number(a.categories?.some((c) => categoryIds.has(c.id)))
+    )
+    .slice(0, 4);
+
   return (
     <div className="bg-cream text-ink overflow-x-clip min-h-screen flex flex-col">
       <Nav />
@@ -46,80 +58,133 @@ export default async function PostPage({ params }: { params: Promise<{ slug: str
           <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(post.seo.schema) }} />
         )}
         
-        <article className="px-6 md:px-12 lg:px-16 xl:px-28">
-          <div className="mx-auto max-w-[1000px] pt-32 md:pt-40">
-            <a
-              href="/blog"
-              className="inline-flex items-center gap-2 text-sm text-ink-soft transition hover:text-ink"
-            >
-              <span aria-hidden>←</span> Back to blog
-            </a>
+        <div className="px-6 md:px-12 lg:px-16 xl:px-28">
+          <div className="mx-auto grid max-w-[1480px] gap-16 pt-32 pb-16 md:pt-40 lg:grid-cols-[300px_minmax(0,1fr)] lg:gap-16 xl:gap-24">
+            <article className="min-w-0 max-w-[1000px]">
+              <div>
+                <a
+                  href="/blog"
+                  className="inline-flex items-center gap-2 text-sm text-ink-soft transition hover:text-ink"
+                >
+                  <span aria-hidden>←</span> Back to blog
+                </a>
 
-            <div className="mt-10 flex flex-wrap items-center gap-x-4 gap-y-3 text-sm text-ink-soft">
-              {post.categories?.length > 0 && (
-                <div className="flex gap-2">
-                  {post.categories.map(c => (
-                    <a key={c.id} href={`/category/${c.slug}`} className="rounded-full bg-brand/10 text-brand px-3 py-1 text-xs hover:bg-brand hover:text-cream transition-colors">
-                      {c.name}
-                    </a>
-                  ))}
+                <div className="mt-10 flex flex-wrap items-center gap-x-4 gap-y-3 text-sm text-ink-soft">
+                  {post.categories?.length > 0 && (
+                    <div className="flex gap-2">
+                      {post.categories.map(c => (
+                        <a key={c.id} href={`/category/${c.slug}`} className="rounded-full bg-brand/10 text-brand px-3 py-1 text-xs hover:bg-brand hover:text-cream transition-colors">
+                          {c.name}
+                        </a>
+                      ))}
+                    </div>
+                  )}
+                  <span>{post.formattedDate}</span>
+                </div>
+
+                <h1 className="serif mt-6 text-[clamp(2.5rem,6vw,4.5rem)] leading-[1.05] tracking-[-0.02em]">
+                  {post.title}
+                </h1>
+                <p className="mt-8 text-xl md:text-2xl text-ink-soft leading-relaxed font-light">
+                  {post.excerpt}
+                </p>
+              </div>
+
+              {post.featuredImageUrl && (
+                <div className="mt-14 overflow-hidden rounded-[2.5rem] bg-muted shadow-sm">
+                  <img
+                    src={post.featuredImageUrl}
+                    alt={post.title}
+                    className="aspect-[16/9] w-full object-cover"
+                  />
                 </div>
               )}
-              <span>{post.formattedDate}</span>
-            </div>
 
-            <h1 className="serif mt-6 text-[clamp(2.5rem,6vw,4.5rem)] leading-[1.05] tracking-[-0.02em]">
-              {post.title}
-            </h1>
-            <p className="mt-8 text-xl md:text-2xl text-ink-soft leading-relaxed font-light">
-              {post.excerpt}
-            </p>
-          </div>
+              <div className="mt-16">
+                <div 
+                  className="prose prose-lg prose-ink max-w-none prose-headings:font-serif prose-headings:font-normal prose-headings:tracking-tight prose-a:text-brand prose-a:underline hover:prose-a:text-brand/80 transition-colors prose-img:rounded-2xl prose-img:shadow-sm prose-p:leading-relaxed prose-blockquote:border-l-brand prose-blockquote:bg-brand/5 prose-blockquote:py-2 prose-blockquote:px-5 prose-blockquote:rounded-r-xl prose-blockquote:not-italic prose-li:marker:text-brand/60 prose-strong:text-ink prose-strong:font-medium"
+                  dangerouslySetInnerHTML={{ __html: post.contentHtml }} 
+                />
 
-          {post.featuredImageUrl && (
-            <div className="mx-auto mt-14 max-w-[1000px] overflow-hidden rounded-[2.5rem] bg-muted shadow-sm">
-              <img
-                src={post.featuredImageUrl}
-                alt={post.title}
-                className="aspect-[16/9] w-full object-cover"
-              />
-            </div>
-          )}
-
-          <div className="mx-auto mt-16 max-w-[1000px] pb-16">
-            <div 
-              className="prose prose-lg prose-ink max-w-none prose-headings:font-serif prose-headings:font-normal prose-headings:tracking-tight prose-a:text-brand prose-a:underline hover:prose-a:text-brand/80 transition-colors prose-img:rounded-2xl prose-img:shadow-sm prose-p:leading-relaxed prose-blockquote:border-l-brand prose-blockquote:bg-brand/5 prose-blockquote:py-2 prose-blockquote:px-5 prose-blockquote:rounded-r-xl prose-blockquote:not-italic prose-li:marker:text-brand/60 prose-strong:text-ink prose-strong:font-medium"
-              dangerouslySetInnerHTML={{ __html: post.contentHtml }} 
-            />
-
-            <div className="mt-16 pt-8 border-t border-ink/10 flex flex-col sm:flex-row sm:items-center justify-between gap-6">
-              <div className="flex items-center gap-4">
-                {post.author.avatarUrl ? (
-                  <img src={post.author.avatarUrl} alt={post.author.name} className="w-12 h-12 rounded-full ring-2 ring-cream shadow-sm" />
-                ) : (
-                  <div className="w-12 h-12 rounded-full bg-brand/10 flex items-center justify-center text-brand font-medium">
-                    {post.author.name.charAt(0)}
+                <div className="mt-16 pt-8 border-t border-ink/10 flex flex-col sm:flex-row sm:items-center justify-between gap-6">
+                  <div className="flex items-center gap-4">
+                    {post.author.avatarUrl ? (
+                      <img src={post.author.avatarUrl} alt={post.author.name} className="w-12 h-12 rounded-full ring-2 ring-cream shadow-sm" />
+                    ) : (
+                      <div className="w-12 h-12 rounded-full bg-brand/10 flex items-center justify-center text-brand font-medium">
+                        {post.author.name.charAt(0)}
+                      </div>
+                    )}
+                    <div>
+                      <div className="text-xs text-ink-soft uppercase tracking-wider mb-1">Written by</div>
+                      <div className="text-ink font-medium text-lg">{post.author.name}</div>
+                    </div>
                   </div>
-                )}
-                <div>
-                  <div className="text-xs text-ink-soft uppercase tracking-wider mb-1">Written by</div>
-                  <div className="text-ink font-medium text-lg">{post.author.name}</div>
+                  
+                  {post.tags?.length > 0 && (
+                    <div className="flex flex-wrap items-center gap-2">
+                      <span className="text-sm text-ink-soft mr-1">Tags:</span>
+                      {post.tags.map(t => (
+                        <a key={t.id} href={`/tag/${t.slug}`} className="text-sm text-ink hover:text-brand transition-colors bg-ink/5 px-3 py-1 rounded-full">
+                          #{t.name}
+                        </a>
+                      ))}
+                    </div>
+                  )}
                 </div>
               </div>
-              
-              {post.tags?.length > 0 && (
-                <div className="flex flex-wrap items-center gap-2">
-                  <span className="text-sm text-ink-soft mr-1">Tags:</span>
-                  {post.tags.map(t => (
-                    <a key={t.id} href={`/tag/${t.slug}`} className="text-sm text-ink hover:text-brand transition-colors bg-ink/5 px-3 py-1 rounded-full">
-                      #{t.name}
-                    </a>
-                  ))}
+            </article>
+
+            {/* Sticky recommendations, left on desktop, after the article on mobile */}
+            <aside className="lg:order-first">
+              <div className="lg:sticky lg:top-28">
+                <div className="eyebrow mb-6 flex items-center gap-2">
+                  <span className="h-1.5 w-1.5 rounded-full bg-accent" /> Keep reading
                 </div>
-              )}
-            </div>
+                <h2 className="serif text-3xl">
+                  More from the <span className="serif-italic">blog</span>
+                </h2>
+
+                <ul className="mt-8 flex flex-col">
+                  {related.map((r) => (
+                    <li key={r.id} className="border-t border-ink/10 first:border-t-0 first:pt-0 py-5">
+                      <a href={`/${r.slug}`} className="group flex gap-4">
+                        <span className="block h-20 w-24 shrink-0 overflow-hidden rounded-2xl bg-muted">
+                          {r.featuredImageUrl ? (
+                            <img
+                              src={r.featuredImageUrl}
+                              alt=""
+                              loading="lazy"
+                              className="h-full w-full object-cover transition duration-500 group-hover:scale-105"
+                            />
+                          ) : (
+                            <span className="block h-full w-full bg-brand/10" />
+                          )}
+                        </span>
+                        <span className="min-w-0">
+                          {r.categories?.[0] && (
+                            <span className="eyebrow block text-brand">{r.categories[0].name}</span>
+                          )}
+                          <span className="serif mt-1 block text-lg leading-snug line-clamp-3 transition-colors group-hover:text-ink-soft">
+                            {r.title}
+                          </span>
+                          <span className="mt-1 block text-xs text-ink-soft">{r.formattedDate}</span>
+                        </span>
+                      </a>
+                    </li>
+                  ))}
+                </ul>
+
+                <a
+                  href="/blog"
+                  className="mt-4 inline-flex items-center gap-2 rounded-full border border-ink/20 px-5 py-2.5 text-sm transition-colors hover:bg-brand hover:text-cream hover:border-brand"
+                >
+                  View all posts <span aria-hidden>→</span>
+                </a>
+              </div>
+            </aside>
           </div>
-        </article>
+        </div>
         <CTA />
       </main>
       <Footer />
