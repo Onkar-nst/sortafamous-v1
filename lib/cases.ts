@@ -27,6 +27,11 @@ export type CaseStudy = {
   hidden?: boolean;
   outlet: string;
   services: string[];
+  /**
+   * The client-approved scope of work, shown as the written brief on the
+   * detail page. The first sentence is set as the serif lead-in.
+   */
+  scope?: string;
   summary: string;
   body: string[];
 };
@@ -71,6 +76,8 @@ export const cases: CaseStudy[] = [
     ],
     outlet: "Social & digital",
     services: ["Social media", "Content", "Brand identity"],
+    scope:
+      "We manage the complete social media presence for Ambar House, including content planning, strategy, ideation, and execution. Our work involves developing the content calendar, creating and coordinating content, writing captions and copy, managing regular postings, and ensuring the brand maintains a consistent visual and communication style across its social media platforms. We handle the overall day-to-day social media management to build a strong and cohesive digital presence for the brand.",
     summary:
       "Beyond earned media, we own Ambar House's digital identity end to end — positioning, content direction, and the day-to-day grid that makes a young label look established.",
     body: [
@@ -91,6 +98,8 @@ export const cases: CaseStudy[] = [
       "A feature in Sunday Mid-Day spotlighting Anangsha Biswas and her journey with Mirzapur: The Movie.",
     outlet: "Sunday Mid-Day",
     services: ["Public Relations", "Media relations", "Personal branding"],
+    scope:
+      "We manage the complete PR strategy and media outreach for Anangsha Biswas, including positioning, story development, media mapping, journalist outreach, and securing relevant opportunities. Our work involves identifying the right narratives around her work and career, developing compelling pitches, connecting with relevant journalists and publications, and creating opportunities for meaningful media coverage. We handle the overall PR process to strengthen her public profile, build credibility, and maintain a consistent presence across relevant media platforms.",
     summary:
       "A Sunday Mid-Day feature that let Anangsha Biswas reframe her most famous role on her own terms, timed to her return in Mirzapur: The Movie.",
     body: [
@@ -111,6 +120,8 @@ export const cases: CaseStudy[] = [
       "Shivam Khajuria, a leading TV actor, placed in CAT A entertainment media.",
     outlet: "Zoom / Telly Talk India",
     services: ["Public Relations", "Media relations", "Entertainment PR"],
+    scope:
+      "We work on building and strengthening Shivam Khajuria’s presence across the entertainment media landscape. Our PR efforts focus on identifying relevant moments from his career, turning them into strong media stories, and creating targeted opportunities with entertainment publications, journalists, and digital platforms. From media pitching and interview opportunities to developing timely conversations around his work, we aim to keep Shivam visible, relevant, and consistently part of the industry conversation.",
     summary:
       "Shivam Khajuria plays Prem in Rupali Ganguly's Anupamaa. We placed him in CAT A entertainment media with an exclusive tied to the show's biggest storyline turn.",
     body: [
@@ -131,6 +142,8 @@ export const cases: CaseStudy[] = [
       "Bollywood singer Sudhir Yaduvanshi covered by top entertainment media.",
     outlet: "India Today · Firstpost",
     services: ["Public Relations", "Media relations", "Music PR"],
+    scope:
+      "We handle Sudhir Yaduvanshi’s PR with a focus on expanding his visibility within the music and entertainment space. Our approach involves identifying newsworthy aspects of his work, creating relevant media narratives, and connecting him with publications and journalists across the entertainment ecosystem. Through strategic pitching, interview opportunities, and targeted media conversations, we work towards keeping his music and career in the spotlight while strengthening his overall presence in the industry.",
     summary:
       "Sudhir Yaduvanshi sang the title track of Dhurandhar. We converted a hit song into sustained coverage across India Today and Firstpost.",
     body: [
@@ -151,6 +164,8 @@ export const cases: CaseStudy[] = [
       "KredMe, reaching the right audience and driving app downloads through strategic performance marketing.",
     outlet: "Performance marketing",
     services: ["Performance marketing", "Paid media", "App growth"],
+    scope:
+      "We manage the social media marketing and performance marketing for KredMe, handling the brand’s digital presence across content and paid campaigns. Our social media scope includes content strategy, planning and ideation, content calendar development, copy and caption writing, content coordination, and regular posting. Alongside this, we manage performance marketing campaigns focused on driving app downloads, reaching the right audience, and improving overall campaign performance through targeted digital advertising.",
     summary:
       "KredMe tells you which card earns the most before you pay. We run the performance marketing that puts the app in front of the people who will actually use it.",
     body: [
