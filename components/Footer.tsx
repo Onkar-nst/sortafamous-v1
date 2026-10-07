@@ -1,5 +1,6 @@
 import { ArrowRight, Mail, Phone, MapPin } from "lucide-react";
 import Link from "next/link";
+import { Clock } from "./Clock";
 
 const nav = [
   { href: "/", label: "Home" },
@@ -48,10 +49,8 @@ export function Footer() {
     <footer className="relative z-[150] bg-ink-gradient text-cream overflow-hidden">
       <div className="mx-auto max-w-[1480px] px-6 md:px-12 lg:px-16 xl:px-28 pt-16 md:pt-24">
         {/* top row */}
-        <div className="flex items-center justify-between pb-8 border-b border-cream/15">
-          <div className="eyebrow flex items-center gap-2 text-cream/60">
-            <span className="h-1.5 w-1.5 rounded-full bg-accent" /> Available for new projects
-          </div>
+        <div className="flex flex-wrap items-center justify-between gap-x-6 gap-y-3 pb-8 border-b border-cream/15">
+          <Clock dark />
           <div className="text-sm text-cream/60">Sorta Famous® · 2026</div>
         </div>
 
